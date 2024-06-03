@@ -3,12 +3,12 @@ using UnityEngine.InputSystem;
 
 public class GreenHouseController : MonoBehaviour
 {
+    // Component References
     [SerializeField] private InputActionReference showFlowerAction;
     [SerializeField] private InputActionReference escapeAction;
-    [SerializeField] private TableController[] tables;
+    
     [SerializeField] private Camera flowerCam;
     [SerializeField] private Camera overview;
-
     
     private void Awake()
     {
@@ -20,15 +20,21 @@ public class GreenHouseController : MonoBehaviour
     {
         showFlowerAction.action.Enable();
         showFlowerAction.action.performed += ShowFlowerWrapper;
+        
         escapeAction.action.Enable();
         escapeAction.action.performed += Escape;
-        
+
+        showFlowerAction.action.ReadValue<Vector2>();
     }
 
+    
     private void OnDisable()
     {
         showFlowerAction.action.performed -= ShowFlowerWrapper;
         showFlowerAction.action.Disable();
+        
+        escapeAction.action.Disable();
+        escapeAction.action.performed -= Escape;
     }
 
     private void Escape(InputAction.CallbackContext obj)
@@ -51,8 +57,6 @@ public class GreenHouseController : MonoBehaviour
 
     private void ShowFlower(int index)
     {
-        flowerCam.transform.position = tables[index].CamPosition;
-        flowerCam.gameObject.SetActive(true);
-        overview.gameObject.SetActive(false);
+        Debug.Log($"Show Flower with index: {index}");
     }
 }
