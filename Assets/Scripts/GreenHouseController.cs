@@ -10,8 +10,11 @@ public class GreenHouseController : MonoBehaviour
     [SerializeField] private Camera flowerCam;
     [SerializeField] private Camera overview;
     
+    public static GreenHouseController Instance { get; private set; }
+    
     private void Awake()
     {
+        Instance = this;
         flowerCam.gameObject.SetActive(false);
         overview.gameObject.SetActive(true);
     }
@@ -55,7 +58,7 @@ public class GreenHouseController : MonoBehaviour
         ShowFlower((int)ctx.ReadValue<float>() - 1);
     }
 
-    private void ShowFlower(int index)
+    public void ShowFlower(int index)
     {
         Debug.Log($"Show Flower with index: {index}");
     }
