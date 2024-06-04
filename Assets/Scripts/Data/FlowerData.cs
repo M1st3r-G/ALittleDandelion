@@ -13,8 +13,8 @@ namespace Data
         public FlowerType FlowerName => flowerTypes; 
         [SerializeField] private FlowerType flowerTypes;
 
-        public Environment PreferredEnvironment => env;
-        [SerializeField] private Environment env;
+        public Environment PreferredEnvironment => preferredEnv;
+        [SerializeField] private Environment preferredEnv;
 
         public int TimeToSprout => timeToSprout;
         [SerializeField] private int timeToSprout;

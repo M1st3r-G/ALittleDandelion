@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Dandelion
   m_EditorClassIdentifier: 
   flowerTypes: 0
-  lichtkeimer: 1
-  soilType: 0
-  fertilizerType: 0
+  preferredEnv:
+    soil: 0
+    fertilizer: 0
+    lichtkeimer: 1
   timeToSprout: 2
   timeToBloom: 8
+  timeToDie: 0
   waterFrequency: 2

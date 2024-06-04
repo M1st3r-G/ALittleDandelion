@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace Data
 {
@@ -15,16 +16,16 @@ namespace Data
             Pflanzenjauche, Knochendünger, Pferdedünger
         }
         
-        private SoilType _soil;
-        private FertilizerType _fertilizer;
-        private bool _lichtkeimer;
+        [SerializeField] private SoilType soil;
+        [SerializeField] private FertilizerType fertilizer;
+        [SerializeField] private bool lichtkeimer;
 
         public int Compare(Environment other)
         {
             int counter = 0;
-            if (_soil == other._soil) counter++;
-            if (_fertilizer == other._fertilizer) counter++;
-            if (_lichtkeimer == other._lichtkeimer) counter++;
+            if (soil == other.soil) counter++;
+            if (fertilizer == other.fertilizer) counter++;
+            if (lichtkeimer == other.lichtkeimer) counter++;
             return counter;
         }
     }
