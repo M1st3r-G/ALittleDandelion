@@ -17,7 +17,7 @@ namespace Managers
         private void Awake()
         {
             Instance = this;
-            ToHub();
+            ToGreenhouse();
         }
 
         private void OnDestroy()
