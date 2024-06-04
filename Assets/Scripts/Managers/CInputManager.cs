@@ -60,7 +60,7 @@ namespace Managers
 
         private void ShowShelfedWrapper(InputAction.CallbackContext ctx) => Debug.Log("Show Shelfed");
         
-        public void TriggerNextDay() => Debug.Log("Next Day");
+        public void TriggerNextDay() => TimeManager.Instance.NextDay();
 
         private void Escape(InputAction.CallbackContext ctx)
         {
