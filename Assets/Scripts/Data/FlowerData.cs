@@ -9,28 +9,12 @@ namespace Data
         {
             Löwenzahn, Tulpe, Rose
         }
-
-        public enum SoilType
-        {
-            Lehmerde, Sanderde, Rosenerde
-        }
-
-        public enum FertilizerType
-        {
-            Pflanzenjauche, Knochendünger, Pferdedünger
-        }
         
         public FlowerType FlowerName => flowerTypes; 
         [SerializeField] private FlowerType flowerTypes;
 
-        public bool IsLichtkeimer => lichtkeimer;
-        [SerializeField] private bool lichtkeimer;
-
-        public SoilType Soil => soilType;
-        [SerializeField] private SoilType soilType;
-
-        public FertilizerType Fertilizer => fertilizerType;
-        [SerializeField] private FertilizerType fertilizerType;
+        public Environment PreferredEnvironment => env;
+        [SerializeField] private Environment env;
 
         public int TimeToSprout => timeToSprout;
         [SerializeField] private int timeToSprout;
@@ -38,6 +22,9 @@ namespace Data
         public int TimeToBloom => timeToBloom;
         [SerializeField] private int timeToBloom;
 
+        public int TimeToDie => timeToDie;
+        [SerializeField] private int timeToDie;
+        
         public int WaterFrequency => waterFrequency;
         [SerializeField] private int waterFrequency;
     }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Controller;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Managers
@@ -75,7 +76,7 @@ namespace Managers
         public void ShowFlower(int index)
         {
             CameraManager.Instance.ToGreenhouse();
-            Debug.Log($"Flower with index: {index}");
+            TableController.Instance.DisplayFlower(index);
         }
         
         private void SeedsWrapper(InputAction.CallbackContext ctx) => Seeds();
