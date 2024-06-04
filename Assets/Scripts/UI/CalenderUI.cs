@@ -15,6 +15,7 @@ namespace UI
         private void Awake()
         {
             TimeManager.OnTimeIncrease += OnTimeIncrease;
+            numberOfDaysText.text = "0";
         }
 
         private void OnTimeIncrease()
