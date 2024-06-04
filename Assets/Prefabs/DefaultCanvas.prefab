@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1839190506799950724}
   - component: {fileID: 3958362563498935857}
   - component: {fileID: 5787206008711401590}
-  - component: {fileID: 8773744113312027537}
+  - component: {fileID: 9151335010643182147}
   m_Layer: 5
   m_Name: DefaultCanvas
   m_TagString: Untagged
@@ -35,7 +35,6 @@ RectTransform:
   - {fileID: 4372045576142567515}
   - {fileID: 6722389579827164241}
   - {fileID: 1749065987481915538}
-  - {fileID: 7316770398811435854}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -106,7 +105,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8773744113312027537
+--- !u!114 &9151335010643182147
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,9 +114,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 58354188251663836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ed6fd3fec3a36049a9aaa234e5a955d, type: 3}
+  m_Script: {fileID: 11500000, guid: f6c69ba4f798418490500ca01f58e767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showFlowerAction: {fileID: 5191960415537950457, guid: 3e3ca8f1176f46b44990e4414bc59dbc,
+    type: 3}
+  escapeAction: {fileID: 1787690039930297307, guid: 3e3ca8f1176f46b44990e4414bc59dbc,
+    type: 3}
 --- !u!1 &450574170853031597
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,8 +316,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8773744113312027537}
-        m_TargetAssemblyTypeName: ButtonMethods, Assembly-CSharp
+      - m_Target: {fileID: 9151335010643182147}
+        m_TargetAssemblyTypeName: Managers.CInputManager, Assembly-CSharp
         m_MethodName: Seeds
         m_Mode: 1
         m_Arguments:
@@ -519,8 +522,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8773744113312027537}
-        m_TargetAssemblyTypeName: ButtonMethods, Assembly-CSharp
+      - m_Target: {fileID: 9151335010643182147}
+        m_TargetAssemblyTypeName: Managers.CInputManager, Assembly-CSharp
         m_MethodName: Book
         m_Mode: 1
         m_Arguments:
@@ -689,8 +692,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8773744113312027537}
-        m_TargetAssemblyTypeName: ButtonMethods, Assembly-CSharp
+      - m_Target: {fileID: 9151335010643182147}
+        m_TargetAssemblyTypeName: Managers.CInputManager, Assembly-CSharp
         m_MethodName: TriggerNextDay
         m_Mode: 1
         m_Arguments:
@@ -701,74 +704,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &3926746912992112115
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7316770398811435854}
-  - component: {fileID: 3341565136665776580}
-  - component: {fileID: 2479440086326628191}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7316770398811435854
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3926746912992112115}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960, y: -540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8563597557852640120}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3341565136665776580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3926746912992112115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!114 &2479440086326628191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3926746912992112115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!1 &4809500385210108099
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,7 +927,7 @@ GameObject:
   - component: {fileID: 2601527263541521401}
   - component: {fileID: 552902092568052135}
   m_Layer: 5
-  m_Name: Menu
+  m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1099,8 +1034,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8773744113312027537}
-        m_TargetAssemblyTypeName: ButtonMethods, Assembly-CSharp
+      - m_Target: {fileID: 9151335010643182147}
+        m_TargetAssemblyTypeName: Managers.CInputManager, Assembly-CSharp
         m_MethodName: Settings
         m_Mode: 1
         m_Arguments:
@@ -1121,13 +1056,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8773744113312027537}
+      objectReference: {fileID: 9151335010643182147}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnPotClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Managers.CInputManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
@@ -1260,13 +1205,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8773744113312027537}
+      objectReference: {fileID: 9151335010643182147}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnPotClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Managers.CInputManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
@@ -1399,13 +1354,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8773744113312027537}
+      objectReference: {fileID: 9151335010643182147}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnPotClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Managers.CInputManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
@@ -1538,13 +1503,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8773744113312027537}
+      objectReference: {fileID: 9151335010643182147}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnPotClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Managers.CInputManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
@@ -1677,13 +1652,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8773744113312027537}
+      objectReference: {fileID: 9151335010643182147}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnPotClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Managers.CInputManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
@@ -1818,17 +1803,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8773744113312027537}
-    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnPotClicked
-      objectReference: {fileID: 0}
-    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9151335010643182147}
     - target: {fileID: 7916375488562811013, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1955,13 +1930,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8773744113312027537}
+      objectReference: {fileID: 9151335010643182147}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnPotClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Managers.CInputManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
@@ -2096,7 +2081,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8773744113312027537}
+      objectReference: {fileID: 9151335010643182147}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7916375488562811013, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2223,13 +2213,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8773744113312027537}
+      objectReference: {fileID: 9151335010643182147}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnPotClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Managers.CInputManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
@@ -2362,13 +2362,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8773744113312027537}
+      objectReference: {fileID: 9151335010643182147}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnPotClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Managers.CInputManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
@@ -2501,13 +2511,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8773744113312027537}
+      objectReference: {fileID: 9151335010643182147}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnPotClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Managers.CInputManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
@@ -2640,13 +2660,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8773744113312027537}
+      objectReference: {fileID: 9151335010643182147}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnPotClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Managers.CInputManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1296183686921949239, guid: 190ea50f97ab57a44b1bf6ade964ce6d,
         type: 3}
