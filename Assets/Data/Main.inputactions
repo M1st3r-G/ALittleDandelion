@@ -2,7 +2,7 @@
     "name": "Main",
     "maps": [
         {
-            "name": "Navigation",
+            "name": "Nav",
             "id": "cb75e92c-83eb-4c6d-9ce3-b04580a19ee7",
             "actions": [
                 {
@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ShowStored",
+                    "name": "ShowShelfed",
                     "type": "Button",
                     "id": "fda0d498-7b4d-40e2-aa57-3c107cd68021",
                     "expectedControlType": "Button",
@@ -184,7 +184,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ShowStored",
+                    "action": "ShowShelfed",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

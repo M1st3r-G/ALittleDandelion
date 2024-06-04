@@ -7,9 +7,12 @@ namespace Managers
     {
         // Component References
         [SerializeField] private InputActionReference showFlowerAction;
+        [SerializeField] private InputActionReference showSeedsAction;
+        [SerializeField] private InputActionReference showShelfedAction;
         [SerializeField] private InputActionReference escapeAction;
-
-        public static CInputManager Instance { get; private set; }
+        [SerializeField] private InputActionReference bookAction;
+        
+        private static CInputManager Instance { get; set; }
 
         #region SetUp
 
@@ -26,63 +29,59 @@ namespace Managers
         private void OnEnable()
         {
             showFlowerAction.action.Enable();
-            showFlowerAction.action.performed += ShowFlowerWrapper;
-        
+            showFlowerAction.action.performed += ShowFlowerWrapper; 
+            showSeedsAction.action.Enable();
+            showSeedsAction.action.performed += SeedsWrapper;
+            showShelfedAction.action.Enable();
+            showShelfedAction.action.performed += ShowShelfedWrapper;
+
             escapeAction.action.Enable();
             escapeAction.action.performed += Escape;
+            bookAction.action.Enable();
+            bookAction.action.performed += BookWrapper;
         }
-
     
         private void OnDisable()
         {
             showFlowerAction.action.performed -= ShowFlowerWrapper;
             showFlowerAction.action.Disable();
-        
+            showSeedsAction.action.Disable();
+            showSeedsAction.action.performed -= SeedsWrapper;
+            showShelfedAction.action.Disable();
+            showShelfedAction.action.performed -= ShowShelfedWrapper;
+            
             escapeAction.action.Disable();
             escapeAction.action.performed -= Escape;
+            bookAction.action.Disable();
+            bookAction.action.performed -= BookWrapper;
         }
 
         #endregion
 
+        private void ShowShelfedWrapper(InputAction.CallbackContext ctx) => Debug.Log("Show Shelfed");
+        
+        public void TriggerNextDay() => Debug.Log("Next Day");
+
         private void Escape(InputAction.CallbackContext ctx)
         {
             if (CameraManager.Instance.IsInGreenhouse) CameraManager.Instance.ToHub();
-            else Debug.Log("Opend Settings");
+            else Settings();
         }
+        public void Settings() => Debug.Log("Settings");
 
         private void ShowFlowerWrapper(InputAction.CallbackContext ctx)
-            => ShowFlowerAtIndex((int)ctx.ReadValue<float>() - 1);
-        
-        public void ShowFlowerAtIndex(int index)
+            => ShowFlower((int)ctx.ReadValue<float>() - 1);
+
+        public void ShowFlower(int index)
         {
             CameraManager.Instance.ToGreenhouse();
             Debug.Log($"Flower with index: {index}");
         }
         
-        #region Buttons
+        private void SeedsWrapper(InputAction.CallbackContext ctx) => Seeds();
+        public void Seeds() => Debug.Log("Seeds");
 
-        public void TriggerNextDay()
-        {
-            Debug.Log("Next Day");
-        }
-
-        public void Settings()
-        {
-            Debug.Log("Settings");
-        }
-
-        public void Seeds()
-        {
-            Debug.Log("Seeds");
-        }
-
+        private void BookWrapper(InputAction.CallbackContext ctx) => Book();
         public void Book() => Debug.Log("Open Book");
-    
-        public void OnPotClicked(int index)
-        {
-            ShowFlowerAtIndex(index);
-        }
-        
-        #endregion
     }
 }
