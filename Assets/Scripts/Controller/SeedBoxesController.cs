@@ -11,11 +11,14 @@ namespace Controller
 
         private void Awake()
         {
-            _boxes = new SeedBoxController[6];
+            _boxes = GetComponentsInChildren<SeedBoxController>();
         }
 
-        private void OnEnable()
+        private void Start() => Init();
+        
+        private void Init()
         {
+            Debug.LogError("Looking for Seeds");
             FlowerInstance[] flowers = Storage.Instance.GetSeeds();
             for (int i = 0; i < flowers.Length; i++)
             {
@@ -23,7 +26,7 @@ namespace Controller
             }
         }
 
-        private void OnDisable()
+        private void DeInit()
         {
             Storage.Instance.StoreSeeds(_boxes.Select(b => b.Flower).ToArray());
         }

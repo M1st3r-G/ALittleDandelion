@@ -4,7 +4,6 @@ using UnityEngine.EventSystems;
 
 namespace Controller
 {
-    [RequireComponent(typeof(EventTrigger))]
     public class SeedBoxController : MonoBehaviour, IPointerClickHandler
     {
         public FlowerInstance Flower

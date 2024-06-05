@@ -12,9 +12,10 @@ namespace Managers
         
         private void Awake()
         {
+            Instance = this;
+            Debug.LogError("Created Storage");
             _allPots = new FlowerInstance[12];
             _allSeeds = new FlowerInstance[6];
-            Instance = this;
         }
 
         private void OnDestroy()
@@ -22,7 +23,11 @@ namespace Managers
             if (Instance == this) Instance = this;
         }
 
-        public FlowerInstance[] GetSeeds() => _allSeeds;
+        public FlowerInstance[] GetSeeds()
+        {
+            return _allSeeds;
+        }
+
         public void StoreSeeds(FlowerInstance[] seeds) => _allSeeds = seeds;
 
         public void SetPlant(int index, FlowerInstance flower) => _allPots[index] = flower;
