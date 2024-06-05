@@ -1,6 +1,4 @@
-﻿using System;
-using Managers;
-using UnityEngine;
+﻿using Managers;
 
 namespace Data
 {
@@ -14,32 +12,31 @@ namespace Data
         private readonly FlowerData _type;   // The Type of Flower
         private GrowthState _state; // The GrowthState
         private int _lastWater;     // Time Since Watering
-        private int _damage;        // When Watered Wrong the plant dies
         private int _growthCounter; // How Many Days Past since start of Phase
-
-        public FlowerInstance(FlowerData type)
+        public float Rating => _rating;
+        private int _rating;
+        
+        public FlowerInstance(FlowerData type, Environment potEnv)
         {
             _type = type;
-            _lastWater = _damage = _growthCounter = 0;
             _state = GrowthState.Seed;
+            _lastWater = _growthCounter = 0;
+
+            _rating = 100 - CalculatePenalty(_type, potEnv);
             
             TimeManager.OnTimeIncrease += Grow;
         }
 
-        public float Rating(Environment potEnvironment)
+        private static int CalculatePenalty(FlowerData flower, Environment potEnv)
         {
-            // 0 Worst, 3 Best;
-            int envPoints = potEnvironment.Compare(_type.PreferredEnvironment);
-            
-            // 0 Worst, 5 Best;
-            int damagePoints = 5 - Mathf.Clamp(_damage, 0, 5);
-            
-            // 0 Worst, 3 Best
-            int growthPoints = (int)_state;
-            if (_state is GrowthState.Dead) growthPoints = 0;
-
-            return (envPoints + growthPoints + damagePoints) / 11f;
+            int counter = 0;
+            if (flower.PreferredEnvironment.Lichtkeimer != potEnv.Lichtkeimer) counter += 10;
+            if (flower.PreferredEnvironment.Fertilizer != potEnv.Fertilizer) counter += 10;
+            if (flower.HatedSoil == potEnv.Soil) counter += 30;
+            else if (flower.PreferredEnvironment.Soil != potEnv.Soil) counter += 10;
+            return counter;
         }
+
         
         /// <summary>
         /// As Long as the Plant object exist, this is called at the Start of each day
@@ -51,10 +48,10 @@ namespace Data
             _lastWater++;
             
             // If too dry, The Plant takes Damage
-            if (_lastWater > _type.WaterFrequency) _damage++;
+            if (_lastWater > _type.WaterFrequency) _rating -= (_lastWater - _type.WaterFrequency) * 5;
             
-            // Dies with to much Damage
-            if (Mathf.Abs(_damage) > 5) _state = GrowthState.Dead;
+            // Dies with too much Damage
+            if (_rating <= 0) _state = GrowthState.Dead;
             
             // Grows
             switch (_state)
@@ -92,7 +89,7 @@ namespace Data
         public void Water()
         {
             // To Wet -> Takes Damage
-            if (_lastWater < _type.WaterFrequency) _damage++;
+            if (_lastWater < _type.WaterFrequency)  _rating -= (_type.WaterFrequency - _lastWater) * 5;
             _lastWater = 0;
         }
     }

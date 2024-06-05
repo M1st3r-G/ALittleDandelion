@@ -15,18 +15,12 @@ namespace Data
         {
             Pflanzenjauche, Knochendünger, Pferdedünger
         }
-        
-        [SerializeField] private SoilType soil;
-        [SerializeField] private FertilizerType fertilizer;
-        [SerializeField] private bool lichtkeimer;
 
-        public int Compare(Environment other)
-        {
-            int counter = 0;
-            if (soil == other.soil) counter++;
-            if (fertilizer == other.fertilizer) counter++;
-            if (lichtkeimer == other.lichtkeimer) counter++;
-            return counter;
-        }
+        public SoilType Soil => soil;
+        [SerializeField] private SoilType soil;
+        public FertilizerType Fertilizer => fertilizer;
+        [SerializeField] private FertilizerType fertilizer;
+        public bool Lichtkeimer => lichtkeimer;
+        [SerializeField] private bool lichtkeimer;
     }
 }
