@@ -80,7 +80,7 @@ namespace Managers
         }
         
         private void SeedsWrapper(InputAction.CallbackContext ctx) => Seeds();
-        public void Seeds() => Debug.Log("Seeds");
+        public void Seeds() => TableController.Instance.PlaceSeeds();
 
         private void BookWrapper(InputAction.CallbackContext ctx) => Book();
         public void Book() => Debug.Log("Open Book");

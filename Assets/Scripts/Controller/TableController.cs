@@ -6,7 +6,7 @@ namespace Controller
     {
         [SerializeField] private Transform potCenter;
         [SerializeField] private GameObject pot;
-        [SerializeField] private GameObject seedlings;
+        [SerializeField] private SeedBoxesController seedlings;
 
         public static TableController Instance { get; private set; }
         
