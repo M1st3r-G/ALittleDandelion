@@ -76,7 +76,7 @@ namespace Managers
         public void ShowFlower(int index)
         {
             CameraManager.Instance.ToGreenhouse();
-            TableController.Instance.DisplayFlower(index);
+            TableController.Instance.PlaceFlower(index);
         }
         
         private void SeedsWrapper(InputAction.CallbackContext ctx) => Seeds();

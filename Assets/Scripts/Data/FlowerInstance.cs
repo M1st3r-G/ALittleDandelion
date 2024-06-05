@@ -4,12 +4,14 @@ namespace Data
 {
     public class FlowerInstance
     {
-        private enum GrowthState
+        public enum GrowthState
         {
             Seed, Sprout, Flower, Dead
         }
-        
+
+        public FlowerData Type => _type;
         private readonly FlowerData _type;   // The Type of Flower
+        public GrowthState State => _state;
         private GrowthState _state; // The GrowthState
         private Environment.FertilizerType _fertilizer;
         private int _lastWater;     // Time Since Watering
@@ -94,7 +96,8 @@ namespace Data
                     break;
                 case GrowthState.Dead:
                 default:
-                    _state = GrowthState.Dead;
+                    _rating = 0;
+                    TimeManager.OnTimeIncrease -= Grow;
                     break;
             }
         }
