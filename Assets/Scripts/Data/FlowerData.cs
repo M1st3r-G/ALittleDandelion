@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Data
 {
@@ -17,6 +16,9 @@ namespace Data
         public Environment PreferredEnvironment => preferredEnv;
         [SerializeField] private Environment preferredEnv;
 
+        public Environment.FertilizerType Fertilizer => fertilizer;
+        [SerializeField] private Environment.FertilizerType fertilizer;
+        
         public Environment.SoilType HatedSoil => hSoil;
         [SerializeField] private Environment.SoilType hSoil;
         
@@ -26,9 +28,6 @@ namespace Data
         public int TimeToBloom => timeToBloom;
         [SerializeField] private int timeToBloom;
 
-        public int TimeToDie => timeToDie;
-        [SerializeField] private int timeToDie;
-        
         public int WaterFrequency => waterFrequency;
         [SerializeField] private int waterFrequency;
     }

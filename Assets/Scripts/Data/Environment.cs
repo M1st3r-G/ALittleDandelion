@@ -18,8 +18,6 @@ namespace Data
 
         public SoilType Soil => soil;
         [SerializeField] private SoilType soil;
-        public FertilizerType Fertilizer => fertilizer;
-        [SerializeField] private FertilizerType fertilizer;
         public bool Lichtkeimer => lichtkeimer;
         [SerializeField] private bool lichtkeimer;
     }
