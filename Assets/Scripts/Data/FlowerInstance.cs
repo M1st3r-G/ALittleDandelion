@@ -13,7 +13,6 @@ namespace Data
         private readonly FlowerData _type;   // The Type of Flower
         public GrowthState State => _state;
         private GrowthState _state; // The GrowthState
-        private Environment.FertilizerType _fertilizer;
         private int _lastWater;     // Time Since Watering
         private int _growthCounter; // How Many Days Past since start of Phase
         public float Rating => _rating;
@@ -48,9 +47,8 @@ namespace Data
         /// <param name="fertilizer">The Fertilizer in the New Environment</param>
         public void Replant(Environment.FertilizerType fertilizer)
         {
-            _fertilizer = fertilizer;
             _isReplant = true;
-            if (_fertilizer != _type.Fertilizer) _rating -= 10;
+            if (fertilizer != _type.Fertilizer) _rating -= 10;
         }
         
         /// <summary>
@@ -110,6 +108,11 @@ namespace Data
             // To Wet -> Takes Damage
             if (_lastWater < _type.WaterFrequency)  _rating -= (_type.WaterFrequency - _lastWater) * 5;
             _lastWater = 0;
+        }
+
+        public override string ToString()
+        {
+            return $"Diese {_type} ist ein(e) {_state}\nRanking: {_rating}\nLW:{_lastWater};GC:{_growthCounter}";
         }
     }
 }
