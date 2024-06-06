@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using Clickable;
+﻿using Clickable;
 using Data;
 using Managers;
 using UnityEngine;
@@ -10,23 +8,27 @@ namespace Controller
 {
     public class SeedBoxesController : MonoBehaviour
     {
-        private SeedBoxController[] _boxes;
         private SeedBoxController _currentSelection;
-        
-        private void Awake()
-        {
-            _boxes = GetComponentsInChildren<SeedBoxController>();
-        }
+
+        #region SetUp
 
         private void OnEnable()
         {
-            TimeManager.OnTimeIncrease += OnNextDay;
+            TimeManager.OnTimeIncrease += ClearSelection;
+            ShelfSeedsItem.OnSeedClicked += OnSeedClicked;
+            ShelfSoilItem.OnSoilClicked += OnSoilClicked;
         }
 
         private void OnDisable()
         {
-            TimeManager.OnTimeIncrease -= OnNextDay;
+            TimeManager.OnTimeIncrease -= ClearSelection;
+            ShelfSeedsItem.OnSeedClicked -= OnSeedClicked;
+            ShelfSoilItem.OnSoilClicked -= OnSoilClicked;
         }
+        
+        #endregion
+
+        #region ShelfInteraction
 
         private void OnSeedClicked(FlowerData type)
         {
@@ -45,28 +47,10 @@ namespace Controller
 
             _currentSelection.AddSoil(type);
         }
-        
-        private void Start() => FetchFlowers();
-        
-        private void FetchFlowers()
-        {
-            ShelfSeedsItem.OnSeedClicked += OnSeedClicked;
-            ShelfSoilItem.OnSoilClicked += OnSoilClicked;
-            
-            // Refreshes Display with data from Storage   
-            FlowerInstance[] flowers = Storage.Instance.GetSeeds();
-            for (int i = 0; i < flowers.Length; i++)
-            {
-                _boxes[i].Flower = flowers[i];
-            }
-        }
 
-        private void SaveFlowers()
-        {
-            Storage.Instance.StoreSeeds(_boxes.Select(b => b.Flower).ToArray());
-            ShelfSeedsItem.OnSeedClicked -= OnSeedClicked;
-            ShelfSoilItem.OnSoilClicked -= OnSoilClicked;
-        }
+        #endregion
+
+        #region SelectionManagement
 
         public void BoxWasClicked(SeedBoxController box)
         {
@@ -76,10 +60,12 @@ namespace Controller
             box.Select();
         }
 
-        private void OnNextDay()
+        private void ClearSelection()
         {
             if(_currentSelection is not null) _currentSelection.Deselect();
             _currentSelection = null;
         }
+
+        #endregion
     }
 }
