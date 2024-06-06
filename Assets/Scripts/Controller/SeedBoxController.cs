@@ -9,26 +9,20 @@ namespace Controller
     public class SeedBoxController : MonoBehaviour, IPointerClickHandler
     {
         #region Fields
-
+        // Component References
         [SerializeField] private TextMeshProUGUI debugText;
         [SerializeField] private Material selectedMaterial;
         private SeedBoxesController _parent;
         private Material _defaultMaterial;
         private MeshRenderer _meshRenderer;
         
-        public FlowerInstance Flower
-        {
-            set
-            {
-                _flower = value;
-                Display();
-            }
-            get => _flower;
-        }
-        public bool IsEditable => _flower is null;
+        // Temps
         private FlowerInstance _flower;
         private Environment _tmp;
-
+        
+        // Public
+        public bool IsEditable => _flower is null;
+        
         #endregion
 
         private void Awake()
@@ -38,10 +32,7 @@ namespace Controller
             _defaultMaterial = _meshRenderer.material;
         }
 
-        private void Display()
-        {
-            if (IsEditable) Debug.LogWarning("This Flower is editable");
-        }
+        #region SelectionHandling
 
         public void OnPointerClick(PointerEventData eventData)
         {
@@ -53,7 +44,6 @@ namespace Controller
             debugText.text = _flower is not null ? _flower.ToString() : $"Empty pot: Environment: {_tmp.soil}, {_tmp.lichtkeimer}";
             _meshRenderer.material = selectedMaterial;
         }
-        
 
         public void Deselect()
         {
@@ -61,9 +51,13 @@ namespace Controller
             _meshRenderer.material = _defaultMaterial;
         }
 
+        #endregion
+
+        #region CareAndSet
+
         public void AddFlower(FlowerData flower)
         {
-            if (!EnvironmentIsSet())
+            if (_tmp.soil == Environment.SoilType.None)
                 Debug.LogWarning("Environment Is Not Set");
             else
             {
@@ -87,7 +81,7 @@ namespace Controller
             _flower.Water();
             debugText.text = _flower.ToString();
         }
-        
-        private bool EnvironmentIsSet() => _tmp.soil != Environment.SoilType.None;
+
+        #endregion
     }
 }

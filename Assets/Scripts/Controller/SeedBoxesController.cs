@@ -1,7 +1,6 @@
 ﻿using Clickable;
 using Clickable.Shelf;
 using Data;
-using Managers;
 using UnityEngine;
 using Environment = Data.Environment;
 
@@ -15,7 +14,6 @@ namespace Controller
 
         private void OnEnable()
         {
-            TimeManager.OnTimeIncrease += ClearSelection;
             ShelfSeedsItem.OnSeedClicked += OnSeedClicked;
             ShelfSoilItem.OnSoilClicked += OnSoilClicked;
             WateringCan.OnWatering += OnWatering;
@@ -23,7 +21,6 @@ namespace Controller
 
         private void OnDisable()
         {
-            TimeManager.OnTimeIncrease -= ClearSelection;
             ShelfSeedsItem.OnSeedClicked -= OnSeedClicked;
             ShelfSoilItem.OnSoilClicked -= OnSoilClicked;
             WateringCan.OnWatering -= OnWatering;
