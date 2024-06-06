@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5020111069155979559}
   - component: {fileID: 1982696205162915645}
   m_Layer: 0
-  m_Name: SeedPot
+  m_Name: SeedCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -64,7 +64,6 @@ namespace Controller
 
         public void BoxWasClicked(SeedBoxController box)
         {
-            Debug.Log("SeedBox was Clicked");
             if (_currentSelection is not null) _currentSelection.Deselect();
             _currentSelection = box;
             box.Select();

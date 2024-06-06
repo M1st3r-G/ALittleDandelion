@@ -100,7 +100,6 @@ GameObject:
   - component: {fileID: 3215137332124713097}
   - component: {fileID: 5868193359276685888}
   - component: {fileID: 3627213852932172799}
-  - component: {fileID: 9213638901185719364}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -150,19 +149,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8c140dcd1506ba4889a36be96ea700d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9213638901185719364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4121411382446541115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28c242b24dec415396fde5c52016b01f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debugFlower: {fileID: 11400000, guid: dd89ecd4bbd180941925da6a01168d1c, type: 2}
-  debugEnvironment:
-    soil: 2
-    lichtkeimer: 1
