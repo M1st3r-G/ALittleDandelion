@@ -1,6 +1,8 @@
 ﻿using Data;
+using Managers;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.EventSystems;
 using Environment = Data.Environment;
 
@@ -43,12 +45,14 @@ namespace Controller
         {
             debugText.text = _flower is not null ? _flower.ToString() : $"Empty pot: Environment: {_tmp.soil}, {_tmp.lichtkeimer}";
             _meshRenderer.material = selectedMaterial;
+            TimeManager.OnTimeIncrease += RefreshVisuals;
         }
 
         public void Deselect()
         {
             debugText.text = "";
             _meshRenderer.material = _defaultMaterial;
+            TimeManager.OnTimeIncrease -= RefreshVisuals;
         }
 
         #endregion
@@ -63,25 +67,30 @@ namespace Controller
             {
                 Debug.Log("SetFlower");
                 _flower = new FlowerInstance(flower, _tmp);
-                debugText.text = _flower.ToString();
+                RefreshVisuals();
             }
         }
-
+        
         public void AddSoil(Environment.SoilType type)
         {
             Debug.Assert(_tmp.soil == Environment.SoilType.None, $"Fehler, Soil wurde im Environment Überschrieben!{name}: {_flower}");
             Debug.Log("Added Soil to Pot");
             _tmp.soil = type;
-            debugText.text = $"Empty pot: Environment: {_tmp.soil}, {_tmp.lichtkeimer}";
+            RefreshVisuals();
         }
 
         public void WaterPlant()
         {
             Debug.LogWarning("Plant is Watered");
             _flower.Water();
-            debugText.text = _flower.ToString();
+            RefreshVisuals();
         }
 
+        private void RefreshVisuals()
+        {
+            debugText.text = _flower is not null ? _flower.ToString() : $"Empty pot: Environment: {_tmp.soil}, {_tmp.lichtkeimer}";
+        }
+        
         #endregion
     }
 }

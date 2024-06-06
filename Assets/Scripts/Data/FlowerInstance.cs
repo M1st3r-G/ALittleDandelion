@@ -4,18 +4,25 @@ namespace Data
 {
     public class FlowerInstance
     {
-        public enum GrowthState
+        private enum GrowthState
         {
             Seed, Sprout, Flower, Dead
         }
 
-        public FlowerData Type => _type;
         private readonly FlowerData _type;   // The Type of Flower
-        public GrowthState State => _state;
         private GrowthState _state; // The GrowthState
         private int _lastWater;     // Time Since Watering
         private int _growthCounter; // How Many Days Past since start of Phase
-        public float Rating => _rating;
+
+        private int Rating
+        {
+            get => _rating;
+            set
+            {
+                _rating = value;
+                if (_rating <= 0) _state = GrowthState.Dead;
+            }
+        }
         private int _rating;
 
         private bool _isReplant;
@@ -48,7 +55,7 @@ namespace Data
         public void Replant(Environment.FertilizerType fertilizer)
         {
             _isReplant = true;
-            if (fertilizer != _type.Fertilizer) _rating -= 10;
+            if (fertilizer != _type.Fertilizer) Rating -= 10;
         }
         
         /// <summary>
@@ -61,10 +68,7 @@ namespace Data
             _lastWater++;
             
             // If too dry, The Plant takes Damage
-            if (_lastWater > _type.WaterFrequency) _rating -= (_lastWater - _type.WaterFrequency) * 5;
-            
-            // Dies with too much Damage
-            if (_rating <= 0) _state = GrowthState.Dead;
+            if (_lastWater > _type.WaterFrequency) Rating -= (_lastWater - _type.WaterFrequency) * 5;
             
             // Grows
             switch (_state)
@@ -81,7 +85,7 @@ namespace Data
                     {
                         if (!_isReplant)
                         {
-                            _rating -= (_growthCounter - _type.TimeToBloom) * 5;
+                            Rating -= (_growthCounter - _type.TimeToBloom) * 5;
                         }
                         else
                         {
@@ -106,7 +110,7 @@ namespace Data
         public void Water()
         {
             // To Wet -> Takes Damage
-            if (_lastWater < _type.WaterFrequency)  _rating -= (_type.WaterFrequency - _lastWater) * 5;
+            if (_lastWater < _type.WaterFrequency)  Rating -= (_type.WaterFrequency - _lastWater) * 5;
             _lastWater = 0;
         }
 
