@@ -57,10 +57,23 @@ namespace Controller
 
         public void AddFlower(FlowerData flower)
         {
-            if (EnvironmentIsSet()) _flower = new FlowerInstance(flower, _tmp);
-            else Debug.LogWarning("Environment Is Not Set");
+            if (!EnvironmentIsSet())
+                Debug.LogWarning("Environment Is Not Set");
+            else
+            {
+                Debug.Log("SetFlower");
+                _flower = new FlowerInstance(flower, _tmp);
+                debugText.text = _flower.ToString();
+            }
         }
 
-        private bool EnvironmentIsSet() => _tmp.Soil == Environment.SoilType.None;
+        public void AddSoil(Environment.SoilType type)
+        {
+            Debug.Assert(_tmp.soil == Environment.SoilType.None, $"Fehler, Soil wurde im Environment Überschrieben!{name}: {_flower}");
+            Debug.Log("Added Soil to Pot");
+            _tmp.soil = type;
+        }
+
+        private bool EnvironmentIsSet() => _tmp.soil != Environment.SoilType.None;
     }
 }

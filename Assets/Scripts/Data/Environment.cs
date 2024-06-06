@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 
 namespace Data
 {
@@ -16,9 +15,7 @@ namespace Data
             Pflanzenjauche, Knochendünger, Pferdedünger
         }
 
-        public SoilType Soil => soil;
-        [SerializeField] private SoilType soil;
-        public bool Lichtkeimer => lichtkeimer;
-        [SerializeField] private bool lichtkeimer;
+        public SoilType soil;
+        public bool lichtkeimer;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 namespace Clickable
 {
-    public abstract class ShelfSeedsItem : MonoBehaviour, IPointerClickHandler
+    public class ShelfSeedsItem : MonoBehaviour, IPointerClickHandler
     {
         [SerializeField] private FlowerData seedsType;
 
@@ -13,6 +13,7 @@ namespace Clickable
         
         public void OnPointerClick(PointerEventData eventData)
         {
+            Debug.Log($"ShelfItemSeed was Clicked: {seedsType}");
            OnSeedClicked?.Invoke(seedsType); 
         }
     }

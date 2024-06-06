@@ -35,9 +35,9 @@ namespace Data
         private static int CalculatePenalty(FlowerData flower, Environment potEnv)
         {
             int counter = 0;
-            if (flower.PreferredEnvironment.Lichtkeimer != potEnv.Lichtkeimer) counter += 10;
-            if (flower.HatedSoil == potEnv.Soil) counter += 30;
-            else if (flower.PreferredEnvironment.Soil != potEnv.Soil) counter += 10;
+            if (flower.PreferredEnvironment.lichtkeimer != potEnv.lichtkeimer) counter += 10;
+            if (flower.HatedSoil == potEnv.soil) counter += 30;
+            else if (flower.PreferredEnvironment.soil != potEnv.soil) counter += 10;
             return counter;
         }
 

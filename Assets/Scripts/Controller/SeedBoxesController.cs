@@ -18,17 +18,29 @@ namespace Controller
 
         private void OnSeedClicked(FlowerData type)
         {
+            Debug.Log("Noticed Seed Event");
             if (_currentSelection is null) return;
             if (!_currentSelection.IsEditable) return;
 
             _currentSelection.AddFlower(type);
         }
 
+        private void OnSoilClicked(Environment.SoilType type)
+        {
+            Debug.Log("Noticed Soil Event");
+            if (_currentSelection is null) return;
+            if (!_currentSelection.IsEditable) return;
+
+            _currentSelection.AddSoil(type);
+        }
+        
         private void Start() => FetchFlowers();
         
         private void FetchFlowers()
         {
             ShelfSeedsItem.OnSeedClicked += OnSeedClicked;
+            ShelfSoilItem.OnSoilClicked += OnSoilClicked;
+            
             // Refreshes Display with data from Storage   
             FlowerInstance[] flowers = Storage.Instance.GetSeeds();
             for (int i = 0; i < flowers.Length; i++)
@@ -41,6 +53,7 @@ namespace Controller
         {
             Storage.Instance.StoreSeeds(_boxes.Select(b => b.Flower).ToArray());
             ShelfSeedsItem.OnSeedClicked -= OnSeedClicked;
+            ShelfSoilItem.OnSoilClicked -= OnSoilClicked;
         }
 
         public void BoxWasClicked(SeedBoxController box)
