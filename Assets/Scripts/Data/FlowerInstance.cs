@@ -9,10 +9,10 @@ namespace Data
             Seed, Sprout, Flower, Dead
         }
 
-        private readonly FlowerData _type;   // The Type of Flower
-        private GrowthState _state; // The GrowthState
-        private int _lastWater;     // Time Since Watering
-        private int _growthCounter; // How Many Days Past since start of Phase
+        private readonly FlowerData _type;  // The Type of Flower
+        private GrowthState _state;         // The GrowthState
+        private int _lastWater;             // Time Since Watering
+        private int _growthCounter;         // How Many Days Past since start of Phase
 
         private int Rating
         {
