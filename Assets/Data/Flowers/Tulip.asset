@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowerTypes: 1
   preferredEnv:
-    soil: 1
-    fertilizer: 1
+    soil: 2
     lichtkeimer: 1
+  fertilizer: 0
+  hSoil: 0
   timeToSprout: 2
   timeToBloom: 4
-  timeToDie: 0
   waterFrequency: 4

@@ -54,5 +54,13 @@ namespace Controller
         {
             _meshRenderer.material = _defaultMaterial;
         }
+
+        public void AddFlower(FlowerData flower)
+        {
+            if (EnvironmentIsSet()) _flower = new FlowerInstance(flower, _tmp);
+            else Debug.LogWarning("Environment Is Not Set");
+        }
+
+        private bool EnvironmentIsSet() => _tmp.Soil == Environment.SoilType.None;
     }
 }

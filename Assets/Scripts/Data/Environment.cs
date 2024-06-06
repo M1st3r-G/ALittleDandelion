@@ -8,7 +8,7 @@ namespace Data
     {
         public enum SoilType
         {
-            Lehmerde, Sanderde, Rosenerde
+            None, Lehmerde, Sanderde, Rosenerde
         }
 
         public enum FertilizerType
