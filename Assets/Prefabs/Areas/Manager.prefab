@@ -162,3 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28c242b24dec415396fde5c52016b01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugFlower: {fileID: 11400000, guid: dd89ecd4bbd180941925da6a01168d1c, type: 2}
+  debugEnvironment:
+    soil: 2
+    lichtkeimer: 1

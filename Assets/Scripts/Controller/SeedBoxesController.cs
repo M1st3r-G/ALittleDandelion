@@ -8,17 +8,18 @@ namespace Controller
     public class SeedBoxesController : MonoBehaviour
     {
         private SeedBoxController[] _boxes;
-
+        private SeedBoxController _currentSelection;
+        
         private void Awake()
         {
             _boxes = GetComponentsInChildren<SeedBoxController>();
         }
 
-        private void Start() => Init();
+        private void Start() => FetchFlowers();
         
-        private void Init()
+        private void FetchFlowers()
         {
-            Debug.LogError("Looking for Seeds");
+            // Refreshes Display with data from Storage   
             FlowerInstance[] flowers = Storage.Instance.GetSeeds();
             for (int i = 0; i < flowers.Length; i++)
             {
@@ -26,9 +27,16 @@ namespace Controller
             }
         }
 
-        private void DeInit()
+        private void SaveFlowers()
         {
             Storage.Instance.StoreSeeds(_boxes.Select(b => b.Flower).ToArray());
+        }
+
+        public void BoxWasClicked(SeedBoxController box)
+        {
+            Debug.Log("SeedBox was Clicked");
+            if (_currentSelection is not null) _currentSelection.Deselect();
+            _currentSelection = box;
         }
     }
 }

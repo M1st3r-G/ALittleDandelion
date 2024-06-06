@@ -5,6 +5,8 @@ namespace Managers
 {
     public class Storage : MonoBehaviour
     {
+        [SerializeField] private FlowerData debugFlower;
+        [SerializeField] private Environment debugEnvironment;
         private FlowerInstance[] _allPots;
         private FlowerInstance[] _allSeeds;
         
@@ -13,9 +15,10 @@ namespace Managers
         private void Awake()
         {
             Instance = this;
-            Debug.LogError("Created Storage");
             _allPots = new FlowerInstance[12];
             _allSeeds = new FlowerInstance[6];
+
+            _allSeeds[1] = new FlowerInstance(debugFlower, debugEnvironment);
         }
 
         private void OnDestroy()

@@ -112,7 +112,7 @@ namespace Data
 
         public override string ToString()
         {
-            return $"Diese {_type} ist ein(e) {_state}\nRanking: {_rating}\nLW:{_lastWater};GC:{_growthCounter}";
+            return $"Diese {_type.FlowerName} ist ein(e) {_state}\nRanking: {_rating}\nLW:{_lastWater};GC:{_growthCounter}";
         }
     }
 }

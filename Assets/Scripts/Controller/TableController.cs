@@ -20,7 +20,6 @@ namespace Controller
             Debug.Log($"Flower with index: {index}");
             seedlings.gameObject.SetActive(false);
             pot.gameObject.SetActive(true);
-            //pot.Render(index)
         }
 
         public void PlaceSeeds()
