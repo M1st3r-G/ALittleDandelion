@@ -4,14 +4,14 @@ using UnityEngine.EventSystems;
 
 namespace Clickable
 {
-    public class Greenhouse : MonoBehaviour, IPointerClickHandler
+    public class Greenhouse : ClickableBase
     {
         //ComponentReferences
         //Params
         //Temps
         //Public
 
-        public void OnPointerClick(PointerEventData eventData)
+        public override void OnPointerClick(PointerEventData eventData)
         {
             CameraManager.Instance.ToGreenhouse();
         }

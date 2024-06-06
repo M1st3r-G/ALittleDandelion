@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ad890bd4c1438f9f089f8187777d36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 1cc8e53462cee474c814841d13205929, type: 2}
 --- !u!1 &7204773090271887287
 GameObject:
   m_ObjectHideFlags: 0

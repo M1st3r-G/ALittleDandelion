@@ -682,6 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424fd45d77f3b40489727c37d831f46d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 1cc8e53462cee474c814841d13205929, type: 2}
 --- !u!33 &2930197643060761844
 MeshFilter:
   m_ObjectHideFlags: 0

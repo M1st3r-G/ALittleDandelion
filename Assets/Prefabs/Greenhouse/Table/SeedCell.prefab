@@ -119,5 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce634fa3c6444e0ba099c025ed348ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 1cc8e53462cee474c814841d13205929, type: 2}
   debugText: {fileID: 0}
   selectedMaterial: {fileID: 2100000, guid: b4c807a489328b347a2c2e9a279abc48, type: 2}

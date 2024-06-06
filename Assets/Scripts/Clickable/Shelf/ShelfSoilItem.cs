@@ -4,14 +4,14 @@ using UnityEngine.EventSystems;
 
 namespace Clickable.Shelf
 {
-    public class ShelfSoilItem : MonoBehaviour, IPointerClickHandler
+    public class ShelfSoilItem : ClickableBase
     {
         [SerializeField] private Environment.SoilType soilType;
 
         public delegate void ShelfItemClicked(Environment.SoilType type);
         public static ShelfItemClicked OnSoilClicked;
         
-        public void OnPointerClick(PointerEventData eventData)
+        public override void OnPointerClick(PointerEventData eventData)
         {
             Debug.Log($"ShelfItemSoil was Clicked: {soilType}");
             OnSoilClicked?.Invoke(soilType); 

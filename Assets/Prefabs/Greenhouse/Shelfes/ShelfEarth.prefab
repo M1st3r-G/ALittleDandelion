@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa6b8c42a3164dd080dcb1ca720baa70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 1cc8e53462cee474c814841d13205929, type: 2}
   soilType: 1
 --- !u!1001 &4770425402431483004
 PrefabInstance:

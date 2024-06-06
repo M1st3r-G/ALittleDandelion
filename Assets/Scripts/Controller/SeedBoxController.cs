@@ -1,14 +1,14 @@
-﻿using Data;
+﻿using Clickable;
+using Data;
 using Managers;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Analytics;
 using UnityEngine.EventSystems;
 using Environment = Data.Environment;
 
 namespace Controller
 {
-    public class SeedBoxController : MonoBehaviour, IPointerClickHandler
+    public class SeedBoxController : ClickableBase
     {
         #region Fields
         // Component References
@@ -27,8 +27,9 @@ namespace Controller
         
         #endregion
 
-        private void Awake()
+        private new void Awake()
         {
+            base.Awake();
             _parent = GetComponentInParent<SeedBoxesController>();
             _meshRenderer = GetComponent<MeshRenderer>();
             _defaultMaterial = _meshRenderer.material;
@@ -36,7 +37,7 @@ namespace Controller
 
         #region SelectionHandling
 
-        public void OnPointerClick(PointerEventData eventData)
+        public override void OnPointerClick(PointerEventData eventData)
         {
             _parent.BoxWasClicked(this);
         }
