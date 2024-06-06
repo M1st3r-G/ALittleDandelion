@@ -1,4 +1,6 @@
-﻿using Managers;
+﻿using System.Linq.Expressions;
+using Managers;
+using UnityEngine;
 
 namespace Data
 {
@@ -9,6 +11,8 @@ namespace Data
             Seed, Sprout, Flower, Dead
         }
 
+        public bool IsReplantable => _state == GrowthState.Sprout;
+        
         private readonly FlowerData _type;  // The Type of Flower
         private GrowthState _state;         // The GrowthState
         private int _lastWater;             // Time Since Watering
@@ -62,6 +66,7 @@ namespace Data
         /// <param name="fertilizer">The Fertilizer in the New Environment</param>
         public void Replant(Environment.FertilizerType fertilizer)
         {
+            Debug.Log($"{_type.FlowerName} Got replant with {fertilizer} as Fertilizer");
             _isReplant = true;
             if (fertilizer != _type.Fertilizer) Rating -= 10;
         }

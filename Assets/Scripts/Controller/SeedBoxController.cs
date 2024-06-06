@@ -93,12 +93,20 @@ namespace Controller
             RefreshVisuals();
         }
 
+        public void Replant()
+        {
+            FlowerDisplay.Instance.AddFlower(_flower);
+            _flower = null;
+            _tmp = new Environment();
+        }
+        
         private void RefreshVisuals()
         {
             debugText.text = _flower is not null ? _flower.ToString() : $"Empty pot: Environment: {_tmp.soil}, {_tmp.lichtkeimer}";
         }
 
         public bool EnvironmentIsSet => _tmp.soil != Environment.SoilType.None;
+        public bool IsReplantable => _flower is null ? false : _flower.IsReplantable;
 
         #endregion
     }

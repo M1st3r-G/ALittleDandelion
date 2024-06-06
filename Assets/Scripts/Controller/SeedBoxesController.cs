@@ -1,6 +1,7 @@
 ﻿using Clickable;
 using Clickable.Shelf;
 using Data;
+using Managers;
 using UnityEngine;
 using Environment = Data.Environment;
 
@@ -18,6 +19,7 @@ namespace Controller
             ShelfSoilItem.OnSoilClicked += OnSoilClicked;
             WateringCan.OnWatering += OnWatering;
             Shovel.OnLightTypeChange += OnShovelClicked;
+            ReplantPot.OnReplant += OnReplant;
         }
 
         private void OnDisable()
@@ -26,6 +28,7 @@ namespace Controller
             ShelfSoilItem.OnSoilClicked -= OnSoilClicked;
             WateringCan.OnWatering -= OnWatering;
             Shovel.OnLightTypeChange -= OnShovelClicked;
+            ReplantPot.OnReplant -= OnReplant;
             
             if(_currentSelection is not null) _currentSelection.Deselect();
             _currentSelection = null;
@@ -67,6 +70,15 @@ namespace Controller
             if (_currentSelection is null) return;
             if (_currentSelection.IsEditable) return;
             _currentSelection.WaterPlant();
+        }
+
+        private void OnReplant()
+        {
+            if (_currentSelection is null) return;
+            if (_currentSelection.IsEditable) return;
+            if (!_currentSelection.IsReplantable) return;
+            if (!FlowerDisplay.Instance.HasSpace) return;
+            _currentSelection.Replant(); 
         }
         
         #endregion

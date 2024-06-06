@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1342294473175112561}
   - component: {fileID: 3083383208110377853}
   - component: {fileID: 2112115740661622664}
+  - component: {fileID: 1224947928515686522}
   m_Layer: 0
   m_Name: Pot
   m_TagString: Untagged
@@ -106,3 +107,15 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5076798556035486163, guid: 08c3e7a524fdcb64da63e7042bdacf64, type: 3}
+--- !u!114 &1224947928515686522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864590871730076074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f72e619b399942f6a4f5fbd15b36def8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

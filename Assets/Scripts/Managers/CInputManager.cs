@@ -6,20 +6,28 @@ namespace Managers
 {
     public class CInputManager : MonoBehaviour
     {
+        #region Fields
+
         // Component References
         [SerializeField] private InputActionReference showFlowerAction;
         [SerializeField] private InputActionReference showSeedsAction;
         [SerializeField] private InputActionReference showShelfedAction;
         [SerializeField] private InputActionReference escapeAction;
         [SerializeField] private InputActionReference bookAction;
-        
-        private static CInputManager Instance { get; set; }
 
+        private bool _navigationActive;
+        
+        public static CInputManager Instance { get; private set; }
+        
+
+        #endregion
+        
         #region SetUp
 
         private void Awake()
         {
             Instance = this;
+            _navigationActive = true;
         }
 
         private void OnDestroy()
@@ -59,30 +67,49 @@ namespace Managers
 
         #endregion
 
+        public void SetNavigation(bool state)
+        {
+            Debug.LogError((state ? "Enabled" : "Disabled") + "Navigation");
+            _navigationActive = state;
+        }
+
+        #region InputHandling
+
         private void ShowShelfedWrapper(InputAction.CallbackContext ctx) => Debug.Log("Show Shelfed");
         
         public void TriggerNextDay() => TimeManager.Instance.NextDay();
 
         private void Escape(InputAction.CallbackContext ctx)
         {
+            if (!_navigationActive) return;
+            
             if (CameraManager.Instance.IsInGreenhouse) CameraManager.Instance.ToHub();
             else Settings();
         }
         public void Settings() => Debug.Log("Settings");
 
         private void ShowFlowerWrapper(InputAction.CallbackContext ctx)
-            => ShowFlower((int)ctx.ReadValue<float>() - 1);
+            => ShowFlower((int)ctx.ReadValue<float>());
 
         public void ShowFlower(int index)
         {
+            if (!_navigationActive) return;
+            
             CameraManager.Instance.ToGreenhouse();
-            TableController.Instance.PlaceFlower(index);
+            TableController.Instance.PlaceFlower(index - 1);
         }
         
         private void SeedsWrapper(InputAction.CallbackContext ctx) => Seeds();
-        public void Seeds() => TableController.Instance.PlaceSeeds();
+        public void Seeds()
+        {
+            if (!_navigationActive) return;
+            
+            TableController.Instance.PlaceSeeds();
+        }
 
         private void BookWrapper(InputAction.CallbackContext ctx) => Book();
         public void Book() => Debug.Log("Open Book");
+
+        #endregion
     }
 }

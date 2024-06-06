@@ -4,29 +4,30 @@ namespace Controller
 {
     public class TableController : MonoBehaviour
     {
-        [SerializeField] private Transform potCenter;
-        [SerializeField] private GameObject pot;
-        [SerializeField] private SeedBoxesController seedlings;
+       private PotController _pot;
+       private SeedBoxesController _seedlings;
 
         public static TableController Instance { get; private set; }
         
         private void Awake()
         {
             Instance = this;
+            _pot = GetComponentInChildren<PotController>(true);
+            _seedlings = GetComponentInChildren<SeedBoxesController>(true);
         }
 
         public void PlaceFlower(int index)
         {
             Debug.Log($"Flower with index: {index}");
-            seedlings.gameObject.SetActive(false);
-            pot.gameObject.SetActive(true);
+            _seedlings.gameObject.SetActive(false);
+            _pot.SetActive(index);
         }
 
         public void PlaceSeeds()
         {
             Debug.Log("Showing Seeds");
-            pot.gameObject.SetActive(false);
-            seedlings.gameObject.SetActive(true);
+            _pot.gameObject.SetActive(false);
+            _seedlings.gameObject.SetActive(true);
         }
     }
 }
