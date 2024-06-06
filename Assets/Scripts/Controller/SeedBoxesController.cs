@@ -24,6 +24,9 @@ namespace Controller
             ShelfSeedsItem.OnSeedClicked -= OnSeedClicked;
             ShelfSoilItem.OnSoilClicked -= OnSoilClicked;
             WateringCan.OnWatering -= OnWatering;
+            
+            if(_currentSelection is not null) _currentSelection.Deselect();
+            _currentSelection = null;
         }
         
         #endregion
@@ -65,12 +68,6 @@ namespace Controller
             if (_currentSelection is not null) _currentSelection.Deselect();
             _currentSelection = box;
             box.Select();
-        }
-
-        private void ClearSelection()
-        {
-            if(_currentSelection is not null) _currentSelection.Deselect();
-            _currentSelection = null;
         }
 
         #endregion
