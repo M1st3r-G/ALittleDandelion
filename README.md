@@ -4,7 +4,10 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-- Flowers
 - Saving the Game
 - Pause with Settings
 - Flower Book
+
+
+Enhancements:
+- Fix Highlight
