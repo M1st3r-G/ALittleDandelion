@@ -62,7 +62,7 @@ namespace Controller
 
         public void AddFlower(FlowerData flower)
         {
-            if (_tmp.soil == Environment.SoilType.None)
+            if (!EnvironmentIsSet)
                 Debug.LogWarning("Environment Is Not Set");
             else
             {
@@ -74,7 +74,7 @@ namespace Controller
         
         public void AddSoil(Environment.SoilType type)
         {
-            Debug.Assert(_tmp.soil == Environment.SoilType.None, $"Fehler, Soil wurde im Environment Überschrieben!{name}: {_flower}");
+            Debug.Assert(!EnvironmentIsSet, $"Fehler, Soil wurde im Environment Überschrieben!{name}: {_flower}");
             Debug.Log("Added Soil to Pot");
             _tmp.soil = type;
             RefreshVisuals();
@@ -97,7 +97,9 @@ namespace Controller
         {
             debugText.text = _flower is not null ? _flower.ToString() : $"Empty pot: Environment: {_tmp.soil}, {_tmp.lichtkeimer}";
         }
-        
+
+        public bool EnvironmentIsSet => _tmp.soil != Environment.SoilType.None;
+
         #endregion
     }
 }

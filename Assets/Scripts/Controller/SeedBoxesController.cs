@@ -58,7 +58,7 @@ namespace Controller
             Debug.Log("Noticed Shovel Event");
             if (_currentSelection is null) return;
             if (!_currentSelection.IsEditable) return;
-            
+            if (!_currentSelection.EnvironmentIsSet) return;
             _currentSelection.ChangeLightType();
         }
 

@@ -39,6 +39,14 @@ namespace Data
             TimeManager.OnTimeIncrease += Grow;
         }
 
+        public int CalculateStars() => _rating switch
+        {
+            >= 90 => 3, 
+            >= 75 => 2, 
+            >= 50 => 1, 
+            _ => 0
+        };
+        
         private static int CalculatePenalty(FlowerData flower, Environment potEnv)
         {
             int counter = 0;
