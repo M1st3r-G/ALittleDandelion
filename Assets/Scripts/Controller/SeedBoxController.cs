@@ -75,6 +75,7 @@ namespace Controller
                 Debug.Log("SetFlower");
                 _flower = new FlowerInstance(flower, _tmp);
                 _flower.OnChange += RefreshVisuals;
+                RefreshVisuals();
             }
         }
         

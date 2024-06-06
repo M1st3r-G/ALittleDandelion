@@ -27,7 +27,7 @@ namespace Controller
 
         private void OnDisable()
         {
-            _current.OnChange -= RefreshVisuals;
+            if(_current is not null) _current.OnChange -= RefreshVisuals;
             WateringCan.OnWatering -= WaterPlant;
             
             _current = null;
@@ -46,7 +46,9 @@ namespace Controller
             
             OnDisable();
             _current = flower;
-
+            _current.OnChange += RefreshVisuals;
+            RefreshVisuals();
+            
             ShelfFertilizerItem.OnFertilizer += Fertilize;
             CInputManager.Instance.SetNavigation(false);
         }
