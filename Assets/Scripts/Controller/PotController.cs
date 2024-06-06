@@ -27,9 +27,9 @@ namespace Controller
 
         private void OnDisable()
         {
-            if(_current is not null) _current.OnChange -= RefreshVisuals;
             WateringCan.OnWatering -= WaterPlant;
             
+            if(_current is not null) _current.OnChange -= RefreshVisuals;
             _current = null;
             debugDisplay.text = "";
         }
@@ -56,8 +56,6 @@ namespace Controller
         private void Fertilize(Environment.FertilizerType type)
         {
             CInputManager.Instance.SetNavigation(true);
-                        
-            _current.OnChange += RefreshVisuals;
             WateringCan.OnWatering += WaterPlant;
             
             ShelfFertilizerItem.OnFertilizer -= Fertilize;

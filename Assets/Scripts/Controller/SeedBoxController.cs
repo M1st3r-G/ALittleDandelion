@@ -53,6 +53,7 @@ namespace Controller
             else
             {
                 _flower.OnChange += RefreshVisuals;
+                RefreshVisuals();
             }
         }
 
