@@ -1,8 +1,10 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Clickable;
 using Data;
 using Managers;
 using UnityEngine;
+using Environment = Data.Environment;
 
 namespace Controller
 {
@@ -14,6 +16,16 @@ namespace Controller
         private void Awake()
         {
             _boxes = GetComponentsInChildren<SeedBoxController>();
+        }
+
+        private void OnEnable()
+        {
+            TimeManager.OnTimeIncrease += OnNextDay;
+        }
+
+        private void OnDisable()
+        {
+            TimeManager.OnTimeIncrease -= OnNextDay;
         }
 
         private void OnSeedClicked(FlowerData type)
@@ -61,6 +73,13 @@ namespace Controller
             Debug.Log("SeedBox was Clicked");
             if (_currentSelection is not null) _currentSelection.Deselect();
             _currentSelection = box;
+            box.Select();
+        }
+
+        private void OnNextDay()
+        {
+            if(_currentSelection is not null) _currentSelection.Deselect();
+            _currentSelection = null;
         }
     }
 }

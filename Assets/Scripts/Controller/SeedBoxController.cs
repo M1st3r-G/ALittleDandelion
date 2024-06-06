@@ -46,12 +46,18 @@ namespace Controller
         public void OnPointerClick(PointerEventData eventData)
         {
             _parent.BoxWasClicked(this);
-            debugText.text = _flower is not null ? _flower.ToString() : "";
+        }
+
+        public void Select()
+        {
+            debugText.text = _flower is not null ? _flower.ToString() : $"Empty pot: Environment: {_tmp.soil}, {_tmp.lichtkeimer}";
             _meshRenderer.material = selectedMaterial;
         }
+        
 
         public void Deselect()
         {
+            debugText.text = "";
             _meshRenderer.material = _defaultMaterial;
         }
 
@@ -72,6 +78,7 @@ namespace Controller
             Debug.Assert(_tmp.soil == Environment.SoilType.None, $"Fehler, Soil wurde im Environment Überschrieben!{name}: {_flower}");
             Debug.Log("Added Soil to Pot");
             _tmp.soil = type;
+            debugText.text = $"Empty pot: Environment: {_tmp.soil}, {_tmp.lichtkeimer}";
         }
 
         private bool EnvironmentIsSet() => _tmp.soil != Environment.SoilType.None;
