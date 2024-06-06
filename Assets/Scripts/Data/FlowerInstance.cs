@@ -20,7 +20,7 @@ namespace Data
             set
             {
                 _rating = value;
-                if (_rating <= 0) _state = GrowthState.Dead;
+                if (_rating <= 50) _state = GrowthState.Dead;
             }
         }
         private int _rating;
