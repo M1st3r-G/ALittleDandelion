@@ -11,6 +11,7 @@ namespace Controller
     public class SeedBoxController : ClickableBase
     {
         #region Fields
+        
         // Component References
         [SerializeField] private TextMeshProUGUI debugText;
         [SerializeField] private Material selectedMaterial;
@@ -44,16 +45,22 @@ namespace Controller
 
         public void Select()
         {
-            debugText.text = _flower is not null ? _flower.ToString() : $"Empty pot: Environment: {_tmp.soil}, {_tmp.lichtkeimer}";
             _meshRenderer.material = selectedMaterial;
-            TimeManager.OnTimeIncrease += RefreshVisuals;
+            if (_flower is null)
+            {
+                debugText.text = $"Empty pot: Environment: {_tmp.soil}, {_tmp.lichtkeimer}";
+            }
+            else
+            {
+                _flower.OnChange += RefreshVisuals;
+            }
         }
 
         public void Deselect()
         {
             debugText.text = "";
             _meshRenderer.material = _defaultMaterial;
-            TimeManager.OnTimeIncrease -= RefreshVisuals;
+            if (_flower is not null) _flower.OnChange -= RefreshVisuals;
         }
 
         #endregion
@@ -62,13 +69,12 @@ namespace Controller
 
         public void AddFlower(FlowerData flower)
         {
-            if (!EnvironmentIsSet)
-                Debug.LogWarning("Environment Is Not Set");
+            if (!EnvironmentIsSet) Debug.LogWarning("Environment Is Not Set");
             else
             {
                 Debug.Log("SetFlower");
                 _flower = new FlowerInstance(flower, _tmp);
-                RefreshVisuals();
+                _flower.OnChange += RefreshVisuals;
             }
         }
         
@@ -90,11 +96,11 @@ namespace Controller
         {
             Debug.LogWarning("Plant is Watered");
             _flower.Water();
-            RefreshVisuals();
         }
 
         public void Replant()
         {
+            _flower.OnChange -= RefreshVisuals;
             TableController.Instance.ReplantFlower(_flower);
             _flower = null;
             _tmp = new Environment();

@@ -18,18 +18,19 @@ namespace Controller
             
             if(_current is not null) OnDisable();
 
-            TimeManager.OnTimeIncrease += RefreshVisuals;
             WateringCan.OnWatering += WaterPlant;
             
             _current = FlowerDisplay.Instance.GetFlower(index);
+            _current.OnChange += RefreshVisuals;
             RefreshVisuals();
         }
 
         private void OnDisable()
         {
-            _current = null;
-            TimeManager.OnTimeIncrease -= RefreshVisuals;
+            _current.OnChange -= RefreshVisuals;
             WateringCan.OnWatering -= WaterPlant;
+            
+            _current = null;
             debugDisplay.text = "";
         }
 
@@ -37,7 +38,6 @@ namespace Controller
         {
             Debug.Assert(_current is not null, "Illegal Event Subscription");
             _current.Water();
-            RefreshVisuals();
         }
 
         public void Replant(FlowerInstance flower)
@@ -54,16 +54,13 @@ namespace Controller
         private void Fertilize(Environment.FertilizerType type)
         {
             CInputManager.Instance.SetNavigation(true);
-            
                         
-            TimeManager.OnTimeIncrease += RefreshVisuals;
+            _current.OnChange += RefreshVisuals;
             WateringCan.OnWatering += WaterPlant;
             
             ShelfFertilizerItem.OnFertilizer -= Fertilize;
             _current.Replant(type);
-            RefreshVisuals();
         }
-    
         
         private void RefreshVisuals()
         {

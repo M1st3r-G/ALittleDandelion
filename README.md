@@ -9,7 +9,7 @@ ToDo:
 - Flower Book
 
 Display Pots in Display
-FlowerChange Event jeder Flower, an das der Container Subscriben kann? 
+Make Pot and SeedBox inherit from PlantContainer? 
 
 Enhancements:
 - Fix Highlight
