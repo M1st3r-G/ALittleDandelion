@@ -7,9 +7,9 @@ ToDo:
 - Saving the Game
 - Pause with Settings
 - Flower Book
+- Display Pots in Display
 
-Display Pots in Display
-Make Pot and SeedBox inherit from PlantContainer? 
 
 Enhancements:
 - Fix Highlight
+- Make Pot and SeedBox inherit from PlantContainer?
