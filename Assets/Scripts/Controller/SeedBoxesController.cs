@@ -1,4 +1,5 @@
 ﻿using Clickable;
+using Clickable.Shelf;
 using Data;
 using Managers;
 using UnityEngine;
@@ -17,6 +18,7 @@ namespace Controller
             TimeManager.OnTimeIncrease += ClearSelection;
             ShelfSeedsItem.OnSeedClicked += OnSeedClicked;
             ShelfSoilItem.OnSoilClicked += OnSoilClicked;
+            WateringCan.OnWatering += OnWatering;
         }
 
         private void OnDisable()
@@ -24,6 +26,7 @@ namespace Controller
             TimeManager.OnTimeIncrease -= ClearSelection;
             ShelfSeedsItem.OnSeedClicked -= OnSeedClicked;
             ShelfSoilItem.OnSoilClicked -= OnSoilClicked;
+            WateringCan.OnWatering -= OnWatering;
         }
         
         #endregion
@@ -48,6 +51,13 @@ namespace Controller
             _currentSelection.AddSoil(type);
         }
 
+        private void OnWatering()
+        {
+            if (_currentSelection is null) return;
+            if (_currentSelection.IsEditable) return;
+            _currentSelection.WaterPlant();
+        }
+        
         #endregion
 
         #region SelectionManagement

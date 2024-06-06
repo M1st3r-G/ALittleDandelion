@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Clickable
+namespace Clickable.Shelf
 {
     public class ShelfSeedsItem : MonoBehaviour, IPointerClickHandler
     {

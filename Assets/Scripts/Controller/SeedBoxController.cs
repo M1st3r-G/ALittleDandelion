@@ -81,6 +81,13 @@ namespace Controller
             debugText.text = $"Empty pot: Environment: {_tmp.soil}, {_tmp.lichtkeimer}";
         }
 
+        public void WaterPlant()
+        {
+            Debug.LogWarning("Plant is Watered");
+            _flower.Water();
+            debugText.text = _flower.ToString();
+        }
+        
         private bool EnvironmentIsSet() => _tmp.soil != Environment.SoilType.None;
     }
 }
