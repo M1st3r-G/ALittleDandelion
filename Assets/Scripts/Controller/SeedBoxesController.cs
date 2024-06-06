@@ -17,6 +17,7 @@ namespace Controller
             ShelfSeedsItem.OnSeedClicked += OnSeedClicked;
             ShelfSoilItem.OnSoilClicked += OnSoilClicked;
             WateringCan.OnWatering += OnWatering;
+            Shovel.OnLightTypeChange += OnShovelClicked;
         }
 
         private void OnDisable()
@@ -24,6 +25,7 @@ namespace Controller
             ShelfSeedsItem.OnSeedClicked -= OnSeedClicked;
             ShelfSoilItem.OnSoilClicked -= OnSoilClicked;
             WateringCan.OnWatering -= OnWatering;
+            Shovel.OnLightTypeChange -= OnShovelClicked;
             
             if(_currentSelection is not null) _currentSelection.Deselect();
             _currentSelection = null;
@@ -49,6 +51,15 @@ namespace Controller
             if (!_currentSelection.IsEditable) return;
 
             _currentSelection.AddSoil(type);
+        }
+
+        private void OnShovelClicked()
+        {
+            Debug.Log("Noticed Shovel Event");
+            if (_currentSelection is null) return;
+            if (!_currentSelection.IsEditable) return;
+            
+            _currentSelection.ChangeLightType();
         }
 
         private void OnWatering()

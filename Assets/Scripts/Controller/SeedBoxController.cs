@@ -80,6 +80,12 @@ namespace Controller
             RefreshVisuals();
         }
 
+        public void ChangeLightType()
+        {
+            _tmp.lichtkeimer = !_tmp.lichtkeimer;
+            RefreshVisuals();
+        }
+
         public void WaterPlant()
         {
             Debug.LogWarning("Plant is Watered");
