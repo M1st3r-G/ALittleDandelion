@@ -135,7 +135,8 @@ namespace Data
         
         public override string ToString()
         {
-            return $"Diese {_type.FlowerName} ist ein(e) {_state}\nRanking: {_rating}\nLW:{_lastWater};GC:{_growthCounter}";
+            string umgetopft = _isReplant ? "umgetopfte " : "";
+            return $"Diese(r) {_type.FlowerName} ist ein(e) {umgetopft}{_state}\nRanking: {_rating}\nLW:{_lastWater};GC:{_growthCounter}";
         }
 
         #endregion
