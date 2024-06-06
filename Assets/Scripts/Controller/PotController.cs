@@ -1,4 +1,5 @@
 ﻿using Clickable;
+using Clickable.Shelf;
 using Data;
 using Managers;
 using TMPro;
@@ -38,6 +39,31 @@ namespace Controller
             _current.Water();
             RefreshVisuals();
         }
+
+        public void Replant(FlowerInstance flower)
+        {
+            gameObject.SetActive(true);
+            
+            OnDisable();
+            _current = flower;
+
+            ShelfFertilizerItem.OnFertilizer += Fertilize;
+            CInputManager.Instance.SetNavigation(false);
+        }
+            
+        private void Fertilize(Environment.FertilizerType type)
+        {
+            CInputManager.Instance.SetNavigation(true);
+            
+                        
+            TimeManager.OnTimeIncrease += RefreshVisuals;
+            WateringCan.OnWatering += WaterPlant;
+            
+            ShelfFertilizerItem.OnFertilizer -= Fertilize;
+            _current.Replant(type);
+            RefreshVisuals();
+        }
+    
         
         private void RefreshVisuals()
         {

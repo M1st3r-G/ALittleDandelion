@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18290716, g: 0.22615919, b: 0.29269832, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -774,6 +774,11 @@ PrefabInstance:
     - target: {fileID: 7298347502744082254, guid: ae77225a1eb62ae4b8353d411fb058c9,
         type: 3}
       propertyPath: potsDisplay
+      value: 
+      objectReference: {fileID: 1719867928}
+    - target: {fileID: 7298347502744082254, guid: ae77225a1eb62ae4b8353d411fb058c9,
+        type: 3}
+      propertyPath: potsUIDisplay
       value: 
       objectReference: {fileID: 1719867928}
     m_RemovedComponents: []

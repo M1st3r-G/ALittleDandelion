@@ -95,7 +95,7 @@ namespace Controller
 
         public void Replant()
         {
-            FlowerDisplay.Instance.AddFlower(_flower);
+            TableController.Instance.ReplantFlower(_flower);
             _flower = null;
             _tmp = new Environment();
         }

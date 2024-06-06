@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Data;
+using Managers;
+using UnityEngine;
 
 namespace Controller
 {
@@ -14,6 +16,15 @@ namespace Controller
             Instance = this;
             _pot = GetComponentInChildren<PotController>(true);
             _seedlings = GetComponentInChildren<SeedBoxesController>(true);
+        }
+
+        public void ReplantFlower(FlowerInstance flower)
+        {
+            //Visually and Save
+            FlowerDisplay.Instance.AddFlower(flower);
+
+            _seedlings.gameObject.SetActive(false);
+            _pot.Replant(flower);
         }
 
         public void PlaceFlower(int index)
