@@ -9,7 +9,12 @@ namespace Controller
     public class FlowerRendererComponent : MonoBehaviour
     {
         private MeshFilter _mesh;
-        
+
+        private void Awake()
+        {
+            _mesh = GetComponent<MeshFilter>();
+        }
+
         public void RenderState(FlowerInstance flower)
         {
             _mesh.mesh = FlowerLibrary.Instance.GetMesh(flower.Type, flower.State);
