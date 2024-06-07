@@ -1,5 +1,6 @@
 ﻿using Clickable;
 using Data;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Environment = Data.Environment;
@@ -34,6 +35,7 @@ namespace Controller
             _meshRenderer = GetComponent<MeshRenderer>();
             _defaultMaterial = _meshRenderer.material;
             _pr = GetComponent<PlantRenderer>();
+            _tmp.lichtkeimer = true;
         }
 
         #region SelectionHandling
@@ -99,7 +101,9 @@ namespace Controller
             _flower.OnChange -= RefreshVisualsWrapper;
             _flower = null;
             
-            _tmp = new Environment();
+            _tmp = new Environment { lichtkeimer = true };
+            _pr.RefreshVisuals(_flower, _tmp);
+            
         }
         
         private void RefreshVisualsWrapper() => _pr.RefreshVisuals(_flower, _tmp);
