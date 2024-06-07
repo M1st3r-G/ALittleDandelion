@@ -339,6 +339,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8096062678423143572, guid: 3dd704d0243425042ae7f9fd58083987,
+        type: 3}
+      propertyPath: m_Antialiasing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8096062678423143572, guid: 3dd704d0243425042ae7f9fd58083987,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8429781413699672628, guid: 3dd704d0243425042ae7f9fd58083987,
         type: 3}
       propertyPath: m_Name
@@ -766,6 +776,12 @@ PrefabInstance:
       propertyPath: flowerCam
       value: 
       objectReference: {fileID: 1709577582}
+    - target: {fileID: 7275470066684636270, guid: ae77225a1eb62ae4b8353d411fb058c9,
+        type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 853961efe082a534f901fe48b7cf1040,
+        type: 2}
     - target: {fileID: 7298347502744082254, guid: ae77225a1eb62ae4b8353d411fb058c9,
         type: 3}
       propertyPath: replantPot
@@ -1618,8 +1634,8 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
