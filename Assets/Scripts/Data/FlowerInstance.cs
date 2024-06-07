@@ -7,14 +7,16 @@ namespace Data
     {
         #region SetUpAndFields
 
-        private enum GrowthState
+        public enum GrowthState
         {
             Seed, Sprout, Flower, Dead
         }
         
         // State
-        
+
+        public FlowerData.FlowerType Type => _type.FlowerName;
         private readonly FlowerData _type;  // The Type of Flower
+        public GrowthState State => _state;
         private GrowthState _state;         // The GrowthState
         private int _lastWater;             // Time Since Watering
         private int _growthCounter;         // How Many Days Past since start of Phase
