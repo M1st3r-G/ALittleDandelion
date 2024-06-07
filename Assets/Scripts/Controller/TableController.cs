@@ -18,13 +18,13 @@ namespace Controller
             _seedlings = GetComponentInChildren<SeedBoxesController>(true);
         }
 
-        public void ReplantFlower(FlowerInstance flower)
+        public void ReplantFlower(FlowerInstance flower, Environment e)
         {
             //Visually and Save
-            FlowerDisplay.Instance.AddFlower(flower);
+            FlowerDisplay.Instance.AddFlower(flower, e);
 
             _seedlings.gameObject.SetActive(false);
-            _pot.Replant(flower);
+            _pot.Replant(flower, e);
         }
 
         public void PlaceFlower(int index)

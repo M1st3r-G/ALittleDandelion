@@ -1,6 +1,8 @@
-﻿using Data;
+﻿using System;
+using Data;
 using UnityEngine;
 using UnityEngine.UI;
+using Environment = Data.Environment;
 
 namespace UI
 {
@@ -18,7 +20,7 @@ namespace UI
             }
         }
 
-        public void SetActive(FlowerInstance[] flowers)
+        public void SetActive(Tuple<FlowerInstance, Environment>[] flowers)
         {
             for (var i = 0; i < flowers.Length; i++)
             {

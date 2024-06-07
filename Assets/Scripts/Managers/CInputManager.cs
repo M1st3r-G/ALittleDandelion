@@ -69,7 +69,7 @@ namespace Managers
 
         public void SetNavigation(bool state)
         {
-            Debug.LogError((state ? "Enabled" : "Disabled") + "Navigation");
+            Debug.LogWarning((state ? "Enabled" : "Disabled") + "Navigation");
             _navigationActive = state;
         }
 

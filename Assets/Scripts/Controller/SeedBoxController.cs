@@ -1,23 +1,22 @@
 ﻿using Clickable;
 using Data;
-using Managers;
-using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Environment = Data.Environment;
 
 namespace Controller
 {
+    [RequireComponent(typeof(PlantRenderer))]
     public class SeedBoxController : ClickableBase
     {
         #region Fields
         
         // Component References
-        [SerializeField] private TextMeshProUGUI debugText;
         [SerializeField] private Material selectedMaterial;
         private SeedBoxesController _parent;
         private Material _defaultMaterial;
         private MeshRenderer _meshRenderer;
+        private PlantRenderer _pr;
         
         // Temps
         private FlowerInstance _flower;
@@ -34,6 +33,7 @@ namespace Controller
             _parent = GetComponentInParent<SeedBoxesController>();
             _meshRenderer = GetComponent<MeshRenderer>();
             _defaultMaterial = _meshRenderer.material;
+            _pr = GetComponent<PlantRenderer>();
         }
 
         #region SelectionHandling
@@ -46,22 +46,15 @@ namespace Controller
         public void Select()
         {
             _meshRenderer.material = selectedMaterial;
-            if (_flower is null)
-            {
-                debugText.text = $"Empty pot: Environment: {_tmp.soil}, {_tmp.lichtkeimer}";
-            }
-            else
-            {
-                _flower.OnChange += RefreshVisuals;
-                RefreshVisuals();
-            }
+            if (_flower is not null) _flower.OnChange += RefreshVisualsWrapper;
+            _pr.RefreshVisuals(_flower, _tmp);
         }
 
         public void Deselect()
         {
-            debugText.text = "";
             _meshRenderer.material = _defaultMaterial;
-            if (_flower is not null) _flower.OnChange -= RefreshVisuals;
+            if (_flower is not null) _flower.OnChange -= RefreshVisualsWrapper;
+            _pr.DebugClearRender();
         }
 
         #endregion
@@ -73,46 +66,43 @@ namespace Controller
             if (!EnvironmentIsSet) Debug.LogWarning("Environment Is Not Set");
             else
             {
-                Debug.Log("SetFlower");
                 _flower = new FlowerInstance(flower, _tmp);
-                _flower.OnChange += RefreshVisuals;
-                RefreshVisuals();
+                _flower.OnChange += RefreshVisualsWrapper;
+                _pr.RefreshVisuals(_flower, _tmp);
             }
         }
         
         public void AddSoil(Environment.SoilType type)
         {
             Debug.Assert(!EnvironmentIsSet, $"Fehler, Soil wurde im Environment Überschrieben!{name}: {_flower}");
-            Debug.Log("Added Soil to Pot");
+
             _tmp.soil = type;
-            RefreshVisuals();
+            _pr.RefreshVisuals(_flower, _tmp);
         }
 
         public void ChangeLightType()
         {
             _tmp.lichtkeimer = !_tmp.lichtkeimer;
-            RefreshVisuals();
+            _pr.RefreshVisuals(_flower, _tmp);
         }
 
         public void WaterPlant()
         {
-            Debug.LogWarning("Plant is Watered");
+            Debug.Log("Plant is Watered");
             _flower.Water();
         }
 
         public void Replant()
         {
-            _flower.OnChange -= RefreshVisuals;
-            TableController.Instance.ReplantFlower(_flower);
+            TableController.Instance.ReplantFlower(_flower, _tmp);
+            
+            _flower.OnChange -= RefreshVisualsWrapper;
             _flower = null;
+            
             _tmp = new Environment();
         }
         
-        private void RefreshVisuals()
-        {
-            debugText.text = _flower is not null ? _flower.ToString() : $"Empty pot: Environment: {_tmp.soil}, {_tmp.lichtkeimer}";
-        }
-
+        private void RefreshVisualsWrapper() => _pr.RefreshVisuals(_flower, _tmp);
         public bool EnvironmentIsSet => _tmp.soil != Environment.SoilType.None;
         public bool IsReplantable => _flower is null ? false : _flower.IsReplantable;
 
