@@ -15,6 +15,8 @@ namespace Managers
         
         public bool HasSpace => _flowers.Count < 12;
         private List<Tuple<FlowerInstance, Environment>> _flowers;
+
+        public int NumberOfFlowers => _flowers.Count;
         
         public static FlowerDisplay Instance { get; private set; }
 

@@ -31,6 +31,8 @@ namespace Controller
         {
             Debug.Log($"Flower with index: {index}");
             _seedlings.gameObject.SetActive(false);
+
+            if (index >= FlowerDisplay.Instance.NumberOfFlowers) return;
             _pot.SetActive(index);
         }
 

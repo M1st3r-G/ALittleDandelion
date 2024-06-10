@@ -1,9 +1,7 @@
 ﻿using Clickable;
 using Data;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using Environment = Data.Environment;
 
 namespace Controller
 {
