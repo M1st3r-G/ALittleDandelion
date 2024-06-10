@@ -34,7 +34,7 @@ namespace Managers
         public void AddFlower(FlowerInstance f, Environment e)
         {
             _flowers.Add(new Tuple<FlowerInstance, Environment>(f, e));
-            potsUIDisplay.SetActive(_flowers.ToArray());
+            potsUIDisplay.SetAmountActive(_flowers.ToArray());
             if (_flowers.Count == 12) replantPot.gameObject.SetActive(false);
         }
 

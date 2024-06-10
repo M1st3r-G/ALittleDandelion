@@ -4,9 +4,6 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-- Saving the Game
-- Pause with Settings
-- Display Pots in Display (Show Growing)
 - Display Rating (and Remove Grow Flower)
 - Fix Phases:
   - 1 Phase: Ein kleiner Sprössling dessen Stiel der aus der Erde schaut
@@ -23,6 +20,9 @@ ToDo:
     - Jeder stern ein Hinweis.
     - Max 5.
 
+- Display Pots in Display (Show Growing)
+- Pause with Settings
+- Saving the Game
     
 Enhancements:
 - Fix Highlight

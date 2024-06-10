@@ -20,7 +20,7 @@ namespace UI
             }
         }
 
-        public void SetActive(Tuple<FlowerInstance, Environment>[] flowers)
+        public void SetAmountActive(Tuple<FlowerInstance, Environment>[] flowers)
         {
             for (var i = 0; i < flowers.Length; i++)
             {
