@@ -178,3 +178,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allMeshes: {fileID: 11400000, guid: a013d15d237644f4eb6ab4adb00784dd, type: 2}
+  allDirts:
+  - type: 1
+    mat: {fileID: 2100000, guid: f6fd764c48f7e114ca5e483a5b39728f, type: 2}
+  - type: 3
+    mat: {fileID: 2100000, guid: 5cd4b4f9dc074594d8049903fab8f527, type: 2}
+  - type: 2
+    mat: {fileID: 2100000, guid: 5c8e3531a6925334ca2fc8cd6bf6ad6f, type: 2}

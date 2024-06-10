@@ -1,4 +1,5 @@
 ﻿using Data;
+using Managers;
 using TMPro;
 using UnityEngine;
 using Environment = Data.Environment;
@@ -49,7 +50,15 @@ namespace Controller
         private void RenderEnvironment(Environment env)
         {
             debugText.text = $"Empty pot: Environment: {env.soil}, {env.lichtkeimer}"; // If no flower, not overwritten
-            _ground.gameObject.SetActive(env.soil != Environment.SoilType.None); // Active if not none
+            if (env.soil == Environment.SoilType.None)
+            {
+                _ground.gameObject.SetActive(false); // Active if not none
+            }
+            else
+            {
+                _ground.gameObject.SetActive(env.soil != Environment.SoilType.None); // Active if not none
+                _ground.material = FlowerLibrary.Instance.GetDirtMaterial(env.soil);
+            }
             
             // if(!env.lichtkeimer) Show hole 
         }
