@@ -508,6 +508,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DisplayArea
       objectReference: {fileID: 0}
+    - target: {fileID: 2224989497735258174, guid: 489301937bbe3234daa1c9356a80ccf0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2763402595979190244, guid: 489301937bbe3234daa1c9356a80ccf0,
         type: 3}
       propertyPath: debugText
