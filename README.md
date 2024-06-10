@@ -4,7 +4,7 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-- Display Rating (and Remove Grow Flower)
+
 - Fix Phases:
   - 1 Phase: Ein kleiner Sprössling dessen Stiel der aus der Erde schaut
     - This is Phase Seed

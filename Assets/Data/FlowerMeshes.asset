@@ -16,6 +16,7 @@ MonoBehaviour:
   - type: 0
     meshes:
     - {fileID: 4068373912626513877, guid: 502d933fe73c622489a5abf3af26268d, type: 3}
+    - {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
     - {fileID: 2381890483179193753, guid: 6c869b855a33bd94194ca23f9be75b94, type: 3}
     - {fileID: 6569501557127940183, guid: d900cf9247d4fef4b8143bea61ab3967, type: 3}
     - {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}

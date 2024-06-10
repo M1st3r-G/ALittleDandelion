@@ -9,7 +9,7 @@ namespace Data
 
         public enum GrowthState
         {
-            Seed, Sprout, Flower, Dead
+            Seed, Sprout, Bloom, Flower, Dead
         }
         
         // State
@@ -82,7 +82,7 @@ namespace Data
                     }
                     break;
                 case GrowthState.Sprout:
-                    if (_growthCounter >= _type.TimeToBloom)
+                    if (_growthCounter >= _type.TimeToBloom / 2)
                     {
                         if (!_isReplant)
                         {
@@ -90,12 +90,19 @@ namespace Data
                         }
                         else
                         {
-                            _state = GrowthState.Flower;
-                            _growthCounter = 0;
+                            _state = GrowthState.Bloom;
                         }
                     }
                     break;
+                case GrowthState.Bloom:
+                    if (_growthCounter >= _type.TimeToBloom)
+                    {
+                        _state = GrowthState.Flower;
+                        TimeManager.OnTimeIncrease -= Grow;
+                    }
+                    break;
                 case GrowthState.Flower:
+                    TimeManager.OnTimeIncrease -= Grow;
                     break;
                 case GrowthState.Dead:
                 default:
@@ -137,6 +144,11 @@ namespace Data
         
         public override string ToString()
         {
+            if (_state == GrowthState.Flower)
+            {
+                return $"Ein(e) {CalculateStars()}-Sterne {_type.FlowerName}";
+            }
+
             string umgetopft = _isReplant ? "umgetopfte " : "";
             return $"Diese(r) {_type.FlowerName} ist ein(e) {umgetopft}{_state}\nRanking: {_rating}\nLW:{_lastWater};GC:{_growthCounter}";
         }
