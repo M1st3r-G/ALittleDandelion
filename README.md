@@ -12,9 +12,15 @@ ToDo:
     - Max 5.
 
 - Display Pots in Display (Show Growing)
+- Remove Old Plants
 - Pause with Settings
 - Saving the Game
     
+Zuchtloop:
+- Aufbewahren von Fertigen Plflanzen
+- Auswahl und Kreuzung
+- Samenernte (Nach einigen Tagen)
+
 Enhancements:
 - Fix Highlight
 - Make Pot and SeedBox inherit from PlantContainer?
