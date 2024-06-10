@@ -12,6 +12,7 @@ ToDo:
     - Max 5.
 
 - Display Pots in Display (Show Growing)
+- Dont Unsicscibe from DisplayRefreshs
 - Remove Old Plants
 - Pause with Settings
 - Saving the Game
