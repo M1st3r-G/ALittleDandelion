@@ -9,15 +9,9 @@ namespace Controller
 {
     public class SeedBoxesController : MonoBehaviour
     {
-        private SeedBoxController[] _allBoxes;
         private SeedBoxController _currentSelection;
 
         #region SetUp
-
-        private void Awake()
-        {
-            _allBoxes = GetComponentsInChildren<SeedBoxController>(true);
-        }
 
         private void OnEnable()
         {
@@ -26,8 +20,6 @@ namespace Controller
             WateringCan.OnWatering += OnWatering;
             Shovel.OnLightTypeChange += OnShovelClicked;
             ReplantPot.OnReplant += OnReplant;
-
-            foreach (SeedBoxController box in _allBoxes) box.SetRendererActive(true);
         }
 
         private void OnDisable()
@@ -40,8 +32,6 @@ namespace Controller
             
             if(_currentSelection is not null) _currentSelection.Deselect();
             _currentSelection = null;
-            
-            foreach (SeedBoxController box in _allBoxes) box.SetRendererActive(false);
         }
         
         #endregion

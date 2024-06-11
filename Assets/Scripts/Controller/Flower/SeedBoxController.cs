@@ -46,26 +46,17 @@ namespace Controller
         public void Select()
         {
             _meshRenderer.material = selectedMaterial;
+            if (_flower is not null) _flower.OnChange += RefreshVisualsWrapper;
+            _pr.RefreshVisuals(_flower, _tmp);
         }
 
         public void Deselect()
         {
             _meshRenderer.material = _defaultMaterial;
+            if (_flower is not null) _flower.OnChange -= RefreshVisualsWrapper;
+            _pr.DebugClearRender();
         }
 
-        public void SetRendererActive(bool state)
-        {
-            if (state)
-            {
-                if (_flower is not null) _flower.OnChange += RefreshVisualsWrapper;
-                _pr.RefreshVisuals(_flower, _tmp);
-            }
-            else{
-                if (_flower is not null) _flower.OnChange -= RefreshVisualsWrapper;
-                _pr.DebugClearRender();
-            }
-        }
-        
         #endregion
 
         #region CareAndSet
