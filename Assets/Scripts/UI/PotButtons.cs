@@ -1,8 +1,5 @@
-﻿using System;
-using Data;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using Environment = Data.Environment;
 
 namespace UI
 {
@@ -14,23 +11,13 @@ namespace UI
         {
             _buttons = GetComponentsInChildren<Button>();
 
-            foreach (Button b in _buttons)
-            {
-                b.gameObject.SetActive(false);
-            }
+            foreach (Button b in _buttons) b.gameObject.SetActive(false);
         }
 
-        public void SetAmountActive(Tuple<FlowerInstance, Environment>[] flowers)
+        public void SetAmountActive(bool[] states)
         {
-            for (var i = 0; i < flowers.Length; i++)
-            {
-                _buttons[i].gameObject.SetActive(true);
-            }
-            
-            for (var i = flowers.Length; i < 12; i++)
-            {
-                _buttons[i].gameObject.SetActive(false);
-            }
+            // Copy States
+            for (int i = 0; i < states.Length; i++) _buttons[i].gameObject.SetActive(states[i]);
         }
     }
 }

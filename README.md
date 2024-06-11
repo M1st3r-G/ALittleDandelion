@@ -4,21 +4,25 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
+- Prevent Replant on dead Plants    
+- Don't Unsubscribe from DisplayRefreshs (Later, because Debug can only render One)
+  - PlatRender subscribes to the RefreshEvent?
+  - Leads To Overlap in the DebugDisplay
+- Remove Old/Dead Plants
+
 - BlumenBuch:
   - Name und Bleistift immer,
   - Color bei erster züchtung.
-  - Hinweise Werden nach und Nach freigeschaltet:
+  - Hinweise Werden nach und nach freigeschaltet:
     - Jeder stern ein Hinweis.
     - Max 5.
 
-- Display Pots in Display (Show Growing)
-- Dont Unsicscibe from DisplayRefreshs
-- Remove Old Plants
 - Pause with Settings
 - Saving the Game
-    
+
+
 Zuchtloop:
-- Aufbewahren von Fertigen Plflanzen
+- Aufbewahren von Fertigen Pflanzen
 - Auswahl und Kreuzung
 - Samenernte (Nach einigen Tagen)
 

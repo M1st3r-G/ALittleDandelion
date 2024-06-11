@@ -1,5 +1,6 @@
 ﻿using Clickable;
 using Data;
+using Managers;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -94,14 +95,16 @@ namespace Controller
 
         public void Replant()
         {
-            TableController.Instance.ReplantFlower(_flower, _tmp);
+            FlowerInstanceLibrary.Instance.AddReplantFlower(_flower, _tmp);
+            
+            // ResetVariables
+            _parent.gameObject.SetActive(false);
             
             _flower.OnChange -= RefreshVisualsWrapper;
             _flower = null;
             
             _tmp = new Environment { lichtkeimer = true };
             _pr.RefreshVisuals(_flower, _tmp);
-            
         }
         
         private void RefreshVisualsWrapper() => _pr.RefreshVisuals(_flower, _tmp);

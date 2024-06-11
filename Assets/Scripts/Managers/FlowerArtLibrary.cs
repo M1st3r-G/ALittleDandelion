@@ -6,12 +6,12 @@ using Environment = Data.Environment;
 
 namespace Managers
 {
-    public class FlowerLibrary : MonoBehaviour
+    public class FlowerArtLibrary : MonoBehaviour
     {
         [SerializeField] private FlowerMeshesAsset allMeshes;
         [SerializeField] private MaterialWithTag[] allDirts;
         
-        public static FlowerLibrary Instance { get; private set; }
+        public static FlowerArtLibrary Instance { get; private set; }
 
         private void Awake()
         {

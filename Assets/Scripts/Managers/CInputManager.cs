@@ -94,6 +94,11 @@ namespace Managers
         public void ShowFlower(int index)
         {
             if (!_navigationActive) return;
+            if (!FlowerInstanceLibrary.Instance.FlowerIsSet(index - 1))
+            {
+                Debug.Log("FlowerInput Ignored, Plant is not set");
+                return;
+            }
             
             CameraManager.Instance.ToGreenhouse();
             TableController.Instance.PlaceFlower(index - 1);

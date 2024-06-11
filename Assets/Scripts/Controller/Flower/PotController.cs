@@ -1,5 +1,4 @@
-﻿using System;
-using Clickable;
+﻿using Clickable;
 using Clickable.Shelf;
 using Data;
 using Managers;
@@ -11,9 +10,9 @@ namespace Controller
     [RequireComponent(typeof(PlantRenderer))]
     public class PotController : MonoBehaviour
     {
-        private FlowerInstance _current;
-        private Environment _currentEnv;
         private PlantRenderer _pr;
+        private FlowerInstance _currentFlower;
+        private Environment _currentEnv;
 
         #region SetUp
 
@@ -22,29 +21,27 @@ namespace Controller
             _pr = GetComponent<PlantRenderer>();
         }
 
-        public void SetActive(int index)
+        private void SetToFlower(FlowerInstance flower, Environment env)
         {
-            gameObject.SetActive(true);    
+            gameObject.SetActive(true);
             
-            if(_current is not null) OnDisable();
-
-            WateringCan.OnWatering += WaterPlant;
+            _currentFlower = flower;
+            _currentEnv = env;
             
-            Tuple<FlowerInstance, Environment> tmp = FlowerDisplay.Instance.GetFlowerAndEnv(index);
-            _current = tmp.Item1;
-            _currentEnv = tmp.Item2;
-            _current.OnChange += RefreshVisualsWrapper;
-            _pr.RefreshVisuals(_current, _currentEnv);
+            _currentFlower.OnChange += RefreshVisualsWrapper;
+            _pr.RefreshVisuals(_currentFlower, _currentEnv);
         }
 
-        private void OnDisable()
+        private void RemoveFlower()
         {
             WateringCan.OnWatering -= WaterPlant;
+            _currentFlower.OnChange -= RefreshVisualsWrapper;
             
-            if(_current is not null) _current.OnChange -= RefreshVisualsWrapper;
-            _current = null;
+            _currentFlower = null;
             _currentEnv = new Environment();
+            
             _pr.DebugClearRender();
+            gameObject.SetActive(false);
         }
 
         #endregion
@@ -53,19 +50,14 @@ namespace Controller
 
         private void WaterPlant()
         {
-            Debug.Assert(_current is not null, "Illegal Event Subscription");
-            _current.Water();
+            Debug.Assert(_currentFlower is not null, "Illegal Event Subscription");
+            _currentFlower.Water();
         }
 
         public void Replant(FlowerInstance flower, Environment env)
         {
-            gameObject.SetActive(true);
-            OnDisable();
-            
-            _current = flower;
-            _currentEnv = env;
-            _current.OnChange += RefreshVisualsWrapper;
-            _pr.RefreshVisuals(_current, env);
+            TableController.Instance.CenterPot(this);
+            SetToFlower(flower, env);
             
             ShelfFertilizerItem.OnFertilizer += Fertilize;
             CInputManager.Instance.SetNavigation(false);
@@ -77,14 +69,14 @@ namespace Controller
             ShelfFertilizerItem.OnFertilizer -= Fertilize;
             WateringCan.OnWatering += WaterPlant;
             
-            _current.Replant(type);
+            _currentFlower.Replant(type);
         }
 
         #endregion
 
         #region Util
 
-        private void RefreshVisualsWrapper() => _pr.RefreshVisuals(_current, _currentEnv);
+        private void RefreshVisualsWrapper() => _pr.RefreshVisuals(_currentFlower, _currentEnv);
 
         #endregion
     }

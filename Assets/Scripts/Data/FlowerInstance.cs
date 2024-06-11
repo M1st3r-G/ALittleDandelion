@@ -86,7 +86,7 @@ namespace Data
                     {
                         if (!_isReplant)
                         {
-                            DecreaseRating((_growthCounter - _type.TimeToBloom) * 5);
+                            DecreaseRating((_growthCounter - _type.TimeToBloom / 2) * 5);
                         }
                         else
                         {
@@ -116,8 +116,10 @@ namespace Data
 
         public void Water()
         {
+            if (_state == GrowthState.Dead) return;
+            
             // To Wet -> Takes Damage
-            if (_lastWater < _type.WaterFrequency)  DecreaseRating((_type.WaterFrequency - _lastWater) * 5);
+            if (_lastWater < _type.WaterFrequency) DecreaseRating((_type.WaterFrequency - _lastWater) * 5);
             _lastWater = 0;
             
             OnChange?.Invoke();

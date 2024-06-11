@@ -77,7 +77,7 @@ namespace Controller
             if (_currentSelection is null) return;
             if (_currentSelection.IsEditable) return;
             if (!_currentSelection.IsReplantable) return;
-            if (!FlowerDisplay.Instance.HasSpace) return;
+            if (!FlowerInstanceLibrary.Instance.HasSpace) return;
             _currentSelection.Replant(); 
         }
         
