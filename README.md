@@ -4,10 +4,7 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-- Prevent Replant on dead Plants    
-- Don't Unsubscribe from DisplayRefreshs (Later, because Debug can only render One)
-  - PlatRender subscribes to the RefreshEvent?
-  - Leads To Overlap in the DebugDisplay
+
 - Remove Old/Dead Plants
 
 - BlumenBuch:
@@ -29,3 +26,6 @@ Zuchtloop:
 Enhancements:
 - Fix Highlight
 - Make Pot and SeedBox inherit from PlantContainer?
+- Don't Unsubscribe from DisplayRefreshes (Later, because Debug can only render One)
+  - PlatRender subscribes to the RefreshEvent?
+  - Leads To Overlap in the DebugDisplay
