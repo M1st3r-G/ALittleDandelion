@@ -1,4 +1,5 @@
 ﻿using Controller;
+using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,7 +15,7 @@ namespace Managers
         [SerializeField] private InputActionReference showShelfedAction;
         [SerializeField] private InputActionReference escapeAction;
         [SerializeField] private InputActionReference bookAction;
-
+        
         private bool _navigationActive;
         
         public static CInputManager Instance { get; private set; }
@@ -86,7 +87,8 @@ namespace Managers
             if (CameraManager.Instance.IsInGreenhouse) CameraManager.Instance.ToHub();
             else Settings();
         }
-        public void Settings() => Debug.Log("Settings");
+
+        public void Settings() => PauseMenuController.Instance.Toggle();
 
         private void ShowFlowerWrapper(InputAction.CallbackContext ctx)
             => ShowFlower((int)ctx.ReadValue<float>());

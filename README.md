@@ -4,8 +4,9 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-
 - Remove Old/Dead Plants
+- Pause menu
+  - Add Volume Sliders
 
 - BlumenBuch:
   - Name und Bleistift immer,
@@ -14,7 +15,6 @@ ToDo:
     - Jeder stern ein Hinweis.
     - Max 5.
 
-- Pause with Settings
 - Saving the Game
 
 
