@@ -25,7 +25,7 @@ namespace Controller
 
             if (_current is not null) FlowerInstanceLibrary.Instance.ReturnPot(_current);
             _current = FlowerInstanceLibrary.Instance.BorrowPot(index);
-            _current.transform.position = center.position;
+            AdjustCurrentTransform();
         }
 
         // Replaces the PlaceFlower for Replanting
@@ -33,7 +33,13 @@ namespace Controller
         {
             //Should be Redundant _seedlings.gameObject.SetActive(false);
             _current = pot;
-            _current.transform.position = center.position;
+            AdjustCurrentTransform();
+        }
+
+        private void AdjustCurrentTransform()
+        {
+            _current.transform.parent = center;
+            _current.transform.localPosition = Vector3.zero;
         }
         
         public void PlaceSeeds()

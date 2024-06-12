@@ -52,7 +52,6 @@ MonoBehaviour:
   row2: {fileID: 1609087112859399241}
   potPrefab: {fileID: 8864590871730076074, guid: eac7270006df2934083d5ad90fa4f9ad,
     type: 3}
-  spacingSteps: 1.25
 --- !u!1001 &933800003877714588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69,7 +68,7 @@ PrefabInstance:
     - target: {fileID: 4083350556197343766, guid: 6a4787e51718e574abb55194b25552d0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4083350556197343766, guid: 6a4787e51718e574abb55194b25552d0,
         type: 3}
@@ -143,7 +142,7 @@ PrefabInstance:
     - target: {fileID: 4083350556197343766, guid: 6a4787e51718e574abb55194b25552d0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4083350556197343766, guid: 6a4787e51718e574abb55194b25552d0,
         type: 3}
