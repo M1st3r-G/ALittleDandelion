@@ -16,6 +16,12 @@ ToDo:
     - Max 5.
 
 - Saving the Game
+  - SeedBox States
+  - FlowerDisplay State
+  - (FlowerBook State)
+  - (ZuchtRegalState)
+- Loading the Game
+  - Set ...
 
 
 Zuchtloop:
@@ -29,3 +35,15 @@ Enhancements:
 - Don't Unsubscribe from DisplayRefreshes (Later, because Debug can only render One)
   - PlatRender subscribes to the RefreshEvent?
   - Leads To Overlap in the DebugDisplay
+
+
+
+Flower:
+
+TOJSON:
+- type -> flowerType
+- private GrowthState _state 
+  private int _lastWater   
+  private int _growthCounter
+  private int _rating
+  private bool _isReplant

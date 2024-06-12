@@ -58,7 +58,7 @@ namespace Controller
             else
             {
                 _ground.gameObject.SetActive(env.soil != Environment.SoilType.None); // Active if not none
-                _ground.material = FlowerArtLibrary.Instance.GetDirtMaterial(env.soil);
+                _ground.material = FlowerLookUpLibrary.Instance.GetDirtMaterial(env.soil);
             }
             
             // if(!env.lichtkeimer) Show hole 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Clickable.Shelf;
 using Controller;
@@ -101,6 +102,22 @@ namespace Managers
             => _allPots.FirstOrDefault(pot => !pot.gameObject.activeSelf);
         private bool[] CalculateButtonStates()
             => _allPots.Select(pot => pot.gameObject.activeSelf).ToArray();
+
+        public void GetSaveContent(out FlowerInstance.FlowerSerialization[] flowers, out Environment[] environments)
+        {
+            flowers = new FlowerInstance.FlowerSerialization[12]; 
+            environments = new Environment[12];
+            int c = 0;
+            
+            foreach (Tuple<FlowerInstance, Environment> tuple in _allPots.Select(pot => pot.GetSaveContent()))
+            {
+                if (tuple.Item1 is null) flowers[c] = null;
+                else flowers[c] = tuple.Item1.Serialization;
+                
+                environments[c] = tuple.Item2;
+                c++;
+            }
+        }
 
         #endregion
     }

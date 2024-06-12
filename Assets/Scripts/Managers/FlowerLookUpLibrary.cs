@@ -6,12 +6,13 @@ using Environment = Data.Environment;
 
 namespace Managers
 {
-    public class FlowerArtLibrary : MonoBehaviour
+    public class FlowerLookUpLibrary : MonoBehaviour
     {
         [SerializeField] private FlowerMeshesAsset allMeshes;
         [SerializeField] private MaterialWithTag[] allDirts;
-        
-        public static FlowerArtLibrary Instance { get; private set; }
+        [SerializeField] private FlowerData[] allFlowerData;
+
+        public static FlowerLookUpLibrary Instance { get; private set; }
 
         private void Awake()
         {
@@ -29,6 +30,10 @@ namespace Managers
         public Material GetDirtMaterial(Environment.SoilType type)
             => allDirts.FirstOrDefault(mWt => mWt.type == type).mat;
 
+        public FlowerData GetFlowerData(FlowerData.FlowerType type)
+            => allFlowerData.FirstOrDefault(f => f.FlowerName == type);
+
+        
         [Serializable]
         private struct MaterialWithTag
         {

@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 5868193359276685888}
   - component: {fileID: 3627213852932172799}
   - component: {fileID: 3985963363946305395}
+  - component: {fileID: 1084906627230340793}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -170,3 +171,33 @@ MonoBehaviour:
     mat: {fileID: 2100000, guid: 5cd4b4f9dc074594d8049903fab8f527, type: 2}
   - type: 2
     mat: {fileID: 2100000, guid: 5c8e3531a6925334ca2fc8cd6bf6ad6f, type: 2}
+--- !u!114 &1084906627230340793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121411382446541115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962a1af0df4e4682a6cf0b9e5d3183e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugAction:
+    m_Name: Debug
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 741a5bb5-a8cc-4dd9-8ea6-8c2a3735f201
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 727f20bb-7845-4de4-a3e2-cd8b0ddc4565
+      m_Path: <Keyboard>/h
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Debug
+      m_Flags: 0
+    m_Flags: 0
+  seeds: {fileID: 0}

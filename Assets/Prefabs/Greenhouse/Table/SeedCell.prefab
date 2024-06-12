@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 259292852143166506}
   m_Layer: 0
   m_Name: SeedCell
-  m_TagString: Untagged
+  m_TagString: SeedPot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fc94cd26f44c44a71ff11dad9e7dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugText: {fileID: 0}
   defaultFlower: {fileID: 4292043486683329899, guid: 128eab10f8c8cf1448a0e2af529748e9,
     type: 3}
   defaultDirt: {fileID: 248757509620955735, guid: 6482eeb6e20cf8b44be5e301cd32573c,
