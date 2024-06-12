@@ -1,4 +1,5 @@
-﻿using Clickable;
+﻿using System;
+using Clickable;
 using Clickable.Shelf;
 using Data;
 using Managers;
@@ -77,6 +78,8 @@ namespace Controller
         #region Util
 
         private void RefreshVisualsWrapper() => _pr.RefreshVisuals(_currentFlower, _currentEnv);
+        public Tuple<FlowerInstance, Environment> GetSaveContent()
+            => new(_currentFlower, _currentEnv);
 
         #endregion
     }

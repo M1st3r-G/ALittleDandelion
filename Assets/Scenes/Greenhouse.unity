@@ -141,6 +141,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 211c12fe5f80410c9abcbafc4f5176ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1315767278 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6311089704100916388, guid: cefda1920dac3fa468ce3f3a3e203920,
+    type: 3}
+  m_PrefabInstance: {fileID: 5233263825427944546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47464d3fd4d4c7c98665068ce07f1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &1709577582 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 276979246960631432, guid: 3dd704d0243425042ae7f9fd58083987,
@@ -779,6 +791,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1084906627230340793, guid: ae77225a1eb62ae4b8353d411fb058c9,
+        type: 3}
+      propertyPath: seeds
+      value: 
+      objectReference: {fileID: 1315767278}
     - target: {fileID: 3215137332124713097, guid: ae77225a1eb62ae4b8353d411fb058c9,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -80,15 +80,15 @@ namespace Managers
         
         public void TriggerNextDay() => TimeManager.Instance.NextDay();
 
-        private void Escape(InputAction.CallbackContext ctx)
+        private void Escape(InputAction.CallbackContext ctx) => Settings();
+
+        public void Settings()
         {
             if (!_navigationActive) return;
             
             if (CameraManager.Instance.IsInGreenhouse) CameraManager.Instance.ToHub();
-            else Settings();
+            else PauseMenuController.Instance.Toggle();
         }
-
-        public void Settings() => PauseMenuController.Instance.Toggle();
 
         private void ShowFlowerWrapper(InputAction.CallbackContext ctx)
             => ShowFlower((int)ctx.ReadValue<float>());

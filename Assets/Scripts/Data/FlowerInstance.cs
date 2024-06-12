@@ -1,4 +1,5 @@
-﻿using Managers;
+﻿using System;
+using Managers;
 using UnityEngine;
 
 namespace Data
@@ -13,7 +14,6 @@ namespace Data
         }
         
         // State
-
         public FlowerData.FlowerType Type => _type.FlowerName;
         private readonly FlowerData _type;  // The Type of Flower
         public GrowthState State => _state;
@@ -26,7 +26,7 @@ namespace Data
         // Public
         public bool IsReplantable => _state == GrowthState.Sprout;
 
-        public int CalculateStars() => _rating switch
+        private int CalculateStars() => _rating switch
         {
             >= 90 => 3, 
             >= 75 => 2, 
@@ -155,6 +155,46 @@ namespace Data
             return $"Diese(r) {_type.FlowerName} ist ein(e) {umgetopft}{_state}\nRanking: {_rating}\nLW:{_lastWater};GC:{_growthCounter}";
         }
 
+        #endregion
+
+        #region Serialization
+
+        public FlowerSerialization Serialization
+            => new(_type.FlowerName, _state, _lastWater, _growthCounter, _rating, _isReplant);
+        
+        public FlowerInstance(FlowerSerialization serialization)
+        {
+            _type = FlowerLookUpLibrary.Instance.GetFlowerData(serialization.type);
+            _state = serialization.state;
+            _lastWater = serialization.lastWater;
+            _growthCounter = serialization.growthCounter;
+            _rating = serialization.rating;
+            _isReplant = serialization.isReplant;
+            
+            TimeManager.OnTimeIncrease += Grow;
+        }
+
+        [Serializable]
+        public class FlowerSerialization
+        {
+            public FlowerData.FlowerType type;
+            public GrowthState state;
+            public int lastWater;
+            public int growthCounter;
+            public int rating;
+            public bool isReplant;
+            
+            public FlowerSerialization(FlowerData.FlowerType type, GrowthState state, int lastWater, int growthCounter, int rating, bool isReplant)
+            {
+                this.type = type;
+                this.state = state;
+                this.lastWater = lastWater;
+                this.growthCounter = growthCounter;
+                this.rating = rating;
+                this.isReplant = isReplant;
+            }
+        }
+        
         #endregion
     }
 }

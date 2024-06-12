@@ -17,7 +17,7 @@ namespace Controller
 
         public void RenderState(FlowerInstance flower)
         {
-            _mesh.mesh = FlowerArtLibrary.Instance.GetMesh(flower.Type, flower.State);
+            _mesh.mesh = FlowerLookUpLibrary.Instance.GetMesh(flower.Type, flower.State);
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Data
@@ -17,7 +18,7 @@ namespace Data
             return null;
         }
         
-        [System.Serializable]
+        [Serializable]
         private struct FlowerTypedList
         {
             public FlowerData.FlowerType type;

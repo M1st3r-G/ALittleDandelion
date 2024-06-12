@@ -1,8 +1,10 @@
-﻿using Clickable;
+﻿using System;
+using Clickable;
 using Data;
 using Managers;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Environment = Data.Environment;
 
 namespace Controller
 {
@@ -10,6 +12,8 @@ namespace Controller
     public class SeedBoxController : ClickableBase
     {
         #region Fields
+
+        
         
         // Component References
         [SerializeField] private Material selectedMaterial;
@@ -110,7 +114,8 @@ namespace Controller
         private void RefreshVisualsWrapper() => _pr.RefreshVisuals(_flower, _tmp);
         public bool EnvironmentIsSet => _tmp.soil != Environment.SoilType.None;
         public bool IsReplantable => _flower is null ? false : _flower.IsReplantable;
-
+        public Tuple<FlowerInstance, Environment> GetSaveContent() => new(_flower, _tmp);
+        
         #endregion
     }
 }
