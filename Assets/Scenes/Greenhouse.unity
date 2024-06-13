@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18290733, g: 0.22615963, b: 0.2926988, a: 1}
+  m_IndirectSpecularColor: {r: 0.18290749, g: 0.22616015, b: 0.29269916, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -129,9 +129,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2531868442897709860}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &965342602 stripped
+--- !u!114 &897835186 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7754655851514592541, guid: 5b6fa54c327f74b4abdaeacae801aef8,
+  m_CorrespondingSourceObject: {fileID: 133965361071541793, guid: 5b6fa54c327f74b4abdaeacae801aef8,
     type: 3}
   m_PrefabInstance: {fileID: 3052996902121935973}
   m_PrefabAsset: {fileID: 0}
@@ -497,7 +497,7 @@ PrefabInstance:
         type: 3}
       propertyPath: replantPot
       value: 
-      objectReference: {fileID: 965342602}
+      objectReference: {fileID: 897835186}
     - target: {fileID: 5669860033620618810, guid: 489301937bbe3234daa1c9356a80ccf0,
         type: 3}
       propertyPath: potsUIDisplay
@@ -624,11 +624,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShelfEarth
       objectReference: {fileID: 0}
-    - target: {fileID: 2688758665833320537, guid: 5b6fa54c327f74b4abdaeacae801aef8,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d9c71310f05a28a40b300c621d75d897, type: 2}
     - target: {fileID: 4848653674598057740, guid: 5b6fa54c327f74b4abdaeacae801aef8,
         type: 3}
       propertyPath: m_LocalPosition.x
