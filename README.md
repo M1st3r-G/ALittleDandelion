@@ -5,6 +5,8 @@ A Cozy Gardening Game with calming colors
 ---
 ToDo:
 - Remove Old/Dead Plants
+  - ui Display mit Sternen, wenn eine tote oder ausgewachsene Pflanze geöffnet wird
+    buttons verkaufen und behalten, bei toten pflanzen nur wegschmeißen.
 - Pause menu
   - Add Volume Sliders
 
@@ -15,18 +17,8 @@ ToDo:
     - Jeder stern ein Hinweis.
     - Max 5.
 
-- Saving the Game
-  - SeedBox States
-  - FlowerDisplay State
-  - (FlowerBook State)
-  - (ZuchtRegalState)
-- Loading the Game
-  - Set ...
+- Behaltene Blumen loswerden, mit einem Verkaufen button
 
-ui Display mit Sternen, wenn eine tote oder ausgewachsene Pflanze geöffnet wird
-buttons verkaufen und behalten, bei toten pflanzen nur wegschmeißen.
-
-Behakltene Blumen loswerden, mit einem Verkaufen button
 
 Zuchtloop:
 - Aufbewahren von Fertigen Pflanzen
