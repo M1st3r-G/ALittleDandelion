@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using Controller;
 using Data;
-using UnityEditor;
-using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Environment = Data.Environment;
