@@ -12,8 +12,6 @@ namespace Controller
     public class SeedBoxController : ClickableBase
     {
         #region Fields
-
-        
         
         // Component References
         [SerializeField] private Material selectedMaterial;
@@ -38,7 +36,12 @@ namespace Controller
             _meshRenderer = GetComponent<MeshRenderer>();
             _defaultMaterial = _meshRenderer.material;
             _pr = GetComponent<PlantRenderer>();
-            _tmp.lichtkeimer = true;
+        }
+
+        public void SetUpContent(FlowerInstance flower, Environment env)
+        {
+            _flower = flower;
+            _tmp = env;
         }
 
         #region SelectionHandling

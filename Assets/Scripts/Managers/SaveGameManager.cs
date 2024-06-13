@@ -2,6 +2,7 @@
 using Controller;
 using Data;
 using UnityEditor;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Environment = Data.Environment;
@@ -32,8 +33,16 @@ namespace Managers
 
         #region RetrieveSavedData
 
-        
+        public void GetSeedBoxData(out FlowerInstance[] flowers, out Environment envs)
+        {
+            ReadSavedLists(_loadedState.seedMap, _loadedState.seedBoxFlowers, _loadedState.seedBoxEnvironments, out flowers, out envs);
+        }
 
+        private void ReadSavedLists()
+        {
+            
+        }
+        
         #endregion
         
         #region Saving

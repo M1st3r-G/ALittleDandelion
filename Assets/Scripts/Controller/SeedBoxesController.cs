@@ -13,7 +13,8 @@ namespace Controller
     public class SeedBoxesController : MonoBehaviour
     {
         private SeedBoxController _currentSelection;
-
+        private SeedBoxController[] _allBoxes;
+        
         #region SetUp
 
         private void OnEnable()
@@ -36,7 +37,20 @@ namespace Controller
             if(_currentSelection is not null) _currentSelection.Deselect();
             _currentSelection = null;
         }
-        
+
+        private void Awake()
+        {
+            _allBoxes = GetComponentsInChildren<SeedBoxController>();
+        }
+
+        private void Start()
+        {
+            foreach (SeedBoxController box in _allBoxes)
+            {
+                
+            }
+        }
+
         #endregion
 
         #region ShelfInteraction
@@ -101,14 +115,13 @@ namespace Controller
 
         public void GetSaveContent(out FlowerInstance.FlowerSerialization[] flowers, out Environment[] environments, out int map)
         {
-            SeedBoxController[] boxes = GetComponentsInChildren<SeedBoxController>();
             
             List<FlowerInstance.FlowerSerialization> tmpFlowers = new(); 
             List<Environment> tmpEnvironments = new();
             
             map = 0;
             int copyMapValue = 1 << 5;
-            foreach (Tuple<FlowerInstance, Environment> tuple in boxes.Select(b => b.GetSaveContent()))
+            foreach (Tuple<FlowerInstance, Environment> tuple in _allBoxes.Select(b => b.GetSaveContent()))
             {
                 if (tuple.Item1 is not null)
                 {
