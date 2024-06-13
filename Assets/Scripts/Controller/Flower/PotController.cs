@@ -22,6 +22,11 @@ namespace Controller
             _pr = GetComponent<PlantRenderer>();
         }
 
+        public void Start()
+        {
+            Debug.LogWarning($"this is {_currentFlower}");
+        }
+        
         private void SetToFlower(FlowerInstance flower, Environment env)
         {
             gameObject.SetActive(true);

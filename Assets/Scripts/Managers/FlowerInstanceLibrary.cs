@@ -103,22 +103,29 @@ namespace Managers
         private bool[] CalculateButtonStates()
             => _allPots.Select(pot => pot.gameObject.activeSelf).ToArray();
 
-        public void GetSaveContent(out FlowerInstance.FlowerSerialization[] flowers, out Environment[] environments)
+        public void GetSaveContent(out FlowerInstance.FlowerSerialization[] flowers, out Environment[] environments, out int map)
         {
-            flowers = new FlowerInstance.FlowerSerialization[12]; 
-            environments = new Environment[12];
-            int c = 0;
+            List<FlowerInstance.FlowerSerialization> tmpFlowers = new(); 
+            List<Environment> tmpEnvironments = new();
+            map = 0;
+            int copyMapValue = 1 << 11;
             
             foreach (Tuple<FlowerInstance, Environment> tuple in _allPots.Select(pot => pot.GetSaveContent()))
             {
-                if (tuple.Item1 is null) flowers[c] = null;
-                else flowers[c] = tuple.Item1.Serialization;
+                if (tuple.Item1 is not null)
+                {
+                    tmpFlowers.Add(tuple.Item1.Serialization);
+                    tmpEnvironments.Add(tuple.Item2);
+                    map += copyMapValue;
+                }
                 
-                environments[c] = tuple.Item2;
-                c++;
+                copyMapValue >>= 1;
             }
+            
+            flowers = tmpFlowers.ToArray();
+            environments = tmpEnvironments.ToArray();
         }
-
+        
         #endregion
     }
 }

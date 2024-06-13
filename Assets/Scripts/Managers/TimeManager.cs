@@ -7,8 +7,7 @@ namespace Managers
         //ComponentReferences
         //Params
         //Temps
-        public int Days => _days;
-        private int _days = 1;
+        public int Days { get; private set; } = 1;
         //Public
         public static TimeManager Instance {get; private set; }
 
@@ -22,13 +21,14 @@ namespace Managers
     
         private void OnDestroy()
         {
-            if (Instance == this) Instance = null;
+            //TODO find a Better way to work with this
+            //if (Instance == this) Instance = null;
         }
 
         public void NextDay()
         {
             Debug.Log("Next Day");
-            _days++;
+            Days++;
             OnTimeIncrease?.Invoke();
         }
     }

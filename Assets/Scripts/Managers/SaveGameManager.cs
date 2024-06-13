@@ -1,6 +1,7 @@
 ﻿using System;
 using Controller;
 using Data;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Environment = Data.Environment;
@@ -11,39 +12,68 @@ namespace Managers
     {
         [SerializeField] private InputAction debugAction;
         [SerializeField] private SeedBoxesController seeds;
+
+        private SaveFileObject _loadedState;
+        
         public static SaveGameManager Instance { get; private set; }
         public const string PrefSaveKey = "SavedGames";
         
         private void Awake()
         {
             Instance = this;
+
+            string tmp = PlayerPrefs.GetString(PrefSaveKey, "");
+            _loadedState = tmp == "" ? null : JsonUtility.FromJson<SaveFileObject>(tmp);
+            
+            Debug.LogWarning(tmp);
             debugAction.Enable();
-            debugAction.performed += Test;
+            debugAction.performed += SaveGame;
         }
 
-        private void Test(InputAction.CallbackContext obj)
+        #region RetrieveSavedData
+
+        
+
+        #endregion
+        
+        #region Saving
+
+        private void OnDestroy()
         {
-            Debug.Log(GenerateSaveFile());
+            if (Instance == this) Instance = null;
+            SaveGame(new InputAction.CallbackContext());
         }
 
-        private string GenerateSaveFile()
+        private void SaveGame(InputAction.CallbackContext _)
         {
-            return JsonUtility.ToJson(new SaveFileObject(seeds), true);
+            string tmp = GenerateSaveFile();
+            Debug.LogWarning(tmp);
+            PlayerPrefs.SetString(PrefSaveKey, tmp);
         }
+
+        private string GenerateSaveFile() => JsonUtility.ToJson(new SaveFileObject(seeds));
 
         [Serializable]
         private class SaveFileObject
         {
             public FlowerInstance.FlowerSerialization[] seedBoxFlowers;
             public Environment[] seedBoxEnvironments;
+            public int seedMap;
+            
             public FlowerInstance.FlowerSerialization[] flowerInstances;
             public Environment[] environmentInstances;
-
+            public int instanceMap;
+            
+            public int dayCount;
+            
             public SaveFileObject(SeedBoxesController seeds)
             {
-                seeds.GetSaveContent(out seedBoxFlowers, out seedBoxEnvironments);
-                FlowerInstanceLibrary.Instance.GetSaveContent(out flowerInstances, out environmentInstances);
+                seeds.GetSaveContent(out seedBoxFlowers, out seedBoxEnvironments, out seedMap);
+                FlowerInstanceLibrary.Instance.GetSaveContent(out flowerInstances, out environmentInstances, out instanceMap);
+                dayCount = TimeManager.Instance.Days;
             }
         }
+    
+        #endregion
     }
 }

@@ -35,15 +35,4 @@ Enhancements:
 - Don't Unsubscribe from DisplayRefreshes (Later, because Debug can only render One)
   - PlatRender subscribes to the RefreshEvent?
   - Leads To Overlap in the DebugDisplay
-
-
-
-Flower:
-
-TOJSON:
-- type -> flowerType
-- private GrowthState _state 
-  private int _lastWater   
-  private int _growthCounter
-  private int _rating
-  private bool _isReplant
+- SaveFiles include Evniroment in seeds

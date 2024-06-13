@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Clickable;
 using Clickable.Shelf;
@@ -98,20 +99,29 @@ namespace Controller
 
         #region Utils
 
-        public void GetSaveContent(out FlowerInstance.FlowerSerialization[] flowers, out Environment[] environments)
+        public void GetSaveContent(out FlowerInstance.FlowerSerialization[] flowers, out Environment[] environments, out int map)
         {
-            var boxes = GetComponentsInChildren<SeedBoxController>();
-            flowers = new FlowerInstance.FlowerSerialization[6]; 
-            environments = new Environment[6];
-            int c = 0;
+            SeedBoxController[] boxes = GetComponentsInChildren<SeedBoxController>();
+            
+            List<FlowerInstance.FlowerSerialization> tmpFlowers = new(); 
+            List<Environment> tmpEnvironments = new();
+            
+            map = 0;
+            int copyMapValue = 1 << 5;
             foreach (Tuple<FlowerInstance, Environment> tuple in boxes.Select(b => b.GetSaveContent()))
             {
-                if (tuple.Item1 is null) flowers[c] = null;
-                else flowers[c] = tuple.Item1.Serialization;
-                
-                environments[c] = tuple.Item2;
-                c++;
+                if (tuple.Item1 is not null)
+                {
+                    tmpFlowers.Add(tuple.Item1.Serialization);
+                    tmpEnvironments.Add(tuple.Item2);
+                    map += copyMapValue;
+                }
+
+                copyMapValue >>= 1;
             }
+
+            flowers = tmpFlowers.ToArray();
+            environments = tmpEnvironments.ToArray();
         }
         
         #endregion
