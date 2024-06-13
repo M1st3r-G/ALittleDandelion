@@ -34,13 +34,33 @@ namespace Managers
 
         public void GetSeedBoxData(out FlowerInstance[] flowers, out Environment[] envs)
         {
-            ReadSavedLists(_loadedState.seedMap, 6, _loadedState.seedBoxFlowers, _loadedState.seedBoxEnvironments, out flowers, out envs);
+            if (_loadedState is null)
+            {
+                flowers = new FlowerInstance[6];
+                envs = new Environment[6];
+            }
+            else
+            {
+                ReadSavedLists(_loadedState.seedMap, 6, _loadedState.seedBoxFlowers, _loadedState.seedBoxEnvironments,
+                    out flowers, out envs);
+            }
         }
 
         public void GetInstanceData(out FlowerInstance[] flowers, out Environment[] envs)
         {
-            ReadSavedLists(_loadedState.instanceMap, 12, _loadedState.flowerInstances, _loadedState.environmentInstances, out flowers, out envs);
+            if (_loadedState is null)
+            {
+                flowers = new FlowerInstance[12];
+                envs = new Environment[12];
+            }
+            else
+            {
+                ReadSavedLists(_loadedState.instanceMap, 12, _loadedState.flowerInstances,
+                    _loadedState.environmentInstances, out flowers, out envs);
+            }
         }
+
+        public int GetTimeData() => _loadedState is null ? 1 : _loadedState.dayCount;
 
         private static void ReadSavedLists(int map, int numberOfItems, FlowerInstance.FlowerSerialization[] readFlowers, Environment[] readEnv, out FlowerInstance[] rFlowers, out Environment[] rEnvironment)
         {

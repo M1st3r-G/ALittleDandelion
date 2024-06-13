@@ -7,7 +7,7 @@ namespace Managers
         //ComponentReferences
         //Params
         //Temps
-        public int Days { get; private set; } = 1;
+        public int Days { get; private set; }
         //Public
         public static TimeManager Instance {get; private set; }
 
@@ -17,12 +17,7 @@ namespace Managers
         private void Awake()
         {
             Instance = this;
-        }
-    
-        private void OnDestroy()
-        {
-            //TODO find a Better way to work with this
-            //if (Instance == this) Instance = null;
+            Days = SaveGameManager.Instance.GetTimeData();
         }
 
         public void NextDay()
