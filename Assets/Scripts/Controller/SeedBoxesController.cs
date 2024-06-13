@@ -117,12 +117,11 @@ namespace Controller
 
         public void GetSaveContent(out FlowerInstance.FlowerSerialization[] flowers, out Environment[] environments, out int map)
         {
-            
             List<FlowerInstance.FlowerSerialization> tmpFlowers = new(); 
             List<Environment> tmpEnvironments = new();
             
             map = 0;
-            int copyMapValue = 1 << 5;
+            int copyMapValue = 1;
             foreach (Tuple<FlowerInstance, Environment> tuple in _allBoxes.Select(b => b.GetSaveContent()))
             {
                 if (tuple.Item1 is not null)
@@ -132,7 +131,7 @@ namespace Controller
                     map += copyMapValue;
                 }
 
-                copyMapValue >>= 1;
+                copyMapValue <<= 1;
             }
 
             flowers = tmpFlowers.ToArray();

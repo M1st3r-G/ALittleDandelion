@@ -107,7 +107,7 @@ namespace Managers
             List<FlowerInstance.FlowerSerialization> tmpFlowers = new(); 
             List<Environment> tmpEnvironments = new();
             map = 0;
-            int copyMapValue = 1 << 11;
+            int copyMapValue = 1;
             
             foreach (Tuple<FlowerInstance, Environment> tuple in _allPots.Select(pot => pot.GetSaveContent()))
             {
@@ -118,7 +118,7 @@ namespace Managers
                     map += copyMapValue;
                 }
                 
-                copyMapValue >>= 1;
+                copyMapValue <<= 1;
             }
             
             flowers = tmpFlowers.ToArray();
