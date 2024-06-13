@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6067409850511221803, guid: 08c3e7a524fdcb64da63e7042bdacf64, type: 3}
+  - {fileID: 2100000, guid: d9c71310f05a28a40b300c621d75d897, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,7 +109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fc94cd26f44c44a71ff11dad9e7dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugText: {fileID: 0}
   defaultFlower: {fileID: 4292043486683329899, guid: 128eab10f8c8cf1448a0e2af529748e9,
     type: 3}
   defaultDirt: {fileID: 248757509620955735, guid: 6482eeb6e20cf8b44be5e301cd32573c,
