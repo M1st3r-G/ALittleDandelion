@@ -12,6 +12,7 @@ namespace Managers
         [SerializeField] private InputAction debugAction;
         [SerializeField] private SeedBoxesController seeds;
         public static SaveGameManager Instance { get; private set; }
+        public const string PrefSaveKey = "SavedGames";
         
         private void Awake()
         {

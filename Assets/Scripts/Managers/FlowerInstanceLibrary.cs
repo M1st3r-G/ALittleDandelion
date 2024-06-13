@@ -81,7 +81,7 @@ namespace Managers
                 idx -= 6;
             }
             else returnedPot.transform.parent = row1;
-            returnedPot.transform.localPosition = new Vector3(15f - idx * 6f, 0, 0);
+            returnedPot.transform.localPosition = new Vector3(15f - idx * 6f, 2.76f, 0);
         }
         
         // Return the Requested Pot
