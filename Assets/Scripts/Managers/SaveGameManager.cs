@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Controller;
 using Data;
 using UnityEditor;
@@ -33,14 +34,46 @@ namespace Managers
 
         #region RetrieveSavedData
 
-        public void GetSeedBoxData(out FlowerInstance[] flowers, out Environment envs)
+        public void GetSeedBoxData(out FlowerInstance[] flowers, out Environment[] envs)
         {
-            ReadSavedLists(_loadedState.seedMap, _loadedState.seedBoxFlowers, _loadedState.seedBoxEnvironments, out flowers, out envs);
+            ReadSavedLists(_loadedState.seedMap, 6, _loadedState.seedBoxFlowers, _loadedState.seedBoxEnvironments, out flowers, out envs);
         }
 
-        private void ReadSavedLists()
+        public void GetInstanceData(out FlowerInstance[] flowers, out Environment[] envs)
         {
+            ReadSavedLists(_loadedState.instanceMap, 12, _loadedState.flowerInstances, _loadedState.environmentInstances, out flowers, out envs);
+        }
+
+        private static void ReadSavedLists(int map, int numberOfItems, FlowerInstance.FlowerSerialization[] readFlowers, Environment[] readEnv, out FlowerInstance[] rFlowers, out Environment[] rEnvironment)
+        {
+            var tmpFlower = new List<FlowerInstance>();
+            var tmpEnvironments = new List<Environment>();
+
+            int c = 0;
             
+            for (int i = 0; i < numberOfItems; i++)
+            {
+                bool plant = map % 2 == 1;
+                if (plant)
+                {
+                    tmpFlower.Add(new FlowerInstance(readFlowers[c]));
+                    tmpEnvironments.Add(readEnv[c]);
+                    c++;
+                }
+                else
+                {
+                    tmpFlower.Add(null); 
+                    tmpEnvironments.Add(new Environment());
+                }
+                
+                map >>= 1;
+            }
+            
+            Debug.Assert(tmpEnvironments.Count == numberOfItems, "Fehler beim Parsen");
+            Debug.Assert(tmpFlower.Count == numberOfItems, "Fehler beim Parsen");
+
+            rFlowers = tmpFlower.ToArray();
+            rEnvironment = tmpEnvironments.ToArray();
         }
         
         #endregion

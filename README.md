@@ -23,6 +23,10 @@ ToDo:
 - Loading the Game
   - Set ...
 
+ui Display mit Sternen, wenn eine tote oder ausgewachsene Pflanze geöffnet wird
+buttons verkaufen und behalten, bei toten pflanzen nur wegschmeißen.
+
+Behakltene Blumen loswerden, mit einem Verkaufen button
 
 Zuchtloop:
 - Aufbewahren von Fertigen Pflanzen

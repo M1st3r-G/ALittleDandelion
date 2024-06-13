@@ -37,6 +37,8 @@ namespace Managers
             Instance = this;
             _allPots = new List<PotController>();
             
+            SaveGameManager.Instance.GetInstanceData(out FlowerInstance[] flowers, out Environment[] envs);
+            
             for (int i = 0; i < 12; i++)
             {
                 GameObject tmpObj = Instantiate(potPrefab);
@@ -45,12 +47,9 @@ namespace Managers
                 
                 _allPots.Add(tmpPot);
                 ReturnPot(tmpPot);
-            }
-        }
 
-        private void OnDestroy()
-        {
-            if (Instance == this) Instance = null;
+                tmpPot.SetUpContent(flowers[i], envs[i]);
+            }
         }
         
         #endregion

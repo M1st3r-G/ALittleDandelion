@@ -42,6 +42,13 @@ namespace Controller
         {
             _flower = flower;
             _tmp = env;
+            if (_tmp.soil == Environment.SoilType.None) _tmp.lichtkeimer = true;
+            else
+            {
+                if(_flower is not null) _flower.OnChange += RefreshVisualsWrapper;
+            }
+            
+            _pr.RefreshVisuals(_flower, _tmp);
         }
 
         #region SelectionHandling

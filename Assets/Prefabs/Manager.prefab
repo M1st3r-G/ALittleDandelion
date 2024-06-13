@@ -171,6 +171,10 @@ MonoBehaviour:
     mat: {fileID: 2100000, guid: 5cd4b4f9dc074594d8049903fab8f527, type: 2}
   - type: 2
     mat: {fileID: 2100000, guid: 5c8e3531a6925334ca2fc8cd6bf6ad6f, type: 2}
+  allFlowerData:
+  - {fileID: 11400000, guid: dd89ecd4bbd180941925da6a01168d1c, type: 2}
+  - {fileID: 11400000, guid: e217e18bc31b48a43aa45025cff3ad26, type: 2}
+  - {fileID: 11400000, guid: 7602ffdaab6661d47a1e0eb76f31495f, type: 2}
 --- !u!114 &1084906627230340793
 MonoBehaviour:
   m_ObjectHideFlags: 0

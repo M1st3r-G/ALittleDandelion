@@ -22,13 +22,10 @@ namespace Controller
             _pr = GetComponent<PlantRenderer>();
         }
 
-        public void Start()
+        public void SetUpContent(FlowerInstance flower, Environment env)
         {
-            Debug.LogWarning($"this is {_currentFlower}");
-        }
-        
-        private void SetToFlower(FlowerInstance flower, Environment env)
-        {
+            if (flower is null) return;
+            
             gameObject.SetActive(true);
             
             _currentFlower = flower;
@@ -36,18 +33,8 @@ namespace Controller
             
             _currentFlower.OnChange += RefreshVisualsWrapper;
             _pr.RefreshVisuals(_currentFlower, _currentEnv);
-        }
 
-        private void RemoveFlower()
-        {
-            WateringCan.OnWatering -= WaterPlant;
-            _currentFlower.OnChange -= RefreshVisualsWrapper;
-            
-            _currentFlower = null;
-            _currentEnv = new Environment();
-            
-            _pr.DebugClearRender();
-            gameObject.SetActive(false);
+            WateringCan.OnWatering += WaterPlant;
         }
 
         #endregion
@@ -63,7 +50,14 @@ namespace Controller
         public void Replant(FlowerInstance flower, Environment env)
         {
             TableController.Instance.CenterPot(this);
-            SetToFlower(flower, env);
+            
+            gameObject.SetActive(true);
+            
+            _currentFlower = flower;
+            _currentEnv = env;
+            
+            _currentFlower.OnChange += RefreshVisualsWrapper;
+            _pr.RefreshVisuals(_currentFlower, _currentEnv);
             
             ShelfFertilizerItem.OnFertilizer += Fertilize;
             CInputManager.Instance.SetNavigation(false);

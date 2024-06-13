@@ -45,9 +45,11 @@ namespace Controller
 
         private void Start()
         {
-            foreach (SeedBoxController box in _allBoxes)
+            SaveGameManager.Instance.GetSeedBoxData(out FlowerInstance[] flowers, out Environment[] envs);
+
+            for (var i = 0; i < _allBoxes.Length; i++)
             {
-                
+                _allBoxes[i].SetUpContent(flowers[i], envs[i]);
             }
         }
 
