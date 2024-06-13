@@ -109,8 +109,15 @@ namespace Controller
             if (_currentSelection is not null) _currentSelection.Deselect();
             _currentSelection = box;
             box.Select();
+            if(_currentSelection.IsDead) PlantRemoval.Instance.WaitForRemoval(true, RemoveCurrentSelection);
         }
 
+        private void RemoveCurrentSelection()
+        {
+            _currentSelection.RemovePlant();
+            _currentSelection = null;
+        }
+        
         #endregion
 
         #region Utils

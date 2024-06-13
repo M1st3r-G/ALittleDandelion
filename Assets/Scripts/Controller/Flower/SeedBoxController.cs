@@ -24,10 +24,9 @@ namespace Controller
         private FlowerInstance _flower;
         private Environment _tmp;
         
-        // Public
-        public bool IsEditable => _flower is null;
-        
         #endregion
+
+        #region SetUp
 
         private new void Awake()
         {
@@ -50,7 +49,10 @@ namespace Controller
             
             _pr.RefreshVisuals(_flower, _tmp);
         }
+        
 
+        #endregion
+        
         #region SelectionHandling
 
         public override void OnPointerClick(PointerEventData eventData)
@@ -72,6 +74,21 @@ namespace Controller
             _pr.DebugClearRender();
         }
 
+        public void RemovePlant()
+        {
+            _meshRenderer.material = _defaultMaterial;
+            _flower.OnChange -= RefreshVisualsWrapper;
+
+            _flower = null;
+            _tmp = new Environment
+            {
+                lichtkeimer = true
+            };
+            
+            _pr.RefreshVisuals(_flower, _tmp);
+            _pr.DebugClearRender();
+        }
+        
         #endregion
 
         #region CareAndSet
@@ -121,11 +138,17 @@ namespace Controller
             _pr.RefreshVisuals(_flower, _tmp);
         }
         
+        #endregion
+
+        #region Utils
+
         private void RefreshVisualsWrapper() => _pr.RefreshVisuals(_flower, _tmp);
+        public bool IsDead => _flower is not null && _flower.State == FlowerInstance.GrowthState.Dead;
         public bool EnvironmentIsSet => _tmp.soil != Environment.SoilType.None;
         public bool IsReplantable => _flower is null ? false : _flower.IsReplantable;
         public Tuple<FlowerInstance, Environment> GetSaveContent() => new(_flower, _tmp);
-        
+        public bool IsEditable => _flower is null;
+
         #endregion
     }
 }
