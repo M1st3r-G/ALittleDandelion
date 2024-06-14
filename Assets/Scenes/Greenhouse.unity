@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18290749, g: 0.22616015, b: 0.29269916, a: 1}
+  m_IndirectSpecularColor: {r: 0.18290733, g: 0.22615963, b: 0.2926988, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,94 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &126175072
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 56cb1a07350002a41a2337da537b0ebb,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 161.16327
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 56cb1a07350002a41a2337da537b0ebb,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 219.78418
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 56cb1a07350002a41a2337da537b0ebb,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 219.78418
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 56cb1a07350002a41a2337da537b0ebb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.99
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 56cb1a07350002a41a2337da537b0ebb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.729
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 56cb1a07350002a41a2337da537b0ebb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -39.04
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 56cb1a07350002a41a2337da537b0ebb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8226914
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 56cb1a07350002a41a2337da537b0ebb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 56cb1a07350002a41a2337da537b0ebb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.56848824
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 56cb1a07350002a41a2337da537b0ebb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 56cb1a07350002a41a2337da537b0ebb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 56cb1a07350002a41a2337da537b0ebb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 69.29
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 56cb1a07350002a41a2337da537b0ebb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 56cb1a07350002a41a2337da537b0ebb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cca8d56fd539d7a448b85d22efe4b605, type: 2}
+    - target: {fileID: 919132149155446097, guid: 56cb1a07350002a41a2337da537b0ebb,
+        type: 3}
+      propertyPath: m_Name
+      value: GiessKanne
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 56cb1a07350002a41a2337da537b0ebb, type: 3}
 --- !u!4 &498999263 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6549184415753116069, guid: 489301937bbe3234daa1c9356a80ccf0,
@@ -1764,3 +1852,4 @@ SceneRoots:
   - {fileID: 4057599361604590744}
   - {fileID: 3007872116529417131}
   - {fileID: 1331781701444443968}
+  - {fileID: 126175072}
