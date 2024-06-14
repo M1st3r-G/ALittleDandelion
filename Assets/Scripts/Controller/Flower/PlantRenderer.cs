@@ -1,51 +1,50 @@
 ﻿using Data;
 using Managers;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Environment = Data.Environment;
 
 namespace Controller
 {
     public class PlantRenderer : MonoBehaviour
     {
-        [SerializeField] private GameObject defaultFlower;
-        [SerializeField] private GameObject defaultDirt;
+        [SerializeField] private Mesh dirt;
+        [SerializeField] private float dirtHeight;
+        [SerializeField] private Mesh dirtWithHole;
+        [SerializeField] private float dirtWithHoleHeight;
+        
         private TextMeshProUGUI _debugText;
         
-        private FlowerRendererComponent _flower;
-        private MeshRenderer _ground;
+        [SerializeField] private FlowerRendererComponent flower;
+        [SerializeField] private MeshRenderer groundRenderer;
+        [SerializeField] private MeshFilter groundMesh;
+        
 
         private void Awake()
         {
             _debugText = GameObject.FindGameObjectWithTag("Debug").GetComponent<TextMeshProUGUI>();
-            
-            GameObject tmp = Instantiate(defaultFlower, transform);
-            tmp.SetActive(false);
-            _flower = tmp.GetComponent<FlowerRendererComponent>();
-            
-            tmp = Instantiate(defaultDirt,  transform);
-            _ground = tmp.GetComponent<MeshRenderer>();
-            tmp.SetActive(false);
         }
 
-        public void RefreshVisuals(FlowerInstance flower, Environment env)
+        public void RefreshVisuals(FlowerInstance pFlower, Environment env)
         {
             RenderEnvironment(env);
-            RenderFlower(flower);
+            RenderFlower(pFlower);
         }
 
-        private void RenderFlower(FlowerInstance flower)
+        private void RenderFlower(FlowerInstance pFlower)
         {
-            if (flower is null)
+            if (pFlower is null)
             { 
-                _flower.gameObject.SetActive(false);
+                flower.gameObject.SetActive(false);
                 return;
             }
             
-            _flower.gameObject.SetActive(true);
-            _debugText.text = flower.ToString();
+            flower.gameObject.SetActive(true);
+            _debugText.text = pFlower.ToString();
 
-            _flower.RenderState(flower);
+            flower.RenderState(pFlower);
         }
 
         private void RenderEnvironment(Environment env)
@@ -53,12 +52,15 @@ namespace Controller
             _debugText.text = $"Empty pot: Environment: {env.soil}, {env.lichtkeimer}"; // If no flower, not overwritten
             if (env.soil == Environment.SoilType.None)
             {
-                _ground.gameObject.SetActive(false); // Active if not none
+                groundRenderer.gameObject.SetActive(false); // Active if not none
             }
             else
             {
-                _ground.gameObject.SetActive(env.soil != Environment.SoilType.None); // Active if not none
-                _ground.material = FlowerLookUpLibrary.Instance.GetDirtMaterial(env.soil);
+                groundRenderer.gameObject.SetActive(env.soil != Environment.SoilType.None); // Active if not none
+                groundRenderer.material = FlowerLookUpLibrary.Instance.GetDirtMaterial(env.soil);
+                
+                groundMesh.mesh = env.lichtkeimer ? dirt : dirtWithHole;
+                groundRenderer.transform.position = new Vector3(0, env.lichtkeimer ? dirtHeight : dirtWithHoleHeight, 0);
             }
             
             // if(!env.lichtkeimer) Show hole 
