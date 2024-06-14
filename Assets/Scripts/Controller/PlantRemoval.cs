@@ -66,7 +66,7 @@ namespace Controller
         {
             button2Text.transform.parent.gameObject.SetActive(false);
             SetVisibility(false);
-            CInputManager.Instance.SetNavigation(false);
+            CInputManager.Instance.SetNavigation(true);
             _callBackMethod?.Invoke();
         }
 
