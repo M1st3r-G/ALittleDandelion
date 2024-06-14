@@ -187,21 +187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962a1af0df4e4682a6cf0b9e5d3183e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugAction:
-    m_Name: Debug
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 741a5bb5-a8cc-4dd9-8ea6-8c2a3735f201
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 727f20bb-7845-4de4-a3e2-cd8b0ddc4565
-      m_Path: <Keyboard>/h
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Debug
-      m_Flags: 0
-    m_Flags: 0
   seeds: {fileID: 0}
+  library: {fileID: 0}
+  timeManager: {fileID: 3627213852932172799}

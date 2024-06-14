@@ -10,9 +10,9 @@ namespace Managers
 {
     public class SaveGameManager : MonoBehaviour
     {
-        [SerializeField] private InputAction debugAction;
         [SerializeField] private SeedBoxesController seeds;
         [SerializeField] private FlowerInstanceLibrary library;
+        [SerializeField] private TimeManager timeManager;
         
         private SaveFileObject _loadedState;
         
@@ -27,8 +27,6 @@ namespace Managers
             _loadedState = tmp == "" ? null : JsonUtility.FromJson<SaveFileObject>(tmp);
             
             Debug.LogWarning(tmp);
-            debugAction.Enable();
-            debugAction.performed += SaveGame;
         }
 
         #region RetrieveSavedData
@@ -114,7 +112,7 @@ namespace Managers
             PlayerPrefs.SetString(PrefSaveKey, tmp);
         }
 
-        private string GenerateSaveFile() => JsonUtility.ToJson(new SaveFileObject(seeds, library));
+        private string GenerateSaveFile() => JsonUtility.ToJson(new SaveFileObject(seeds, library, timeManager));
 
         [Serializable]
         private class SaveFileObject
@@ -129,11 +127,11 @@ namespace Managers
             
             public int dayCount;
 
-            public SaveFileObject(SeedBoxesController seeds, FlowerInstanceLibrary library)
+            public SaveFileObject(SeedBoxesController seeds, FlowerInstanceLibrary library, TimeManager time)
             {
                 seeds.GetSaveContent(out seedBoxFlowers, out seedBoxEnvironments, out seedMap);
                 library.GetSaveContent(out flowerInstances, out environmentInstances, out instanceMap);
-                dayCount = TimeManager.Instance.Days;
+                dayCount = time.Days;
             }
         }
     
