@@ -26,14 +26,28 @@ namespace Controller
             if (_current is not null) FlowerInstanceLibrary.Instance.ReturnPot(_current);
             _current = FlowerInstanceLibrary.Instance.BorrowPot(index);
             AdjustCurrentTransform();
+
+            CheckForRemoval();
         }
 
+        public void CheckForRemoval()
+        {
+            if (!_current.IsDead && !_current.IsFullyGrown) return;
+            PlantRemoval.Instance.WaitForRemoval(_current.IsDead, RemoveCurrent);
+        }
+        
         // Replaces the PlaceFlower for Replanting
         public void CenterPot(PotController pot)
         {
-            //Should be Redundant _seedlings.gameObject.SetActive(false);
             _current = pot;
             AdjustCurrentTransform();
+        }
+
+        private void RemoveCurrent()
+        {
+            _current.Empty();
+            FlowerInstanceLibrary.Instance.ReturnPot(_current);
+            _current = null;
         }
 
         private void AdjustCurrentTransform()
