@@ -111,6 +111,7 @@ namespace Managers
         {
             if (!_navigationActive) return;
             
+            CameraManager.Instance.ToGreenhouse();
             TableController.Instance.PlaceSeeds();
         }
 
