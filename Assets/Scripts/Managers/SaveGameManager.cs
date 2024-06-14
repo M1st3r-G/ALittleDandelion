@@ -46,6 +46,8 @@ namespace Managers
             }
         }
 
+        public int GetInstanceMap() => _loadedState is null ? 0 : _loadedState.instanceMap;
+        
         public void GetInstanceData(out FlowerInstance[] flowers, out Environment[] envs)
         {
             if (_loadedState is null)

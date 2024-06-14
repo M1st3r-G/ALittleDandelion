@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Managers;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI
@@ -11,7 +12,13 @@ namespace UI
         {
             _buttons = GetComponentsInChildren<Button>();
 
-            foreach (Button b in _buttons) b.gameObject.SetActive(false);
+            int map = SaveGameManager.Instance.GetInstanceMap();
+            
+            foreach (Button b in _buttons)
+            {
+                b.gameObject.SetActive(map % 2 == 1);
+                map >>= 1;
+            }
         }
 
         public void SetAmountActive(bool[] states)
