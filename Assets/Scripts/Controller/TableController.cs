@@ -23,10 +23,14 @@ namespace Controller
             Debug.Log($"Flower with index: {index}");
             _seedlings.gameObject.SetActive(false);
 
-            if (_current is not null) FlowerInstanceLibrary.Instance.ReturnPot(_current);
+            if (_current is not null)
+            {
+                _current.SetDisplayed(false);
+                FlowerInstanceLibrary.Instance.ReturnPot(_current);
+            }
             _current = FlowerInstanceLibrary.Instance.BorrowPot(index);
             AdjustCurrentTransform();
-
+            _current.SetDisplayed(true);
             CheckForRemoval();
         }
 
@@ -61,6 +65,7 @@ namespace Controller
             Debug.Log("Showing Seeds");
             if (_current is not null)
             {
+                _current.SetDisplayed(false);
                 FlowerInstanceLibrary.Instance.ReturnPot(_current);
                 _current = null;
             }

@@ -3,9 +3,6 @@ Prototyping Project
 A Cozy Gardening Game with calming colors
 
 ---
-Bugs:
-- Gießen Betrifft alle Dargestellten Pflanzen
-
 ToDo:
 - Remove Old/Dead Plants
   - ui Display mit Sternen, wenn eine tote oder ausgewachsene Pflanze geöffnet wird

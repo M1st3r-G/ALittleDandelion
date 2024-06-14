@@ -15,6 +15,8 @@ namespace Controller
         private FlowerInstance _currentFlower;
         private Environment _currentEnv;
 
+        private bool _isDisplayedOnTable;
+        
         #region SetUp
 
         private void Awake()
@@ -33,12 +35,21 @@ namespace Controller
             
             _currentFlower.OnChange += RefreshVisualsWrapper;
             _pr.RefreshVisuals(_currentFlower, _currentEnv);
-
-            WateringCan.OnWatering += WaterPlant;
         }
 
         #endregion
 
+        #region DisplayManagement
+
+        public void SetDisplayed(bool state)
+        {
+            _isDisplayedOnTable = state;
+            if (state) WateringCan.OnWatering += WaterPlant;
+            else WateringCan.OnWatering -= WaterPlant;
+        }
+
+        #endregion
+        
         #region Care
 
         private void WaterPlant()
@@ -55,6 +66,8 @@ namespace Controller
             
             _currentFlower = flower;
             _currentEnv = env;
+
+            _isDisplayedOnTable = true;
             
             _currentFlower.OnChange += RefreshVisualsWrapper;
             _pr.RefreshVisuals(_currentFlower, _currentEnv);
