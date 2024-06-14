@@ -78,10 +78,15 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8296942495540147334, guid: eac7270006df2934083d5ad90fa4f9ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 8864590871730076074, guid: eac7270006df2934083d5ad90fa4f9ad,
         type: 3}
       propertyPath: m_Name
-      value: Pot Variant
+      value: SeedPot
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1224947928515686522, guid: eac7270006df2934083d5ad90fa4f9ad, type: 3}
