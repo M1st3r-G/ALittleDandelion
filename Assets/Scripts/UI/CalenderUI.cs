@@ -8,7 +8,12 @@ namespace UI
     {
         [SerializeField] private TextMeshProUGUI numberOfDaysText;
         
-        private void Awake() => TimeManager.OnTimeIncrease += OnTimeIncrease;
+        private void Awake()
+        {
+            TimeManager.OnTimeIncrease += OnTimeIncrease;
+            numberOfDaysText.text = SaveGameManager.Instance.GetTimeData().ToString();
+        }
+
         private void OnTimeIncrease() => numberOfDaysText.text = TimeManager.Instance.Days.ToString();
     }
 }
