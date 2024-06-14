@@ -30,7 +30,7 @@ namespace Controller
             CheckForRemoval();
         }
 
-        public void CheckForRemoval()
+        private void CheckForRemoval()
         {
             if (!_current.IsDead && !_current.IsFullyGrown) return;
             PlantRemoval.Instance.WaitForRemoval(_current.IsDead, RemoveCurrent);

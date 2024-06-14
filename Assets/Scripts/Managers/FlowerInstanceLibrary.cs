@@ -73,6 +73,8 @@ namespace Managers
             int idx = _allPots.IndexOf(returnedPot);
             Debug.Assert(idx != -1, $"Fehler Unbekannter Topf {returnedPot.name}");
             
+            potsUIDisplay.SetIndexToState(idx, returnedPot.gameObject.activeSelf);
+            
             // Reset Position
             if (idx >= 6)
             {
