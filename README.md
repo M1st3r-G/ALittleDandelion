@@ -9,6 +9,7 @@ ToDo:
     buttons verkaufen und behalten, bei toten pflanzen nur wegschmeißen.
 - Pause menu
   - Add Volume Sliders
+- Add Models and Material
 
 - BlumenBuch:
   - Name und Bleistift immer,
