@@ -60,7 +60,7 @@ namespace Controller
                 groundRenderer.material = FlowerLookUpLibrary.Instance.GetDirtMaterial(env.soil);
                 
                 groundMesh.mesh = env.lichtkeimer ? dirt : dirtWithHole;
-                groundRenderer.transform.position = new Vector3(0, env.lichtkeimer ? dirtHeight : dirtWithHoleHeight, 0);
+                groundRenderer.transform.localPosition = new Vector3(0, env.lichtkeimer ? dirtHeight : dirtWithHoleHeight, 0);
             }
             
             // if(!env.lichtkeimer) Show hole 
