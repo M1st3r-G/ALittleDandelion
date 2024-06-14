@@ -12,7 +12,8 @@ namespace Managers
     {
         [SerializeField] private InputAction debugAction;
         [SerializeField] private SeedBoxesController seeds;
-
+        [SerializeField] private FlowerInstanceLibrary library;
+        
         private SaveFileObject _loadedState;
         
         public static SaveGameManager Instance { get; private set; }
@@ -113,7 +114,7 @@ namespace Managers
             PlayerPrefs.SetString(PrefSaveKey, tmp);
         }
 
-        private string GenerateSaveFile() => JsonUtility.ToJson(new SaveFileObject(seeds));
+        private string GenerateSaveFile() => JsonUtility.ToJson(new SaveFileObject(seeds, library));
 
         [Serializable]
         private class SaveFileObject
@@ -127,11 +128,11 @@ namespace Managers
             public int instanceMap;
             
             public int dayCount;
-            
-            public SaveFileObject(SeedBoxesController seeds)
+
+            public SaveFileObject(SeedBoxesController seeds, FlowerInstanceLibrary library)
             {
                 seeds.GetSaveContent(out seedBoxFlowers, out seedBoxEnvironments, out seedMap);
-                FlowerInstanceLibrary.Instance.GetSaveContent(out flowerInstances, out environmentInstances, out instanceMap);
+                library.GetSaveContent(out flowerInstances, out environmentInstances, out instanceMap);
                 dayCount = TimeManager.Instance.Days;
             }
         }
