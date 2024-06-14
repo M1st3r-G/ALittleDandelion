@@ -619,5 +619,5 @@ MonoBehaviour:
     type: 3}
   dirtWithHoleHeight: 1.45
   flower: {fileID: 8564217537222721003}
-  groundRenderer: {fileID: 0}
-  groundMesh: {fileID: 0}
+  groundRenderer: {fileID: 6582923221170841215}
+  groundMesh: {fileID: 4214023918724026054}
