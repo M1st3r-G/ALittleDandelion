@@ -83,7 +83,6 @@ namespace Managers
             returnedPot.transform.localPosition = new Vector3(15f - idx * 6f, 2.76f, 0);
         }
         
-        // Return the Requested Pot
         public PotController BorrowPot(int index)
         {
             PotController pot = _allPots[index];

@@ -72,6 +72,19 @@ namespace Controller
             _currentFlower.Replant(type);
         }
 
+        public void Empty()
+        {
+            WateringCan.OnWatering -= WaterPlant;
+            _currentFlower.OnChange -= RefreshVisualsWrapper;
+            
+            _currentFlower = null;
+            _currentEnv = default;
+            
+            _pr.RefreshVisuals(_currentFlower, _currentEnv);
+            
+            gameObject.SetActive(false);
+        }
+        
         #endregion
 
         #region Util
@@ -79,6 +92,10 @@ namespace Controller
         private void RefreshVisualsWrapper() => _pr.RefreshVisuals(_currentFlower, _currentEnv);
         public Tuple<FlowerInstance, Environment> GetSaveContent()
             => new(_currentFlower, _currentEnv);
+        public bool IsDead => 
+            _currentFlower is not null && _currentFlower.State == FlowerInstance.GrowthState.Dead;
+        public bool IsFullyGrown =>
+            _currentFlower is not null && _currentFlower.State == FlowerInstance.GrowthState.Flower;
 
         #endregion
     }
