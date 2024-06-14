@@ -52,7 +52,7 @@ namespace Controller
 
         public void OnButton1Pressed()
         {
-            if (!_isDead) {}//AddMones(Value)
+            if (!_isDead) {}//AddMoney(Value)
             End();
         }
         
@@ -66,6 +66,7 @@ namespace Controller
         {
             button2Text.transform.parent.gameObject.SetActive(false);
             SetVisibility(false);
+            CInputManager.Instance.SetNavigation(false);
             _callBackMethod?.Invoke();
         }
 
