@@ -6,7 +6,7 @@ A Cozy Gardening Game with calming colors
 ToDo:
 - Pause menu
   - Add Volume Sliders
-- Import Shelf
+- Import Shelf, Samensack, Schere, Blumenbuch
 
 - BlumenBuch:
   - Name und Bleistift immer,
