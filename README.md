@@ -4,7 +4,7 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-- Add Label
+- Add Label to Rendering
 - Add Models and Material
 - Pause menu
   - Add Volume Sliders
@@ -22,7 +22,9 @@ Zuchtloop:
 - Auswahl und Kreuzung
 - Samenernte (Nach einigen Tagen)
 
-
+Import:
+- Shelf 1
+- House
 
 
 Enhancements:
