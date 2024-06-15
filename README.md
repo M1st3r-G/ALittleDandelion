@@ -4,12 +4,11 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-- Add Label to Rendering
-- Add Models and Material
+- Add Hover to Label
 - Pause menu
   - Add Volume Sliders
+- Import Shelf
 
-- Behaltene Blumen loswerden, mit einem Verkaufen button
 - BlumenBuch:
   - Name und Bleistift immer,
   - Color bei erster züchtung.
@@ -22,12 +21,9 @@ Zuchtloop:
 - Auswahl und Kreuzung
 - Samenernte (Nach einigen Tagen)
 
-Hover:
-- Add hover Multiplier
-- Disable Hover when in Greenhouse
+ShopSystem
+- Samen Kaufen und verkaufen
 
-Import:
-- Shelf 1
 
 Enhancements:
 - Fix Highlight
@@ -37,3 +33,4 @@ Enhancements:
   - Leads To Overlap in the DebugDisplay
 - SaveFiles include Evniroment in seeds
 - Let the SaveFile Controller Adjust the Data
+- Add hover Multiplier
