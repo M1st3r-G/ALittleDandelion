@@ -19,17 +19,11 @@ Zuchtloop:
 - Aufbewahren von Fertigen Pflanzen
 - Auswahl und Kreuzung
 - Samenernte (Nach einigen Tagen)
-
-ShopSystem
-- Samen Kaufen und verkaufen
+- ShopSystem
+  - Samen Kaufen und verkaufen
 
 
 Enhancements:
-- Fix Highlight
-- Make Pot and SeedBox inherit from PlantContainer?
-- Don't Unsubscribe from DisplayRefreshes (Later, because Debug can only render One)
-  - PlatRender subscribes to the RefreshEvent?
-  - Leads To Overlap in the DebugDisplay
-- SaveFiles include Evniroment in seeds
+- Fix Highlight on hover
+  - Add hover Multiplier
 - Let the SaveFile Controller Adjust the Data
-- Add hover Multiplier
