@@ -71,7 +71,6 @@ namespace Controller
         {
             _meshRenderer.material = _defaultMaterial;
             if (_flower is not null) _flower.OnChange -= RefreshVisualsWrapper;
-            _pr.DebugClearRender();
         }
 
         public void RemovePlant()
@@ -86,7 +85,6 @@ namespace Controller
             };
             
             _pr.RefreshVisuals(_flower, _tmp);
-            _pr.DebugClearRender();
         }
         
         #endregion

@@ -4,7 +4,6 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-- Add Hover to Label
 - Pause menu
   - Add Volume Sliders
 - Import Shelf

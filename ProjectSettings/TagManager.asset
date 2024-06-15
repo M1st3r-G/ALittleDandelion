@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Debug
   - SeedPot
+  - LabelText
   layers:
   - Default
   - TransparentFX

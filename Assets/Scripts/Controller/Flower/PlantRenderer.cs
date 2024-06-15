@@ -74,11 +74,5 @@ namespace Controller
                 textRender.text = $"Empty pot: Environment: {pEnv.soil}, {pEnv.lichtkeimer}";
             }
         }
-        
-        public void DebugClearRender()
-        {
-            textRender.text = "";
-            labelObject.SetActive(false);
-        }
     }
 }
