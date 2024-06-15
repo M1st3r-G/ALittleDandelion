@@ -6,7 +6,7 @@ A Cozy Gardening Game with calming colors
 ToDo:
 - Pause menu
   - Add Volume Sliders
-- Import Shelf, Samensack, Schere, Blumenbuch
+- Import Shelf, Blumenbuch
 
 - BlumenBuch:
   - Name und Bleistift immer,
@@ -24,6 +24,8 @@ Zuchtloop:
 
 
 Enhancements:
+- Schere und Unkraut
 - Fix Highlight on hover
   - Add hover Multiplier
 - Let the SaveFile Controller Adjust the Data
+- Remove Pots from SeedController, (RectDirt)
