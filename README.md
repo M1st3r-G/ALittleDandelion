@@ -6,9 +6,12 @@ A Cozy Gardening Game with calming colors
 ToDo:
 - Pause menu
   - Add Volume Sliders
-- Import Blumenbuch
+- Import von GartenMaterialien
+
 
 - BlumenBuch:
+  - Change to Be Static (Doesnt work with Ortho Cam from Overview)
+  - Slide in and out
   - Name und Bleistift immer,
   - Color bei erster züchtung.
   - Hinweise Werden nach und nach freigeschaltet:
