@@ -63,7 +63,8 @@ namespace Controller
             if (pFlower is not null)
             {
                 labelObject.SetActive(true);
-                textRender.text = pFlower.ToString();
+                string tmp = pEnv.lichtkeimer ? "LK" : "DK";
+                textRender.text = $"Ein(e) {pFlower} in einem {pEnv.soil} ({tmp})";
                 return;
             }
 

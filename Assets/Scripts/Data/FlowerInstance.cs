@@ -143,8 +143,8 @@ namespace Data
             else if (flower.PreferredEnvironment.soil != potEnv.soil) counter += 10;
             return counter;
         }
-        
-        public override string ToString()
+
+        public string DebugString()
         {
             if (_state == GrowthState.Flower)
             {
@@ -154,6 +154,10 @@ namespace Data
             string umgetopft = _isReplant ? "umgetopfte " : "";
             return $"Diese(r) {_type.FlowerName} ist ein(e) {umgetopft}{_state}\nRanking: {_rating}\nLW:{_lastWater};GC:{_growthCounter}";
         }
+
+        public override string ToString() => _state == GrowthState.Flower
+            ? $"Ein(e) {CalculateStars()}-Sterne {_type.FlowerName}"
+            : $"{_type.FlowerName}";
 
         #endregion
 
