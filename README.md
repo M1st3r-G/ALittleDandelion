@@ -22,10 +22,12 @@ Zuchtloop:
 - Auswahl und Kreuzung
 - Samenernte (Nach einigen Tagen)
 
+Hover:
+- Add hover Multiplier
+- Disable Hover when in Greenhouse
+
 Import:
 - Shelf 1
-- House
-
 
 Enhancements:
 - Fix Highlight

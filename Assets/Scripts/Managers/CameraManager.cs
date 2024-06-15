@@ -1,3 +1,4 @@
+using Clickable;
 using UnityEngine;
 
 namespace Managers
@@ -7,6 +8,7 @@ namespace Managers
         // Component References
         [SerializeField] private Camera flowerCam;
         [SerializeField] private Camera overview;
+        [SerializeField] private Greenhouse greenhouseClick;
         
         public bool IsInHub => !flowerCam.gameObject.activeSelf;
         public bool IsInGreenhouse => flowerCam.gameObject.activeSelf;
@@ -31,6 +33,7 @@ namespace Managers
         {
             if (!flowerCam.gameObject.activeSelf) return;
             flowerCam.gameObject.SetActive(false);
+            greenhouseClick.enabled = true;
             overview.gameObject.SetActive(true);
         }
         
@@ -38,6 +41,8 @@ namespace Managers
         {
             if (flowerCam.gameObject.activeSelf) return;
             flowerCam.gameObject.SetActive(true);
+            greenhouseClick.enabled = false;
+            greenhouseClick.transform.GetChild(greenhouseClick.transform.childCount - 1).gameObject.SetActive(false);
             overview.gameObject.SetActive(false);
         }
     }
