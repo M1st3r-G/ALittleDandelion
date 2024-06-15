@@ -1,36 +1,33 @@
 ﻿using Data;
 using Managers;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Environment = Data.Environment;
 
 namespace Controller
 {
     public class PlantRenderer : MonoBehaviour
     {
+        [Header("DirtStuff")]
         [SerializeField] private Mesh dirt;
         [SerializeField] private float dirtHeight;
         [SerializeField] private Mesh dirtWithHole;
         [SerializeField] private float dirtWithHoleHeight;
+
+        [Header("Label")] 
+        [SerializeField] private GameObject labelObject;
+        [SerializeField] private TextMeshProUGUI textRender;
         
-        private TextMeshProUGUI _debugText;
-        
+        [Header("RenderComponents")]
         [SerializeField] private FlowerRendererComponent flower;
         [SerializeField] private MeshRenderer groundRenderer;
         [SerializeField] private MeshFilter groundMesh;
         
-
-        private void Awake()
-        {
-            _debugText = GameObject.FindGameObjectWithTag("Debug").GetComponent<TextMeshProUGUI>();
-        }
-
         public void RefreshVisuals(FlowerInstance pFlower, Environment env)
         {
             RenderEnvironment(env);
             RenderFlower(pFlower);
+            RenderLabel(pFlower, env);
         }
 
         private void RenderFlower(FlowerInstance pFlower)
@@ -42,14 +39,11 @@ namespace Controller
             }
             
             flower.gameObject.SetActive(true);
-            _debugText.text = pFlower.ToString();
-
             flower.RenderState(pFlower);
         }
 
         private void RenderEnvironment(Environment env)
         {
-            _debugText.text = $"Empty pot: Environment: {env.soil}, {env.lichtkeimer}"; // If no flower, not overwritten
             if (env.soil == Environment.SoilType.None)
             {
                 groundRenderer.gameObject.SetActive(false); // Active if not none
@@ -62,13 +56,29 @@ namespace Controller
                 groundMesh.mesh = env.lichtkeimer ? dirt : dirtWithHole;
                 groundRenderer.transform.localPosition = new Vector3(0, env.lichtkeimer ? dirtHeight : dirtWithHoleHeight, 0);
             }
-            
-            // if(!env.lichtkeimer) Show hole 
+        }
+
+        private void RenderLabel(FlowerInstance pFlower, Environment pEnv)
+        {
+            if (pFlower is not null)
+            {
+                labelObject.SetActive(true);
+                textRender.text = pFlower.ToString();
+                return;
+            }
+
+            if (pEnv.soil == Environment.SoilType.None) labelObject.SetActive(false);
+            else
+            {
+                labelObject.SetActive(true);
+                textRender.text = $"Empty pot: Environment: {pEnv.soil}, {pEnv.lichtkeimer}";
+            }
         }
         
         public void DebugClearRender()
         {
-            _debugText.text = "";
+            textRender.text = "";
+            labelObject.SetActive(false);
         }
     }
 }
