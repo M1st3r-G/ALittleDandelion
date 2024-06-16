@@ -17,6 +17,7 @@ ToDo:
 
 - BlumenBuch:
   - Disable BookButton in Overworld
+  - Add Input to Book
   - Testing:
     - BookSaving
     - Book Display
