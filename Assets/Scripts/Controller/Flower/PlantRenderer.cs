@@ -64,7 +64,7 @@ namespace Controller
             {
                 labelObject.SetActive(true);
                 string tmp = pEnv.lichtkeimer ? "LK" : "DK";
-                textRender.text = $"Ein(e) {pFlower} in einem {pEnv.soil} ({tmp})";
+                textRender.text = $"Ein(e) {pFlower} in {pEnv.soil} ({tmp})";
                 return;
             }
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7722750721301310156}
   - component: {fileID: 4126344075799662333}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: LabelContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -442,6 +442,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0bf300838a485f927eb74b1fe3b5e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flag: 1
+  labelText: {fileID: 4126344075799662333}
+  contentToShow: 
 --- !u!1 &8166638216577181515
 GameObject:
   m_ObjectHideFlags: 0

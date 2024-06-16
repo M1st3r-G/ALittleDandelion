@@ -6,7 +6,7 @@ A Cozy Gardening Game with calming colors
 ToDo:
 - Pause menu
   - Add Volume Sliders
-- Import von Garten Materialien
+- SoundManger und Music
 
 
 - BlumenBuch:
@@ -26,7 +26,6 @@ Zuchtloop:
   - Samen Kaufen und verkaufen
 
 - Gartenbauen
-- SoundManger und Music
 
 Enhancements:
 - Schere und Unkraut
