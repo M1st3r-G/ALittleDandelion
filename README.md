@@ -8,15 +8,12 @@ ToDo:
   - Add Volume Sliders
 - SoundManger und Music
 
+- Add PlantMaterials
 
 - BlumenBuch:
-  - Change to Be Static (Doesnt work with Ortho Cam from Overview)
+  - Change to Be Static (Doesn't work with Ortho-Cam from Overview)
   - Slide in and out
-  - Name und Bleistift immer,
-  - Color bei erster züchtung.
-  - Hinweise Werden nach und nach freigeschaltet:
-    - Jeder stern ein Hinweis.
-    - Max 5.
+  - Save And Load Progress
 
 Zuchtloop:
 - Aufbewahren von Fertigen Pflanzen
