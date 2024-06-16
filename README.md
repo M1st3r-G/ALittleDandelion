@@ -8,12 +8,20 @@ ToDo:
   - Add Volume Sliders
 - SoundManger und Music
 
-- Add PlantMaterials
+- Add PlantMaterials (Test)
+  - Löwenzahn
+  - Löwenzahn (Weiß)
+  - Rose
+  - Tulpe
+  - Santini
 
 - BlumenBuch:
-  - Change to Be Static (Doesn't work with Ortho-Cam from Overview)
-  - Slide in and out
-  - Save And Load Progress
+  - Disable BookButton in Overworld
+  - Testing:
+    - BookSaving
+    - Book Display
+
+
 
 Zuchtloop:
 - Aufbewahren von Fertigen Pflanzen
@@ -23,6 +31,9 @@ Zuchtloop:
   - Samen Kaufen und verkaufen
 
 - Gartenbauen
+
+Notes:
+- Bei der Santini musst du die Saat vom Löwenzahn nutzen
 
 Enhancements:
 - Schere und Unkraut

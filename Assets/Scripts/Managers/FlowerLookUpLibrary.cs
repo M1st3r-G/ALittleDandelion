@@ -12,6 +12,7 @@ namespace Managers
         [SerializeField] private MaterialWithTag[] allDirts;
         [SerializeField] private FlowerData[] allFlowerData;
 
+        public int NumberOfFlowers => allFlowerData.Length;
         public static FlowerLookUpLibrary Instance { get; private set; }
 
         private void Awake()

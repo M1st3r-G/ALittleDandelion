@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Controller;
+using Controller.Book;
 using Data;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,12 +11,16 @@ namespace Managers
 {
     public class SaveGameManager : MonoBehaviour
     {
+        [Header("References to Savable Objects")]
         [SerializeField] private SeedBoxesController seeds;
         [SerializeField] private FlowerInstanceLibrary library;
         [SerializeField] private TimeManager timeManager;
+        [SerializeField] private BookController book;
         
+        //Temps
         private SaveFileObject _loadedState;
         
+        //Publics
         public static SaveGameManager Instance { get; private set; }
         public const string PrefSaveKey = "SavedGames";
         
@@ -45,8 +50,6 @@ namespace Managers
             }
         }
 
-        public int GetInstanceMap() => _loadedState is null ? 0 : _loadedState.instanceMap;
-        
         public void GetInstanceData(out FlowerInstance[] flowers, out Environment[] envs)
         {
             if (_loadedState is null)
@@ -62,6 +65,8 @@ namespace Managers
         }
 
         public int GetTimeData() => _loadedState is null ? 1 : _loadedState.dayCount;
+
+        public int[] GetBookData() => _loadedState is null ? new int[FlowerLookUpLibrary.Instance.NumberOfFlowers] : _loadedState.bookUnlockValues;
 
         private static void ReadSavedLists(int map, int numberOfItems, FlowerInstance.FlowerSerialization[] readFlowers, Environment[] readEnv, out FlowerInstance[] rFlowers, out Environment[] rEnvironment)
         {
@@ -112,7 +117,7 @@ namespace Managers
             PlayerPrefs.SetString(PrefSaveKey, tmp);
         }
 
-        private string GenerateSaveFile() => JsonUtility.ToJson(new SaveFileObject(seeds, library, timeManager));
+        private string GenerateSaveFile() => JsonUtility.ToJson(new SaveFileObject(seeds, library, timeManager, book));
 
         [Serializable]
         private class SaveFileObject
@@ -127,11 +132,14 @@ namespace Managers
             
             public int dayCount;
 
-            public SaveFileObject(SeedBoxesController seeds, FlowerInstanceLibrary library, TimeManager time)
+            public int[] bookUnlockValues;
+            
+            public SaveFileObject(SeedBoxesController seeds, FlowerInstanceLibrary library, TimeManager time, BookController book)
             {
                 seeds.GetSaveContent(out seedBoxFlowers, out seedBoxEnvironments, out seedMap);
                 library.GetSaveContent(out flowerInstances, out environmentInstances, out instanceMap);
                 dayCount = time.Days;
+                bookUnlockValues = book.GetSaveData();
             }
         }
     

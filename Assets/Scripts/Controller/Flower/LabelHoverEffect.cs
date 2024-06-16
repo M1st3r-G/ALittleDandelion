@@ -46,13 +46,8 @@ namespace Controller
  
             //if you need to do something cute like use a different input type you can do this kind of thing...
             bool flag = serializedObject.FindProperty("flag").boolValue;
+            EditorGUILayout.PropertyField(serializedObject.FindProperty(flag ? "labelText" : "contentToShow"));
 
-            if (flag)
-            {
-                EditorGUILayout.PropertyField(serializedObject.FindProperty("labelText"));
-            }
-            else EditorGUILayout.PropertyField(serializedObject.FindProperty("contentToShow"));
-            
             //do this last!  it will loop over the properties on your object and apply any it needs to, no if necessary!
             serializedObject.ApplyModifiedProperties();
         }
