@@ -64,8 +64,8 @@ MonoBehaviour:
   m_Padding:
     m_Left: 25
     m_Right: 25
-    m_Top: 25
-    m_Bottom: 25
+    m_Top: 35
+    m_Bottom: 15
   m_ChildAlignment: 3
   m_Spacing: 25
   m_ChildForceExpandWidth: 0
