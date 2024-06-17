@@ -124,11 +124,13 @@ MonoBehaviour:
     type: 3}
   showSeedsAction: {fileID: 2411025069710303821, guid: 3e3ca8f1176f46b44990e4414bc59dbc,
     type: 3}
-  showShelfedAction: {fileID: 7576455993589750554, guid: 3e3ca8f1176f46b44990e4414bc59dbc,
+  showShelvedAction: {fileID: 7576455993589750554, guid: 3e3ca8f1176f46b44990e4414bc59dbc,
     type: 3}
   escapeAction: {fileID: 1787690039930297307, guid: 3e3ca8f1176f46b44990e4414bc59dbc,
     type: 3}
   bookAction: {fileID: -7986439974362484881, guid: 3e3ca8f1176f46b44990e4414bc59dbc,
+    type: 3}
+  bookNavigationAction: {fileID: -8799364476923931982, guid: 3e3ca8f1176f46b44990e4414bc59dbc,
     type: 3}
 --- !u!1 &5634195300541314722
 GameObject:
