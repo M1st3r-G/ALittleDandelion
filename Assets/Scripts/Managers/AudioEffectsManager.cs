@@ -8,7 +8,7 @@ namespace Managers
     public class AudioEffectsManager : MonoBehaviour
     {
         [SerializeField] private AudioClipsContainer[] clips;
-        private AudioSource src;
+        private AudioSource _src;
         
         public static AudioEffectsManager Instance { get; private set; }
         
@@ -20,7 +20,7 @@ namespace Managers
         private void Awake()
         {
             Instance = this;
-            src = GetComponent<AudioSource>();
+            _src = GetComponent<AudioSource>();
         }
         
         /// <summary>
@@ -34,7 +34,7 @@ namespace Managers
             {
                 if (cnt.Type != effect) continue;
                 var clip = cnt.GetClip();
-                src.PlayOneShot(clip);
+                _src.PlayOneShot(clip);
                 return clip.length;
             }
             
