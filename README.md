@@ -16,7 +16,7 @@ ToDo:
   - Santini
 
 - BlumenBuch:
-  - Disable BookButton in Overworld  (CameraController)
+  - Fix Viewport
 
 
 Zuchtloop:

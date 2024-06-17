@@ -32,18 +32,26 @@ namespace Managers
         public void ToHub()
         {
             if (!flowerCam.gameObject.activeSelf) return;
+
+            CInputManager.Instance.ShowBookButton(false);
+            
             flowerCam.gameObject.SetActive(false);
-            greenhouseClick.enabled = true;
             overview.gameObject.SetActive(true);
+            
+            greenhouseClick.enabled = true;
         }
         
         public void ToGreenhouse()
         {
             if (flowerCam.gameObject.activeSelf) return;
+            
+            CInputManager.Instance.ShowBookButton(true);
+            
             flowerCam.gameObject.SetActive(true);
+            overview.gameObject.SetActive(false);
+            
             greenhouseClick.enabled = false;
             greenhouseClick.transform.GetChild(greenhouseClick.transform.childCount - 1).gameObject.SetActive(false);
-            overview.gameObject.SetActive(false);
         }
     }
 }

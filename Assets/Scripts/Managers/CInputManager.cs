@@ -3,6 +3,8 @@ using Controller.Book;
 using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace Managers
 {
@@ -11,12 +13,16 @@ namespace Managers
         #region Fields
 
         // Component References
+        [Header("InputActions")]
         [SerializeField] private InputActionReference showFlowerAction;
         [SerializeField] private InputActionReference showSeedsAction;
         [SerializeField] private InputActionReference showShelvedAction;
         [SerializeField] private InputActionReference escapeAction;
         [SerializeField] private InputActionReference bookAction;
         [SerializeField] private InputActionReference bookNavigationAction;
+
+        [Header("ButtonReference")] 
+        [SerializeField] private Button bookButton;
         
         private bool _navigationActive;
         
@@ -125,16 +131,21 @@ namespace Managers
 
         public void Book()
         {
-            if (!gameObject.scene.IsValid()) return;
-            Debug.Log("Book Performed");
+            if (!CameraManager.Instance.IsInGreenhouse) return;
             BookController.Instance.ToggleBook();
         }
 
+        public void ShowBookButton(bool show)
+        {
+            bookButton.gameObject.SetActive(show);
+        }
+        
         private void FlipPageWrapper(InputAction.CallbackContext ctx) => FlipPage((int)ctx.ReadValue<float>());
 
         private  void FlipPage(int direction)
         {
             if (!_navigationActive) return;
+            if (BookController.Instance is null) return; //Faul, vielleicht vorher Initialisieren.
             if(BookController.Instance.IsShown) BookController.Instance.FlipPage(direction);            
         }
         

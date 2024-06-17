@@ -4,7 +4,6 @@ using Controller;
 using Controller.Book;
 using Data;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Environment = Data.Environment;
 
 namespace Managers
@@ -107,10 +106,10 @@ namespace Managers
         private void OnDestroy()
         {
             if (Instance == this) Instance = null;
-            SaveGame(new InputAction.CallbackContext());
+            SaveGame();
         }
 
-        private void SaveGame(InputAction.CallbackContext _)
+        private void SaveGame()
         {
             string tmp = GenerateSaveFile();
             Debug.LogWarning(tmp);
