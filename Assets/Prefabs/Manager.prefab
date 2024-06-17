@@ -207,8 +207,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - name: 
+  - name: Click
     type: 0
+    clips: []
+  - name: Ui Hover
+    type: 1
+    clips: []
+  - name: In Game Hover
+    type: 2
+    clips: []
+  - name: Soil Placement
+    type: 3
+    clips: []
+  - name: Add Fertilizer
+    type: 4
+    clips: []
+  - name: Water Plant
+    type: 5
+    clips: []
+  - name: Use Shovel
+    type: 6
+    clips: []
+  - name: Plant Seed
+    type: 7
+    clips: []
+  - name: Get Rating
+    type: 8
+    clips: []
+  - name: Remove Plant
+    type: 9
+    clips: []
+  - name: Replant Seedling
+    type: 10
+    clips: []
+  - name: Flip Book Page
+    type: 11
+    clips: []
+  - name: Next Day
+    type: 12
     clips: []
 --- !u!82 &620530939505051547
 AudioSource:
