@@ -8,6 +8,7 @@ ToDo:
   - Add Volume Sliders
   - UI Pause, Remover designen
     - Arrow in ui button to overworld
+
   - Tutorial
     - Dialog und Charactere
 
@@ -26,16 +27,14 @@ ToDo:
   - Rose
   - Tulpe
   - Santini
+    - Bei der Santini Saat vom Löwenzahn
 
-
-Zuchtloop:
-- Aufbewahren von Fertigen Pflanzen
-
-- SoundManger und Music
 - Gartenbauen
 
-Notes:
-- Bei der Santini musst du die Saat vom Löwenzahn nutzen
+Aufbewahrung:
+- Aufbewahren von Fertigen Pflanzen
+- Fix Removeal Display
+
 
 Enhancements:
 - Schere und Unkraut

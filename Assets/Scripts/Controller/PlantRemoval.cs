@@ -39,13 +39,13 @@ namespace Controller
 
             SetVisibility(true);
             AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.StarRating);
+            //TODO DISplay stars
             
             if (!isDead)
             {
-                int value = -1;
-                button1Text.text = $"Verkaufen für {value}";
+                button1Text.text = "Wegschmeißen";
                 button2Text.transform.parent.gameObject.SetActive(true);
-                int freeSpace = -1;
+                int freeSpace = -1; //TODO
                 button2Text.text = $"Beahlten ({freeSpace} freie Plätze)";
             }
             else button1Text.text = "Wegschmeißen";
@@ -54,15 +54,13 @@ namespace Controller
         public void OnButton1Pressed()
         {
             AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Click);
-            
-            if (!_isDead) {}//AddMoney(Value)
             End();
         }
         
         public void OnButton2Pressed()
         {
             AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Click);
-            //Add FlowerInstance, Env to Save
+            //Add FlowerInstance, Env to Save TODO
             End();
         }
 
