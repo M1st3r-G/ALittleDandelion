@@ -154,7 +154,7 @@ namespace Controller.Book
 
         public void FlipPage(int direction)
         {
-            _currentPage = Mathf.Clamp(_currentPage + direction, 0, pages.Length);
+            _currentPage = Mathf.Clamp(_currentPage + direction, 0, pages.Length - 1);
             Debug.Assert(IsShown, "Fehler, Seite im Ausgeblendeten zustand geblättert");
             PageWithUnlockData current = pages[_currentPage];
             pageController.ShowPage(current.page, current.unlockValue);

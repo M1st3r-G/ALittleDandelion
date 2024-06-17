@@ -17,8 +17,6 @@ ToDo:
 
 - BlumenBuch:
   - Disable BookButton in Overworld  (CameraController)
-  - Unlock Values
-  - Switch Pages
 
 
 Zuchtloop:
