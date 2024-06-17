@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Managers;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Clickable
@@ -27,11 +28,18 @@ namespace Clickable
             tmp.SetActive(false);
         }
 
-        public abstract void OnPointerClick(PointerEventData eventData);
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Click);
+            OnClick();
+        }
+
+        public abstract void OnClick();
         
         public void OnPointerEnter(PointerEventData eventData)
         {
             _hoverMesh.gameObject.SetActive(true);
+            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.HoverGame);
         }
 
         public void OnPointerExit(PointerEventData eventData)

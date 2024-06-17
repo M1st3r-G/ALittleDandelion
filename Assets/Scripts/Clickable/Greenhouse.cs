@@ -1,6 +1,4 @@
 using Managers;
-using UnityEditor.Rendering;
-using UnityEngine.EventSystems;
 
 namespace Clickable
 {
@@ -11,7 +9,7 @@ namespace Clickable
         //Temps
         //Public
         
-        public override void OnPointerClick(PointerEventData eventData)
+        public override void OnClick()
         {
             CameraManager.Instance.ToGreenhouse();
         }

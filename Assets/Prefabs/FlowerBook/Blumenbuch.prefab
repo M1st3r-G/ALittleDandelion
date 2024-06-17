@@ -1209,6 +1209,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blumenbuch
       objectReference: {fileID: 0}
+    - target: {fileID: 1247273967436397346, guid: e9d8c7577e15e574da8430507ee1b613,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b82b8523edbd36f4687d8e8c9812b262, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8945213421800675235, guid: e9d8c7577e15e574da8430507ee1b613, type: 3}

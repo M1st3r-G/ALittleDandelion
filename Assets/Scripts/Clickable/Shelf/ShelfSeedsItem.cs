@@ -1,6 +1,5 @@
 ﻿using Data;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace Clickable.Shelf
 {
@@ -11,7 +10,7 @@ namespace Clickable.Shelf
         public delegate void ShelfItemClicked(FlowerData type);
         public static ShelfItemClicked OnSeedClicked;
         
-        public override void OnPointerClick(PointerEventData eventData)
+        public override void OnClick()
         {
             Debug.Log($"ShelfItemSeed was Clicked: {seedsType}");
            OnSeedClicked?.Invoke(seedsType); 

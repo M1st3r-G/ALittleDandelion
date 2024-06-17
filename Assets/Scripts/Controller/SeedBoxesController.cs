@@ -63,6 +63,7 @@ namespace Controller
             if (_currentSelection is null) return;
             if (!_currentSelection.IsEditable) return;
 
+            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.SeedPlant);
             _currentSelection.AddFlower(type);
         }
 
@@ -72,6 +73,7 @@ namespace Controller
             if (_currentSelection is null) return;
             if (!_currentSelection.IsEditable) return;
 
+            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Dirt);
             _currentSelection.AddSoil(type);
         }
 
@@ -81,6 +83,8 @@ namespace Controller
             if (_currentSelection is null) return;
             if (!_currentSelection.IsEditable) return;
             if (!_currentSelection.EnvironmentIsSet) return;
+
+            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Shovel);
             _currentSelection.ChangeLightType();
         }
 
@@ -88,6 +92,8 @@ namespace Controller
         {
             if (_currentSelection is null) return;
             if (_currentSelection.IsEditable) return;
+
+            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Water);
             _currentSelection.WaterPlant();
         }
 
@@ -97,6 +103,8 @@ namespace Controller
             if (_currentSelection.IsEditable) return;
             if (!_currentSelection.IsReplantable) return;
             if (!FlowerInstanceLibrary.Instance.HasSpace) return;
+
+            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Replant);
             _currentSelection.Replant(); 
         }
         
@@ -114,6 +122,7 @@ namespace Controller
 
         private void RemoveCurrentSelection()
         {
+            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.RemovePlant);
             _currentSelection.RemovePlant();
             _currentSelection = null;
         }

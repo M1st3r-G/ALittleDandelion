@@ -80,31 +80,40 @@ namespace Managers
 
         #endregion
 
+        #region General
+
         public void SetNavigation(bool state)
         {
             Debug.LogWarning((state ? "Enabled" : "Disabled") + "Navigation");
             _navigationActive = state;
         }
 
+        public void PlayHoverSound() =>
+            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.HoverUI);
+
+        #endregion
+        
         #region InputHandling
 
         private void ShowShelvedWrapper(InputAction.CallbackContext ctx) => Debug.Log("Show Shelved");
         
         public void TriggerNextDay() => TimeManager.Instance.NextDay();
 
+        
         private void Escape(InputAction.CallbackContext ctx) => Settings();
-
         public void Settings()
         {
             if (!_navigationActive) return;
+
+            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Click);
             
             if (CameraManager.Instance.IsInGreenhouse) CameraManager.Instance.ToHub();
             else PauseMenuController.Instance.Toggle();
         }
 
+        
         private void ShowFlowerWrapper(InputAction.CallbackContext ctx)
             => ShowFlower((int)ctx.ReadValue<float>());
-
         public void ShowFlower(int index)
         {
             if (!_navigationActive) return;
@@ -114,34 +123,36 @@ namespace Managers
                 return;
             }
             
+            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Click);
+            
             CameraManager.Instance.ToGreenhouse();
             TableController.Instance.PlaceFlower(index - 1);
         }
+        
         
         private void SeedsWrapper(InputAction.CallbackContext ctx) => Seeds();
         public void Seeds()
         {
             if (!_navigationActive) return;
             
+            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Click);
             CameraManager.Instance.ToGreenhouse();
             TableController.Instance.PlaceSeeds();
         }
 
+        
+        public void ToggleShowBookButton(bool show) => bookButton.gameObject.SetActive(show);
         private void BookWrapper(InputAction.CallbackContext ctx) => Book();
-
         public void Book()
         {
             if (!CameraManager.Instance.IsInGreenhouse) return;
+            
+            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Click);
             BookController.Instance.ToggleBook();
         }
 
-        public void ShowBookButton(bool show)
-        {
-            bookButton.gameObject.SetActive(show);
-        }
         
         private void FlipPageWrapper(InputAction.CallbackContext ctx) => FlipPage((int)ctx.ReadValue<float>());
-
         private  void FlipPage(int direction)
         {
             if (!_navigationActive) return;

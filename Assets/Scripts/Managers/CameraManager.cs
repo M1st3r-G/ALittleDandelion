@@ -33,7 +33,7 @@ namespace Managers
         {
             if (!flowerCam.gameObject.activeSelf) return;
 
-            CInputManager.Instance.ShowBookButton(false);
+            CInputManager.Instance.ToggleShowBookButton(false);
             
             flowerCam.gameObject.SetActive(false);
             overview.gameObject.SetActive(true);
@@ -45,7 +45,7 @@ namespace Managers
         {
             if (flowerCam.gameObject.activeSelf) return;
             
-            CInputManager.Instance.ShowBookButton(true);
+            CInputManager.Instance.ToggleShowBookButton(true);
             
             flowerCam.gameObject.SetActive(true);
             overview.gameObject.SetActive(false);

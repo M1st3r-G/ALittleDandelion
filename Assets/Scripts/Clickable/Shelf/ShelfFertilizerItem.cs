@@ -1,6 +1,5 @@
 ﻿using Data;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace Clickable.Shelf
 {
@@ -11,7 +10,7 @@ namespace Clickable.Shelf
         public delegate void OnFertilizerClickedEvent(Environment.FertilizerType type);
         public static OnFertilizerClickedEvent OnFertilizer;
         
-        public override void OnPointerClick(PointerEventData eventData)
+        public override void OnClick()
         {
             OnFertilizer?.Invoke(type);
         }

@@ -3,7 +3,6 @@ using Clickable;
 using Data;
 using Managers;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using Environment = Data.Environment;
 
 namespace Controller
@@ -55,7 +54,7 @@ namespace Controller
         
         #region SelectionHandling
 
-        public override void OnPointerClick(PointerEventData eventData)
+        public override void OnClick()
         {
             _parent.BoxWasClicked(this);
         }
@@ -83,7 +82,7 @@ namespace Controller
             {
                 lichtkeimer = true
             };
-            
+
             _pr.RefreshVisuals(_flower, _tmp);
         }
         

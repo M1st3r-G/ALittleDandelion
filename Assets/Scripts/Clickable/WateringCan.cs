@@ -1,14 +1,11 @@
-﻿using UnityEngine;
-using UnityEngine.EventSystems;
-
-namespace Clickable
+﻿namespace Clickable
 {
     public class WateringCan : ClickableBase
     {
         public delegate void WateringCanEvent();
         public static WateringCanEvent OnWatering;
         
-        public override void OnPointerClick(PointerEventData eventData)
+        public override void OnClick()
         {
             OnWatering?.Invoke();
         }

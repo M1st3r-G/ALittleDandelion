@@ -12,9 +12,9 @@ namespace Managers
         
         public static AudioEffectsManager Instance { get; private set; }
         
-        public enum AudioEffect
+        public enum AudioEffect // MoneyChange | Ignored PotClicked due to Inheritance
         {
-            Click, HoverUI, HoverGame, Dirt, Fertilizer, Shovel, SeedPlant, StarRating, PotClicked, RemovePlant, MoneyChange
+            Click, HoverUI, HoverGame, Dirt, Fertilizer, Water,  Shovel, SeedPlant, StarRating,  RemovePlant, Replant, BookPageFlip, NextDay
         }
         
         private void Awake()

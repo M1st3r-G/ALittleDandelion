@@ -1,6 +1,5 @@
 ﻿using Data;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace Clickable.Shelf
 {
@@ -11,7 +10,7 @@ namespace Clickable.Shelf
         public delegate void ShelfItemClicked(Environment.SoilType type);
         public static ShelfItemClicked OnSoilClicked;
         
-        public override void OnPointerClick(PointerEventData eventData)
+        public override void OnClick()
         {
             Debug.Log($"ShelfItemSoil was Clicked: {soilType}");
             OnSoilClicked?.Invoke(soilType); 
