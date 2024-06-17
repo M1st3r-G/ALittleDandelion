@@ -299,6 +299,152 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cd18cf22682c8a478d0ffedcc50ac9b, type: 3}
+--- !u!1001 &512437261
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d81a91f73963793449b1348d42113f43,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 46.648895
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d81a91f73963793449b1348d42113f43,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d81a91f73963793449b1348d42113f43,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -103.48885
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d81a91f73963793449b1348d42113f43,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d81a91f73963793449b1348d42113f43,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d81a91f73963793449b1348d42113f43,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d81a91f73963793449b1348d42113f43,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d81a91f73963793449b1348d42113f43,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d81a91f73963793449b1348d42113f43,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d81a91f73963793449b1348d42113f43,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7070432805788676333, guid: d81a91f73963793449b1348d42113f43,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dc480ec87f4dc124e9f0c96e27149370, type: 2}
+    - target: {fileID: 919132149155446097, guid: d81a91f73963793449b1348d42113f43,
+        type: 3}
+      propertyPath: m_Name
+      value: Hyazinthe_Phase4_Stiel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d81a91f73963793449b1348d42113f43, type: 3}
+--- !u!1001 &535496612
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 2245168251d09cc40b034c43e375207c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 46.6462
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2245168251d09cc40b034c43e375207c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0776
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2245168251d09cc40b034c43e375207c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -103.4777
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2245168251d09cc40b034c43e375207c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.90814316
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2245168251d09cc40b034c43e375207c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2245168251d09cc40b034c43e375207c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.41865975
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2245168251d09cc40b034c43e375207c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2245168251d09cc40b034c43e375207c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2245168251d09cc40b034c43e375207c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2245168251d09cc40b034c43e375207c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2245168251d09cc40b034c43e375207c,
+        type: 3}
+      propertyPath: m_Name
+      value: "Hyazinthe_Phase4_Bl\xFCte"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986881288083766441, guid: 2245168251d09cc40b034c43e375207c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 334fab4df323b9a49adcbab1362172f1, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2245168251d09cc40b034c43e375207c, type: 3}
 --- !u!1001 &598692236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1115,3 +1261,5 @@ SceneRoots:
   - {fileID: 1524928747}
   - {fileID: 1684755690}
   - {fileID: 705814472}
+  - {fileID: 512437261}
+  - {fileID: 535496612}
