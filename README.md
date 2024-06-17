@@ -4,8 +4,11 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
+- Check Load for Save of Book (Seems To reset)
+- Save Volume Settings
+- Play DebugEffect
+
 - Pause menu
-  - Add Volume Sliders
   - UI Pause, Remover designen
     - Arrow in ui button to overworld
 
