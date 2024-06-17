@@ -16,11 +16,9 @@ ToDo:
   - Santini
 
 - BlumenBuch:
-  - Disable BookButton in Overworld
-  - Add Input to Book
+  - Disable BookButton in Overworld  (CameraController)
   - Testing:
     - BookSaving
-    - Book Display
 
 
 

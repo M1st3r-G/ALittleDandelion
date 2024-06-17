@@ -1,4 +1,5 @@
 ﻿using Controller;
+using Controller.Book;
 using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -43,11 +44,12 @@ namespace Managers
             showSeedsAction.action.Enable();
             showSeedsAction.action.performed += SeedsWrapper;
             showShelfedAction.action.Enable();
-            showShelfedAction.action.performed += ShowShelfedWrapper;
+            showShelfedAction.action.performed += ShowShelvedWrapper;
 
             escapeAction.action.Enable();
             escapeAction.action.performed += Escape;
             bookAction.action.Enable();
+            bookAction.action.performed -= BookWrapper;
             bookAction.action.performed += BookWrapper;
         }
     
@@ -58,7 +60,7 @@ namespace Managers
             showSeedsAction.action.Disable();
             showSeedsAction.action.performed -= SeedsWrapper;
             showShelfedAction.action.Disable();
-            showShelfedAction.action.performed -= ShowShelfedWrapper;
+            showShelfedAction.action.performed -= ShowShelvedWrapper;
             
             escapeAction.action.Disable();
             escapeAction.action.performed -= Escape;
@@ -76,7 +78,7 @@ namespace Managers
 
         #region InputHandling
 
-        private void ShowShelfedWrapper(InputAction.CallbackContext ctx) => Debug.Log("Show Shelfed");
+        private void ShowShelvedWrapper(InputAction.CallbackContext ctx) => Debug.Log("Show Shelved");
         
         public void TriggerNextDay() => TimeManager.Instance.NextDay();
 
@@ -115,8 +117,18 @@ namespace Managers
             TableController.Instance.PlaceSeeds();
         }
 
-        private void BookWrapper(InputAction.CallbackContext ctx) => Book();
-        public void Book() => Debug.Log("Open Book");
+        private void BookWrapper(InputAction.CallbackContext ctx)
+        {
+            Debug.Log($"BookAction performed {ctx.performed}");
+            Book();
+        }
+
+        public void Book()
+        {
+            if (!gameObject.scene.IsValid()) return;
+            Debug.Log("Book Performed");
+            BookController.Instance.ToggleBook();
+        }
 
         #endregion
     }

@@ -102,7 +102,6 @@ GameObject:
   - component: {fileID: 3627213852932172799}
   - component: {fileID: 3985963363946305395}
   - component: {fileID: 1084906627230340793}
-  - component: {fileID: 3831222051196572987}
   - component: {fileID: 544136477527370881}
   - component: {fileID: 620530939505051547}
   m_Layer: 0
@@ -143,10 +142,6 @@ MonoBehaviour:
   flowerCam: {fileID: 0}
   overview: {fileID: 0}
   greenhouseClick: {fileID: 0}
-  positionOffset: {x: 4.25, y: 0, z: 8}
-  rotation: {x: 0, y: -90, z: 90}
-  book: {fileID: 0}
-  outOfFrameX: 12
 --- !u!114 &3627213852932172799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,28 +193,7 @@ MonoBehaviour:
   seeds: {fileID: 0}
   library: {fileID: 0}
   timeManager: {fileID: 3627213852932172799}
---- !u!114 &3831222051196572987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4121411382446541115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c69ba4f798418490500ca01f58e767, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showFlowerAction: {fileID: 5191960415537950457, guid: 3e3ca8f1176f46b44990e4414bc59dbc,
-    type: 3}
-  showSeedsAction: {fileID: 2411025069710303821, guid: 3e3ca8f1176f46b44990e4414bc59dbc,
-    type: 3}
-  showShelfedAction: {fileID: 7576455993589750554, guid: 3e3ca8f1176f46b44990e4414bc59dbc,
-    type: 3}
-  escapeAction: {fileID: 1787690039930297307, guid: 3e3ca8f1176f46b44990e4414bc59dbc,
-    type: 3}
-  bookAction: {fileID: -7986439974362484881, guid: 3e3ca8f1176f46b44990e4414bc59dbc,
-    type: 3}
+  book: {fileID: 0}
 --- !u!114 &544136477527370881
 MonoBehaviour:
   m_ObjectHideFlags: 0

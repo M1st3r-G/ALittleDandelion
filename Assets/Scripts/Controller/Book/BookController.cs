@@ -18,10 +18,10 @@ namespace Controller.Book
         
         //Temps
         private int _currentPage;
-        
-        public BookController Instance { get; private set; }
 
-        private bool IsShown => transform.localPosition.x > 8f;
+        public static BookController Instance { get; private set; }
+
+        private bool IsShown => transform.localPosition.x < 8f;
         
         private void Awake()
         {
@@ -44,14 +44,15 @@ namespace Controller.Book
 
         public void ToggleBook()
         {
+            Debug.Log($"Toggle book to {!IsShown}");
             DisplayBook(!IsShown);
         }
         
-        private void DisplayBook(bool state)
+        private void DisplayBook(bool show)
         {
-            transform.localPosition = new Vector3(state ? inAndOutOfFrame.x : inAndOutOfFrame.y, 0, DefaultZ);
+            transform.localPosition = new Vector3(show ? inAndOutOfFrame.x : inAndOutOfFrame.y, 0, DefaultZ);
             
-            if (!state) return;
+            if (!show) return;
             PageWithUnlockData current = pages[_currentPage];
             pageController.ShowPage(current.page, current.unlockValue);
         }
