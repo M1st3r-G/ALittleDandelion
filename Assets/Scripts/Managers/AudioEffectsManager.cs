@@ -33,7 +33,13 @@ namespace Managers
             foreach (AudioClipsContainer cnt in clips)
             {
                 if (cnt.Type != effect) continue;
-                var clip = cnt.GetClip();
+                AudioClip clip = cnt.GetClip();
+                if (clip is null)
+                {
+                    Debug.LogError($"Noch keine Sounds für {effect} sind importiert");
+                    return -1f;
+                }
+                
                 _src.PlayOneShot(clip);
                 return clip.length;
             }
@@ -53,7 +59,7 @@ namespace Managers
             
             public AudioClip GetClip()
             {
-                return clips[Random.Range(0, clips.Length)];
+                return clips.Length == 0 ? null : clips[Random.Range(0, clips.Length)];
             }
         }
 
