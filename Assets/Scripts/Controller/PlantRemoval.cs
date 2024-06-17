@@ -38,7 +38,7 @@ namespace Controller
             CInputManager.Instance.SetNavigation(false);
 
             SetVisibility(true);
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.StarRating);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.StarRating);
             
             if (!isDead)
             {
@@ -53,7 +53,7 @@ namespace Controller
 
         public void OnButton1Pressed()
         {
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Click);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Click);
             
             if (!_isDead) {}//AddMoney(Value)
             End();
@@ -61,7 +61,7 @@ namespace Controller
         
         public void OnButton2Pressed()
         {
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Click);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Click);
             //Add FlowerInstance, Env to Save
             End();
         }

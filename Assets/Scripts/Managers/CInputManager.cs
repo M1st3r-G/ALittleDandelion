@@ -89,7 +89,7 @@ namespace Managers
         }
 
         public void PlayHoverSound() =>
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.HoverUI);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.HoverUI);
 
         #endregion
         
@@ -105,7 +105,7 @@ namespace Managers
         {
             if (!_navigationActive) return;
 
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Click);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Click);
             
             if (CameraManager.Instance.IsInGreenhouse) CameraManager.Instance.ToHub();
             else PauseMenuController.Instance.Toggle();
@@ -123,7 +123,7 @@ namespace Managers
                 return;
             }
             
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Click);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Click);
             
             CameraManager.Instance.ToGreenhouse();
             TableController.Instance.PlaceFlower(index - 1);
@@ -135,7 +135,7 @@ namespace Managers
         {
             if (!_navigationActive) return;
             
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Click);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Click);
             CameraManager.Instance.ToGreenhouse();
             TableController.Instance.PlaceSeeds();
         }
@@ -147,7 +147,7 @@ namespace Managers
         {
             if (!CameraManager.Instance.IsInGreenhouse) return;
             
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Click);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Click);
             BookController.Instance.ToggleBook();
         }
 

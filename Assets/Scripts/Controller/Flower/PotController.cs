@@ -55,7 +55,7 @@ namespace Controller
         private void WaterPlant()
         {
             Debug.Assert(_currentFlower is not null, "Illegal Event Subscription");
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Water);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Water);
             _currentFlower.Water();
         }
 
@@ -83,7 +83,7 @@ namespace Controller
             ShelfFertilizerItem.OnFertilizer -= Fertilize;
             WateringCan.OnWatering += WaterPlant;
 
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Fertilizer);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Fertilizer);
             _currentFlower.Replant(type);
         }
 
@@ -97,7 +97,7 @@ namespace Controller
             
             _pr.RefreshVisuals(_currentFlower, _currentEnv);
 
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.RemovePlant);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.RemovePlant);
             
             gameObject.SetActive(false);
         }

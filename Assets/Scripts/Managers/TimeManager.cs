@@ -23,7 +23,7 @@ namespace Managers
         public void NextDay()
         {
             Debug.Log("Next Day");
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.NextDay);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.NextDay);
             Days++;
             OnTimeIncrease?.Invoke();
         }

@@ -63,7 +63,7 @@ namespace Controller
             if (_currentSelection is null) return;
             if (!_currentSelection.IsEditable) return;
 
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.SeedPlant);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.SeedPlant);
             _currentSelection.AddFlower(type);
         }
 
@@ -73,7 +73,7 @@ namespace Controller
             if (_currentSelection is null) return;
             if (!_currentSelection.IsEditable) return;
 
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Dirt);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Dirt);
             _currentSelection.AddSoil(type);
         }
 
@@ -84,7 +84,7 @@ namespace Controller
             if (!_currentSelection.IsEditable) return;
             if (!_currentSelection.EnvironmentIsSet) return;
 
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Shovel);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Shovel);
             _currentSelection.ChangeLightType();
         }
 
@@ -93,7 +93,7 @@ namespace Controller
             if (_currentSelection is null) return;
             if (_currentSelection.IsEditable) return;
 
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Water);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Water);
             _currentSelection.WaterPlant();
         }
 
@@ -104,7 +104,7 @@ namespace Controller
             if (!_currentSelection.IsReplantable) return;
             if (!FlowerInstanceLibrary.Instance.HasSpace) return;
 
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Replant);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Replant);
             _currentSelection.Replant(); 
         }
         
@@ -122,7 +122,7 @@ namespace Controller
 
         private void RemoveCurrentSelection()
         {
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.RemovePlant);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.RemovePlant);
             _currentSelection.RemovePlant();
             _currentSelection = null;
         }

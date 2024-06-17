@@ -30,7 +30,7 @@ namespace Clickable
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.Click);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Click);
             OnClick();
         }
 
@@ -39,7 +39,7 @@ namespace Clickable
         public void OnPointerEnter(PointerEventData eventData)
         {
             _hoverMesh.gameObject.SetActive(true);
-            AudioEffectsManager.Instance.PlayEffect(AudioEffectsManager.AudioEffect.HoverGame);
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.HoverGame);
         }
 
         public void OnPointerExit(PointerEventData eventData)

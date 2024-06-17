@@ -11,6 +11,15 @@ ToDo:
   - Tutorial
     - Dialog und Charactere
 
+- Audio
+  - Add Topf Benutzen
+  - Import Sounds
+    - Soil Placement
+    - Water Plant
+    - Use Shovel
+    - Remove Plant
+    - Plant Seedling
+
 - Add PlantMaterials (Test)
   - Löwenzahn
   - Löwenzahn (Weiß)
