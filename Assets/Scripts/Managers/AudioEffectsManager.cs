@@ -14,7 +14,7 @@ namespace Managers
         
         public enum AudioEffect
         {
-            Click, Attack, Move, Evil, Heal, Hit, Death, Ticking, Steps, Victory
+            Click, HoverUI, HoverGame, Dirt, Fertilizer, Shovel, SeedPlant, StarRating, PotClicked, RemovePlant, MoneyChange
         }
         
         private void Awake()
