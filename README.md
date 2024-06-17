@@ -6,7 +6,10 @@ A Cozy Gardening Game with calming colors
 ToDo:
 - Pause menu
   - Add Volume Sliders
-- SoundManger und Music
+  - UI Pause, Remover designen
+    - Arrow in ui button to overworld
+  - Tutorial
+    - Dialog und Charactere
 
 - Add PlantMaterials (Test)
   - Löwenzahn
@@ -15,15 +18,11 @@ ToDo:
   - Tulpe
   - Santini
 
-Arrow in ui button to overworld
 
 Zuchtloop:
 - Aufbewahren von Fertigen Pflanzen
-- Auswahl und Kreuzung
-- Samenernte (Nach einigen Tagen)
-- ShopSystem
-  - Samen Kaufen und verkaufen
 
+- SoundManger und Music
 - Gartenbauen
 
 Notes:
@@ -35,3 +34,8 @@ Enhancements:
   - Add hover Multiplier
 - Let the SaveFile Controller Adjust the Data
 - Remove Pots from SeedController, (RectDirt)
+
+(- Auswahl und Kreuzung
+- Samenernte (Nach einigen Tagen)
+- ShopSystem
+  - Samen Kaufen und verkaufen)
