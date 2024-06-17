@@ -13,9 +13,10 @@ namespace Managers
         // Component References
         [SerializeField] private InputActionReference showFlowerAction;
         [SerializeField] private InputActionReference showSeedsAction;
-        [SerializeField] private InputActionReference showShelfedAction;
+        [SerializeField] private InputActionReference showShelvedAction;
         [SerializeField] private InputActionReference escapeAction;
         [SerializeField] private InputActionReference bookAction;
+        [SerializeField] private InputActionReference bookNavigationAction;
         
         private bool _navigationActive;
         
@@ -43,29 +44,32 @@ namespace Managers
             showFlowerAction.action.performed += ShowFlowerWrapper; 
             showSeedsAction.action.Enable();
             showSeedsAction.action.performed += SeedsWrapper;
-            showShelfedAction.action.Enable();
-            showShelfedAction.action.performed += ShowShelvedWrapper;
+            showShelvedAction.action.Enable();
+            showShelvedAction.action.performed += ShowShelvedWrapper;
 
             escapeAction.action.Enable();
             escapeAction.action.performed += Escape;
             bookAction.action.Enable();
-            bookAction.action.performed -= BookWrapper;
             bookAction.action.performed += BookWrapper;
+            bookNavigationAction.action.Enable();
+            bookNavigationAction.action.performed += FlipPageWrapper;
         }
-    
+        
         private void OnDisable()
         {
             showFlowerAction.action.performed -= ShowFlowerWrapper;
             showFlowerAction.action.Disable();
-            showSeedsAction.action.Disable();
             showSeedsAction.action.performed -= SeedsWrapper;
-            showShelfedAction.action.Disable();
-            showShelfedAction.action.performed -= ShowShelvedWrapper;
+            showSeedsAction.action.Disable();
+            showShelvedAction.action.performed -= ShowShelvedWrapper;
+            showShelvedAction.action.Disable();
             
-            escapeAction.action.Disable();
             escapeAction.action.performed -= Escape;
-            bookAction.action.Disable();
+            escapeAction.action.Disable();
             bookAction.action.performed -= BookWrapper;
+            bookAction.action.Disable();
+            bookNavigationAction.action.performed -= FlipPageWrapper;
+            bookNavigationAction.action.Disable();
         }
 
         #endregion
@@ -117,11 +121,7 @@ namespace Managers
             TableController.Instance.PlaceSeeds();
         }
 
-        private void BookWrapper(InputAction.CallbackContext ctx)
-        {
-            Debug.Log($"BookAction performed {ctx.performed}");
-            Book();
-        }
+        private void BookWrapper(InputAction.CallbackContext ctx) => Book();
 
         public void Book()
         {
@@ -130,6 +130,14 @@ namespace Managers
             BookController.Instance.ToggleBook();
         }
 
+        private void FlipPageWrapper(InputAction.CallbackContext ctx) => FlipPage((int)ctx.ReadValue<float>());
+
+        private  void FlipPage(int direction)
+        {
+            if (!_navigationActive) return;
+            if(BookController.Instance.IsShown) BookController.Instance.FlipPage(direction);            
+        }
+        
         #endregion
     }
 }

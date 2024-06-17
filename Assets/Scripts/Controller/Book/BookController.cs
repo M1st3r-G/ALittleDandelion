@@ -25,7 +25,7 @@ namespace Controller.Book
 
         public static BookController Instance { get; private set; }
 
-        private bool IsShown => transform.localPosition.x < 8f;
+        public bool IsShown => transform.localPosition.x < 8f;
         
 
         #endregion
@@ -150,6 +150,14 @@ namespace Controller.Book
         {
             Debug.Log($"Toggle book to {!IsShown}");
             DisplayBook(!IsShown);
+        }
+
+        public void FlipPage(int direction)
+        {
+            _currentPage = Mathf.Clamp(_currentPage + direction, 0, pages.Length);
+            Debug.Assert(IsShown, "Fehler, Seite im Ausgeblendeten zustand geblättert");
+            PageWithUnlockData current = pages[_currentPage];
+            pageController.ShowPage(current.page, current.unlockValue);
         }
         
         private void DisplayBook(bool show)
