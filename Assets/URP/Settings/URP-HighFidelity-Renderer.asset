@@ -111,18 +111,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    intensity: 1
-    kuwahara: 0
-    passes: 4
-    radius: 10
+    intensity: 0.216
+    kuwahara: 2
+    passes: 3
+    radius: 7
     blur: 2
     sharpness: 8
     hardness: 8
     alpha: 1
     zeroCrossing: 0.58
     detail: 0
-    detailStrength: 1
-    embossStrength: 5
+    detailStrength: 0
+    embossStrength: 0.1
     embossAngle: 0
     waterColor: 0
     processDepth: 0
@@ -139,8 +139,8 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.75
-        value: 1
+        time: 0.9750061
+        value: 1.0023575
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
     viewDepthCurve: 0
     renderSize: 1
     brightness: 0
-    contrast: 1
+    contrast: 0.5
     gamma: 1
     hue: 0
     saturation: 1
