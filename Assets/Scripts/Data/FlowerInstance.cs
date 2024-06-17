@@ -26,7 +26,7 @@ namespace Data
         // Public
         public bool IsReplantable => _state == GrowthState.Sprout;
 
-        private int CalculateStars() => _rating switch
+        public int CalculateStars() => _rating switch
         {
             >= 90 => 3, 
             >= 75 => 2, 

@@ -15,7 +15,7 @@ namespace Controller
         private FlowerInstance _currentFlower;
         private Environment _currentEnv;
 
-        private bool _isDisplayedOnTable;
+        private bool _isDisplayedOnTable; // For removen on Grow
         
         #region SetUp
 
@@ -110,6 +110,15 @@ namespace Controller
         public bool IsFullyGrown =>
             _currentFlower is not null && _currentFlower.State == FlowerInstance.GrowthState.Flower;
 
+        public int GetRatingOfFlower(out FlowerData.FlowerType type)
+        {
+            type = FlowerData.FlowerType.Löwenzahn;
+            if (_currentFlower is null) return -1;
+
+            type = _currentFlower.Type;
+            return _currentFlower.CalculateStars();
+        }
+        
         #endregion
     }
 }

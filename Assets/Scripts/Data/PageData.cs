@@ -5,8 +5,10 @@ namespace Data
     [CreateAssetMenu(fileName = "Data/Page")]
     public class PageData : ScriptableObject
     {
-        public string Title => title;
-        [SerializeField] private string title;
+
+        public string Title => type.ToString();
+        public FlowerData.FlowerType Type => type;
+        [SerializeField] private FlowerData.FlowerType type;
         public Sprite Sketch => sketch;
         [SerializeField] private Sprite sketch;
         public Sprite Image => image;

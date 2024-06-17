@@ -1,4 +1,7 @@
-﻿using Managers;
+﻿using Controller.Book;
+using Data;
+using Managers;
+using UnityEditor;
 using UnityEngine;
 
 namespace Controller
@@ -49,6 +52,13 @@ namespace Controller
 
         private void RemoveCurrent()
         {
+            //Wenn Flower, Add Knowledge to Book
+            if (_current.IsFullyGrown)
+            {
+                int stars = _current.GetRatingOfFlower(out FlowerData.FlowerType type);
+                BookController.Instance.Unlock(type, stars);
+            }
+            
             _current.Empty();
             FlowerInstanceLibrary.Instance.ReturnPot(_current);
             _current = null;
