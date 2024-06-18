@@ -4,14 +4,11 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-- Check Load for Save of Book (Seems To reset)
-- Save Volume Settings
-- Play DebugEffect
+- Arrow in ui button to overworld
+- Remover designen
 
-- Pause menu
-  - UI Pause, Remover designen
-    - Arrow in ui button to overworld
-
+Bugs:
+  - Check Load for Save of Book (Seems To reset)
   - Tutorial
     - Dialog und Charactere
 
@@ -45,6 +42,7 @@ Enhancements:
   - Add hover Multiplier
 - Let the SaveFile Controller Adjust the Data
 - Remove Pots from SeedController, (RectDirt)
+- Pause Change Debug Sound
 
 (- Auswahl und Kreuzung
 - Samenernte (Nach einigen Tagen)

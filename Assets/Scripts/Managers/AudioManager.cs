@@ -11,6 +11,11 @@ namespace Managers
         [SerializeField] private AudioSource effectSrc;
         [SerializeField] private AudioSource musicSrc;
         [SerializeField] private AudioSource ambienceSrc;
+
+        public const string MasterVolumeKey = "MasterVolume";
+        public const string MusicVolumeKey = "MusicVolume";
+        public const string AmbienceVolumeKey = "AmbienceVolume";
+        public const string EffectVolumeKey = "EffectVolume";
         
         public static AudioManager Instance { get; private set; }
         

@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using Managers;
+using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,6 +22,12 @@ namespace UI
         
         private CanvasGroup _cg;
 
+        private float _cooldown;
+        
+        private const float DefaultZeroDecibel = 0.675f;
+        private const float Default15Decibel = 0.475f;
+        
+        
         public static PauseMenuController Instance { get; private set; }
 
         #region SetUp
@@ -30,6 +39,14 @@ namespace UI
             _cg = GetComponent<CanvasGroup>();
             _cg.interactable = _cg.blocksRaycasts = false;
             _cg.alpha = 0;
+        }
+
+        private void Start()
+        {
+            masterVolumeSlider.value   = PlayerPrefs.GetFloat(AudioManager.MasterVolumeKey,   DefaultZeroDecibel);
+            musicVolumeSlider.value    = PlayerPrefs.GetFloat(AudioManager.MusicVolumeKey,    Default15Decibel);
+            ambienceVolumeSlider.value = PlayerPrefs.GetFloat(AudioManager.AmbienceVolumeKey, DefaultZeroDecibel);
+            effectVolumeSlider.value   = PlayerPrefs.GetFloat(AudioManager.EffectVolumeKey,   DefaultZeroDecibel);
         }
 
         private void OnDestroy()
@@ -49,9 +66,12 @@ namespace UI
 
         private void SaveSettings()
         {
-            Debug.Log("SaveAudioSettings");
+            PlayerPrefs.SetFloat(AudioManager.MasterVolumeKey, masterVolumeSlider.value);
+            PlayerPrefs.SetFloat(AudioManager.MusicVolumeKey, musicVolumeSlider.value);
+            PlayerPrefs.SetFloat(AudioManager.AmbienceVolumeKey, ambienceVolumeSlider.value);
+            PlayerPrefs.SetFloat(AudioManager.EffectVolumeKey, effectVolumeSlider.value);
         }
-        
+
         public void OnMasterVolumeChange()
         {
             mainAudioMixer.SetFloat("MasterVolume", SliderValueToDecibel(masterVolumeSlider.value));
@@ -59,7 +79,7 @@ namespace UI
             
         public void OnMusicVolumeChange() 
         {
-            mainAudioMixer.SetFloat("MusicVolume", SliderValueToDecibel(musicVolumeSlider.value, -15f));
+            mainAudioMixer.SetFloat("MusicVolume", SliderValueToDecibel(musicVolumeSlider.value));
         }
                 
         public void OnAmbienceVolumeChange()
@@ -70,16 +90,24 @@ namespace UI
         public void OnEffectVolumeChange()
         {
             mainAudioMixer.SetFloat("EffectVolume", SliderValueToDecibel(effectVolumeSlider.value));
+            
+            if (!(_cooldown <= 0f)) return;
+            
+            _cooldown = 1f;
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Click);
+            StartCoroutine(CountDown());
+        }
+
+        private IEnumerator CountDown()
+        {
+            while (_cooldown > 0f)
+            {
+                _cooldown -= Time.deltaTime;
+                yield return null;
+            }
         }
         
-        private float SliderValueToDecibel(float sliderValue, float defaultDecibel = 0, int minDecibel = -80, int maxDecibel = 20)
-        {
-            if (sliderValue < 0.75f)
-            {
-                return (-minDecibel + defaultDecibel) / 0.75f * sliderValue - 80;
-            }
-            return (maxDecibel - defaultDecibel) / 0.25f * (sliderValue - 0.75f) + defaultDecibel;
-        }
+        private static float SliderValueToDecibel(float sliderValue) => 163.769f * Mathf.Log10(sliderValue + 0.324718f);
         
         #region ButtonFunctions
 
