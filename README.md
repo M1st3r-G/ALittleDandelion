@@ -5,7 +5,7 @@ A Cozy Gardening Game with calming colors
 ---
 ToDo:
 - Arrow in ui button to overworld
-- Remover designen
+- Remover Add KeepSpace
 
 Bugs:
   - Check Load for Save of Book (Seems To reset)

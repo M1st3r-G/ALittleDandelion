@@ -1,7 +1,6 @@
 ﻿using Controller.Book;
 using Data;
 using Managers;
-using UnityEditor;
 using UnityEngine;
 
 namespace Controller
@@ -40,7 +39,7 @@ namespace Controller
         private void CheckForRemoval()
         {
             if (!_current.IsDead && !_current.IsFullyGrown) return;
-            PlantRemoval.Instance.WaitForRemoval(_current.IsDead, RemoveCurrent);
+            PlantRemoval.Instance.WaitForRemoval(_current.IsDead, _current.GetRatingOfFlower(out _), RemoveCurrent);
         }
         
         // Replaces the PlaceFlower for Replanting

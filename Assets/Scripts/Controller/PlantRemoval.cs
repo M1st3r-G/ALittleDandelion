@@ -1,4 +1,5 @@
-﻿using Managers;
+﻿using System.Collections;
+using Managers;
 using TMPro;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ namespace Controller
     {
         [SerializeField] private TextMeshProUGUI button1Text;
         [SerializeField] private TextMeshProUGUI button2Text;
+        [SerializeField] private TextMeshProUGUI mainText;
+        
         private CanvasGroup _canvasGroup;
         
         public delegate void CallbackType();
@@ -32,17 +35,18 @@ namespace Controller
         }
 
         // When the Callback is Triggered, it Removes the Flower from its spot.
-        public void WaitForRemoval(bool isDead, CallbackType newCallBack)
+        public void WaitForRemoval(bool isDead, int stars, CallbackType newCallBack)
         {
             _callBackMethod = newCallBack;
             CInputManager.Instance.SetNavigation(false);
 
             SetVisibility(true);
-            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.StarRating);
-            //TODO DISplay stars
             
             if (!isDead)
             {
+                mainText.text = $"Sehr gut, du hast eine {stars}-Sterne Blume gezüchtet. Was möchtst du mit ihr tun?";
+                StartCoroutine(ConsecutiveStarSounds(stars));
+                
                 button1Text.text = "Wegschmeißen";
                 button2Text.transform.parent.gameObject.SetActive(true);
                 int freeSpace = -1; //TODO
@@ -76,6 +80,15 @@ namespace Controller
         {
             _canvasGroup.alpha = state ? 1 : 0;
             _canvasGroup.interactable = _canvasGroup.blocksRaycasts = state;
+        }
+
+        private static IEnumerator ConsecutiveStarSounds(int stars)
+        {
+            for (int i = 0; i < stars; i++)
+            {
+                yield return new WaitForSeconds(AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.StarRating));
+                yield return new WaitForSeconds(0.25f);
+            }
         }
     }
 }
