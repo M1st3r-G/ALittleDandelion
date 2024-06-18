@@ -17,10 +17,10 @@ ToDo:
 
 - SeedPot Clickable to Focus
 - Rework Flowers
+  - Pot Smaller, Flower Bigger
 
 Art and Scene
 - Rework Regal Layout
-- Pot Smaller, Flower Bigger
 - Gartenbauen
 
 
