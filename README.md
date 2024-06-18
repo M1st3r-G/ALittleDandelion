@@ -5,8 +5,8 @@ A Cozy Gardening Game with calming colors
 ---
 ToDo:
   - Tutorial
-    - Display Lines
     - Add Triggers
+    - Remove when Sequence over
   - Aufbewahrung:
     - Aufbewahren von Fertigen Pflanzen
       - Fix Removal Display

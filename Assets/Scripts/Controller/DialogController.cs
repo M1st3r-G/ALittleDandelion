@@ -1,16 +1,32 @@
 ﻿using System;
+using System.Linq;
+using Managers;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Controller
 {
     public class DialogController : MonoBehaviour
     {
+        #region Fields
+
+        [Header("Components")]
+        [SerializeField] private Image characterImage;
+        [SerializeField] private TextMeshProUGUI characterName;
+        [SerializeField] private TextMeshProUGUI lineText;
+        
+        [Header("Content")]
         [SerializeField] private DialogueSequence[] sequences;
         [SerializeField] private ActorImages[] images;
+        
         private int _currentSequence;
         private int _currentLine;
+
+        #endregion
         
-        
+        #region LineManagement
+
         public void StartNextSequence()
         {
             _currentSequence++;
@@ -21,17 +37,31 @@ namespace Controller
 
         private void DisplayLine(DialogueLine line)
         {
-            Debug.LogWarning($"{line.ActorName}: {line.line}");
+            characterImage.sprite = GetActorSprite(line.actor);
+            characterName.text = line.ActorName;
+            lineText.text = line.line;
         }
         
         public void NextLine()
         {
             _currentLine++;
-            if (_currentLine >= sequences[_currentSequence].lines.Length) return;
+            if (_currentLine >= sequences[_currentSequence].lines.Length)
+            {
+                print("Finished Lines");
+                TutorialManager.Instance.SetFlag(TutorialManager.TutorialFlag.DialogueFinished);
+                return;
+            }
             
             DialogueLine line = sequences[_currentSequence].lines[_currentLine];
             DisplayLine(line);
         }
+
+        #endregion
+
+        #region Utils
+
+        private Sprite GetActorSprite(Actor actor)
+            => (from aI in images where aI.actor == actor select aI.sprite).FirstOrDefault();
         
         private enum Actor
         {
@@ -67,5 +97,7 @@ namespace Controller
             public Actor actor;
             public Sprite sprite;
         }
+
+        #endregion
     }
 }

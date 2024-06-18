@@ -269,162 +269,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &7035255496686255528
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1119232345064337208}
-  - component: {fileID: 4359853614905999750}
-  m_Layer: 5
-  m_Name: DialougeSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1119232345064337208
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7035255496686255528}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8563597557852640120}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4359853614905999750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7035255496686255528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec5381923f564f2782e2b398abde27a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sequences:
-  - name: "Begr\xFC\xDFung"
-    lines:
-    - actor: 0
-      line: "Herzlich Willkommen Schatz, gef\xE4llt dir dein neuer Garten? Oma hatte
-        sich sehr viel um ihn gek\xFCmmert. "
-    - actor: 1
-      line: "Hi, ja er sieht sch\xF6n aus, aber ich bin mir nicht sicher ob ich Omas
-        Arbeit gerecht werden kann. "
-    - actor: 0
-      line: "Da mach dir mal keine Sorgen, ich werde dir zeigen wie alles funktioniert.
-        Ich habe schon was im Gew\xE4chshaus vorbereitet! "
-  - name: Erster Blick ins Haus
-    lines:
-    - actor: 1
-      line: "Und hier kann ich meine Blumen z\xFCchten?"
-    - actor: 0
-      line: "Richtig! Ich hoffe du wei\xDFt noch wie die Grundlagen davon funktionieren.
-        Lass uns mal eine Blume anpflanzen. Wo ist denn der Setzkasten? "
-  - name: Der Setzkasten
-    lines:
-    - actor: 0
-      line: "Perfekt, wei\xDFt du welche Pflanze du zuerst anpflanzen willst? "
-    - actor: 1
-      line: "Ja, ich w\xFCrde sehr gerne einen L\xF6wenzahn z\xFCchten. "
-    - actor: 0
-      line: "Omas Lieblings Pflanze. Eventuell schaffst du es direkt einen wei\xDFen
-        zu z\xFCchten? Bereite die Lehmerde vor, aber denk daran, L\xF6wenzahn ist
-        ein Lichtkeimer. "
-  - name: Die erste Pflanze
-    lines:
-    - actor: 1
-      line: "Wie oft muss ich ihn gie\xDFen? "
-    - actor: 0
-      line: "So alle 2 Tage, aber f\xFCr heute reicht das erstmal. "
-    - actor: 0
-      line: 'Lass uns morgen weiter machen. '
-  - name: "Am N\xE4chsten Morgen"
-    lines:
-    - actor: 0
-      line: "Guten Morgen du Sonnenschein, lass uns mal nach deinem L\xF6wenzahn
-        schauen. "
-  - name: Wieder im Haus
-    lines:
-    - actor: 1
-      line: "Guten Morgen, heute k\xF6nnen wir ihn gie\xDFen richtig? "
-    - actor: 0
-      line: Genau!
-  - name: "Erstes Gie\xDFen"
-    lines:
-    - actor: 0
-      line: 'Wenn du willst kannst du noch ein paar weitere Blumen anpflanzen, ansonsten
-        sehen wir uns wieder Morgen. '
-  - name: "Der N\xE4chste Tag"
-    lines:
-    - actor: 1
-      line: "Guten Morgen Mama, ich wollte gerade nach dem L\xF6wenzahn schauen. "
-    - actor: 0
-      line: "Guten Morgen Schatz, heute sollten wir ihn bereits umtopfen k\xF6nnen."
-  - name: Wieder im Haus
-    lines:
-    - actor: 0
-      line: "Siehst du, er ist bereits gesprossen und braucht jetzt einen gr\xF6\xDFeren
-        Topf."
-  - name: Umtopfen
-    lines:
-    - actor: 0
-      line: "Denk immer daran, im neuen Topf braucht eine Blume etwas D\xFCnger um
-        richtig wachsen zu k\xF6nne. "
-    - actor: 1
-      line: "Welchen brauche ich den f\xFCr einen L\xF6wenzahn? "
-    - actor: 0
-      line: "Die lieben Pflanzenjauche \xFCber alles."
-  - name: Frisch Gejaucht
-    lines:
-    - actor: 1
-      line: "Wie lange braucht die den bis sie bl\xFCht? "
-    - actor: 0
-      line: "Das dauert ein bisschen. Ich w\xFCrde dann nochmal in ein paar Tagen
-        vorbei schauen."
-  - name: "Die Blume Bl\xFCht"
-    lines:
-    - actor: 0
-      line: "Guten Morgen Sonnenschein, na wie geht\u2019s den unserem gelben Wunder? "
-    - actor: 0
-      line: Hi, ich hoffe ihm geht es gut.
-  - name: Ausgewachsen
-    lines:
-    - actor: 0
-      line: 'Wie toll, er ist ja ausgewachsen. Was willst du jetzt mit ihm machen? '
-  - name: Abschied
-    lines:
-    - actor: 0
-      line: Zur Feier des Tages habe ich dir was vorbereitet. Hier bitte sehr?
-    - actor: 1
-      line: "Das alles ist f\xFCr mich? So viele verschiedene Pflanzen! "
-    - actor: 0
-      line: "Ich hoffe du findest ein paar die dir gefallen. Ich w\xFCnsche dir viel
-        Erfolg bei deinen weiteren Z\xFCchtungen. "
-    - actor: 1
-      line: "Vielen Lieben Dank, die werden w\xFCndersch\xF6n! "
-  images:
-  - name: Mutter
-    actor: 0
-    sprite: {fileID: 21300000, guid: f303001bbf5f1514e9146df36e6ecce3, type: 3}
-  - name: Tochter
-    actor: 1
-    sprite: {fileID: 21300000, guid: e80735592ab00764b950f9e42b15b8b0, type: 3}
 --- !u!1001 &595046075668535322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -978,6 +822,125 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1155148562819270792, guid: 93c7574f2b869bf4182c18846a3edc05,
     type: 3}
   m_PrefabInstance: {fileID: 595046075668535322}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &831251477562751356
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8563597557852640120}
+    m_Modifications:
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650222999726736596, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+        type: 3}
+      propertyPath: m_Name
+      value: DialougeSystem
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 392bdc6dfbab9ac42aa0a7d1b9205858, type: 3}
+--- !u!224 &1119232345064337208 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 288649512405866052, guid: 392bdc6dfbab9ac42aa0a7d1b9205858,
+    type: 3}
+  m_PrefabInstance: {fileID: 831251477562751356}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2847153293052611834
 PrefabInstance:

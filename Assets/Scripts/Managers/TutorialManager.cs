@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Controller;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ namespace Managers
         
         private TutorialFlag _lastFlag;
         private bool _isInTutorial;
+        
+        public static TutorialManager Instance { get; private set; }
         
         public enum TutorialFlag
         {
@@ -24,6 +27,11 @@ namespace Managers
             AddedFertilizer,
             FlowerBlooms,
             DecidedForPlant
+        }
+
+        private void Awake()
+        {
+            Instance = this;
         }
 
         public void StartTutorial()
