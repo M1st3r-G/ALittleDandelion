@@ -11,7 +11,8 @@ namespace Clickable
     {
         [SerializeField] private Material hoverMaterial;
         private MeshRenderer _hoverMesh;
-
+        private bool _acceptsClicks;
+        
         protected void Awake()
         {
             GameObject tmp = new GameObject($"{name}Hover");
@@ -24,12 +25,21 @@ namespace Clickable
             
             _hoverMesh = tmp.AddComponent<MeshRenderer>();
             _hoverMesh.material = hoverMaterial;
+
+            _acceptsClicks = true;
             
             tmp.SetActive(false);
         }
 
+        protected void EnableHoverAndClick(bool state)
+        {
+            _acceptsClicks = state;
+            _hoverMesh.gameObject.SetActive(false);
+        }
+        
         public void OnPointerClick(PointerEventData eventData)
         {
+            if (!_acceptsClicks) return;
             AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Click);
             OnClick();
         }
@@ -38,12 +48,14 @@ namespace Clickable
         
         public void OnPointerEnter(PointerEventData eventData)
         {
+            if (!_acceptsClicks) return;
             _hoverMesh.gameObject.SetActive(true);
             AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.HoverGame);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            if (!_acceptsClicks) return;
             _hoverMesh.gameObject.SetActive(false);
         }
     }

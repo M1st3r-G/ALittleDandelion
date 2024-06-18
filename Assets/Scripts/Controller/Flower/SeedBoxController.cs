@@ -27,6 +27,9 @@ namespace Controller
 
         #region SetUp
 
+        public void SetHover(bool state)
+            => EnableHoverAndClick(state);
+        
         private new void Awake()
         {
             base.Awake();
@@ -34,6 +37,8 @@ namespace Controller
             _meshRenderer = GetComponent<MeshRenderer>();
             _defaultMaterial = _meshRenderer.material;
             _pr = GetComponent<PlantRenderer>();
+            
+            SetHover(false);
         }
 
         public void SetUpContent(FlowerInstance flower, Environment env)
@@ -126,7 +131,7 @@ namespace Controller
             FlowerInstanceLibrary.Instance.AddReplantFlower(_flower, _tmp);
             
             // ResetVariables
-            _parent.gameObject.SetActive(false);
+            _parent.CustomSetActive(false);
             
             _flower.OnChange -= RefreshVisualsWrapper;
             _flower = null;

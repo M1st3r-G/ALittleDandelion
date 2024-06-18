@@ -5,6 +5,7 @@ using Clickable;
 using Clickable.Shelf;
 using Data;
 using Managers;
+using Unity.VisualScripting;
 using UnityEngine;
 using Environment = Data.Environment;
 
@@ -14,19 +15,37 @@ namespace Controller
     {
         private SeedBoxController _currentSelection;
         private SeedBoxController[] _allBoxes;
+
+        private readonly Vector3 _hidePosition = new(-4.65f, -5.5f, -1f);
+        private readonly Vector3 _defaultPosition = new(0,0,0.56f);
         
         #region SetUp
-
-        private void OnEnable()
+        public void CustomSetActive(bool state)
+        {
+            if (state)
+            {
+                transform.localPosition = _defaultPosition;
+                CustomOnEnable();
+            }
+            else
+            {
+                transform.localPosition = _hidePosition;
+                CustomOnDisable();
+            }
+        }
+        
+        private void CustomOnEnable()
         {
             ShelfSeedsItem.OnSeedClicked += OnSeedClicked;
             ShelfSoilItem.OnSoilClicked += OnSoilClicked;
             WateringCan.OnWatering += OnWatering;
             Shovel.OnLightTypeChange += OnShovelClicked;
             ReplantPot.OnReplant += OnReplant;
+            
+            foreach (SeedBoxController box in _allBoxes) box.SetHover(true);
         }
 
-        private void OnDisable()
+        private void CustomOnDisable()
         {
             ShelfSeedsItem.OnSeedClicked -= OnSeedClicked;
             ShelfSoilItem.OnSoilClicked -= OnSoilClicked;
@@ -36,6 +55,13 @@ namespace Controller
             
             if(_currentSelection is not null) _currentSelection.Deselect();
             _currentSelection = null;
+
+            foreach (SeedBoxController box in _allBoxes) box.SetHover(false);
+        }
+
+        private void OnDisable()
+        {
+            Debug.LogError("Wait Who did that? The Seedbox shouldn't get Disabled");
         }
 
         private void Awake()

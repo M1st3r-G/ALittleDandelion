@@ -4,16 +4,19 @@ A Cozy Gardening Game with calming colors
 
 ---
 Bugs:
-  - Dirt Tint, nach gießen
-  - Fix SeedBox Position
+- Feels Laggy
+- Dirt Tint, nach gießen
+- BookRework
   - Buttons for Book
+  - Page Sound only when good
+
 
 ToDo:
   - Tutorial
     - Dialog und Charactere
   - Aufbewahrung:
     - Aufbewahren von Fertigen Pflanzen
-    - Fix Removeal Display
+      - Fix Removal Display
   - Gartenbauen
 
 Blumenbuch Content

@@ -13,5 +13,8 @@ namespace Clickable
         {
             CameraManager.Instance.ToGreenhouse();
         }
+
+        public void Enable() => EnableHoverAndClick(true);
+        public void Disable() => EnableHoverAndClick(false);
     }
 }

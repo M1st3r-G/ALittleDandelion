@@ -8,8 +8,8 @@ namespace Controller
     public class TableController : MonoBehaviour
     {
         [SerializeField] private Transform center;
-        private SeedBoxesController _seedlings;
 
+        private SeedBoxesController _seedlings;
         private PotController _current;
         
         public static TableController Instance { get; private set; }
@@ -23,7 +23,7 @@ namespace Controller
         public void PlaceFlower(int index)
         {
             Debug.Log($"Flower with index: {index}");
-            _seedlings.gameObject.SetActive(false);
+            _seedlings.CustomSetActive(false);
 
             if (_current is not null)
             {
@@ -78,7 +78,7 @@ namespace Controller
                 FlowerInstanceLibrary.Instance.ReturnPot(_current);
                 _current = null;
             }
-            _seedlings.gameObject.SetActive(true);
+            _seedlings.CustomSetActive(true);
         }
     }
 }

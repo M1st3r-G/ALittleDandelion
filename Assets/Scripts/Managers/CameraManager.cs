@@ -41,8 +41,8 @@ namespace Managers
             
             flowerCam.gameObject.SetActive(false);
             overview.gameObject.SetActive(true);
-            
-            greenhouseClick.enabled = true;
+
+            greenhouseClick.Enable();
         }
         
         public void ToGreenhouse()
@@ -53,9 +53,8 @@ namespace Managers
             
             flowerCam.gameObject.SetActive(true);
             overview.gameObject.SetActive(false);
-            
-            greenhouseClick.enabled = false;
-            greenhouseClick.transform.GetChild(greenhouseClick.transform.childCount - 1).gameObject.SetActive(false);
+
+            greenhouseClick.Disable();
         }
     }
 }
