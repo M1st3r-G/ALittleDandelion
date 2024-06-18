@@ -13,24 +13,85 @@ MonoBehaviour:
   m_Name: FlowerMeshes
   m_EditorClassIdentifier: 
   lists:
-  - type: 0
+  - name: "L\xF6wenzahn"
+    type: 0
     meshes:
-    - {fileID: 4068373912626513877, guid: 502d933fe73c622489a5abf3af26268d, type: 3}
-    - {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
-    - {fileID: 2381890483179193753, guid: 6c869b855a33bd94194ca23f9be75b94, type: 3}
-    - {fileID: 6569501557127940183, guid: d900cf9247d4fef4b8143bea61ab3967, type: 3}
-    - {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
-  - type: 1
+    - mesh: {fileID: 189162934501049559, guid: 76d35f7b6c2afeb4ebfe224997d77578, type: 3}
+      material: {fileID: 2100000, guid: 4b51b1a43c2ac164c9300b0058b0cc80, type: 2}
+      offset: {x: 0, y: 0.172, z: 0}
+    - mesh: {fileID: 4068373912626513877, guid: 2288b6bceab5df3478eb612bd953aefd,
+        type: 3}
+      material: {fileID: 2100000, guid: 174c20ae114f44c4cb05a087756a6493, type: 2}
+      offset: {x: -0.7, y: 0.75, z: 0}
+    - mesh: {fileID: 4732937762076777578, guid: d0c1b69dc87df9f4891e4f96ec0df9ac,
+        type: 3}
+      material: {fileID: 2100000, guid: 5256059ba4400c3408fe7456569d7eaa, type: 2}
+      offset: {x: -0.1, y: 0, z: -0.215}
+    - mesh: {fileID: -2776328985985073188, guid: aafffdb64abf60b4aa87ba90ad5c800b,
+        type: 3}
+      material: {fileID: 2100000, guid: dea5db011e9a6d34cbbae8ca3dc0d804, type: 2}
+      offset: {x: -0.2, y: 5.1, z: 0.38}
+    final:
+    - mesh: {fileID: -8012436844635426135, guid: aedb9db6524097344bd97eba50310832,
+        type: 3}
+      material: {fileID: 2100000, guid: ca2f05271ee4d664693ee9bc103f0943, type: 2}
+      offset: {x: 0, y: 1.2, z: 0.15}
+    - mesh: {fileID: 436485938669519311, guid: e10debe32832c104ea274267dcd37dd5, type: 3}
+      material: {fileID: 2100000, guid: 2f8e9f75b65e6b74aaf486b51a44766d, type: 2}
+      offset: {x: 0, y: 1.25, z: 0}
+  - name: Rose
+    type: 2
     meshes:
-    - {fileID: 4068373912626513877, guid: 502d933fe73c622489a5abf3af26268d, type: 3}
-    - {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
-    - {fileID: 2381890483179193753, guid: 6c869b855a33bd94194ca23f9be75b94, type: 3}
-    - {fileID: 6569501557127940183, guid: d900cf9247d4fef4b8143bea61ab3967, type: 3}
-    - {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
-  - type: 2
+    - mesh: {fileID: 4443985371861560359, guid: 3bb324fa569241a4da90e44cdbd3d6b2,
+        type: 3}
+      material: {fileID: 2100000, guid: 2c5ba6d471b2d3342a4ba7408fb069f0, type: 2}
+      offset: {x: 0, y: 0.172, z: 0}
+    - mesh: {fileID: 2373617384909068173, guid: 7a302f94791a97d42a2361b0cb5a6adb,
+        type: 3}
+      material: {fileID: 2100000, guid: 6c02264f49f5a694e9916ef9af6acffa, type: 2}
+      offset: {x: 0, y: 0, z: 0}
+    - mesh: {fileID: 4164511204261677510, guid: e8325acde056c684caaa3a17cd51c49a,
+        type: 3}
+      material: {fileID: 2100000, guid: cd38bc2deb416114eb7c08c8b47c3ede, type: 2}
+      offset: {x: 0.24, y: 1.6, z: 0.285}
+    - mesh: {fileID: -3748313990823450762, guid: f01f89953e0068f4a9c579335609c1e1,
+        type: 3}
+      material: {fileID: 2100000, guid: 3952c3ce0875dea45aaa936b37552803, type: 2}
+      offset: {x: 0.1, y: 1.75, z: 0.15}
+    final:
+    - mesh: {fileID: -1459097487142115289, guid: 3dd63d1dea18e614c8138c3f8d8a1345,
+        type: 3}
+      material: {fileID: 2100000, guid: 32344f38de4770141b7e5c35eb3df01d, type: 2}
+      offset: {x: 0.125, y: 1.6, z: 0}
+    - mesh: {fileID: -1475203435441098036, guid: 86d36c616be695349b8907f83a15718e,
+        type: 3}
+      material: {fileID: 2100000, guid: 18a277b16dc233241a5963a209dbe37a, type: 2}
+      offset: {x: -0.11, y: 1.875, z: -0.05}
+  - name: Tulpe
+    type: 1
     meshes:
-    - {fileID: 4068373912626513877, guid: 502d933fe73c622489a5abf3af26268d, type: 3}
-    - {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
-    - {fileID: 2381890483179193753, guid: 6c869b855a33bd94194ca23f9be75b94, type: 3}
-    - {fileID: 6569501557127940183, guid: d900cf9247d4fef4b8143bea61ab3967, type: 3}
-    - {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+    - mesh: {fileID: -4727693460274846941, guid: 162464001b1de1744b373423f0821574,
+        type: 3}
+      material: {fileID: 2100000, guid: 1531a74475fea7e4c952055b6e48aea2, type: 2}
+      offset: {x: 0, y: 0.25, z: 0}
+    - mesh: {fileID: 4068373912626513877, guid: df8dd62458f81fc438cb14481f40b190,
+        type: 3}
+      material: {fileID: 2100000, guid: 682e06aae01c53e4da3201ac8ade7e12, type: 2}
+      offset: {x: 0, y: 0.8, z: 0}
+    - mesh: {fileID: -4545423930167495100, guid: c6aa75b0cfc923049afea5299b28a654,
+        type: 3}
+      material: {fileID: 2100000, guid: cac4b253a1e945b44a1e4be0e0194a77, type: 2}
+      offset: {x: 0, y: 1.16, z: 0}
+    - mesh: {fileID: -4545423930167495100, guid: 42f18b77ca7987c46b22a92df387c2ea,
+        type: 3}
+      material: {fileID: 2100000, guid: 4c018d8801e3e954d9f088d625c806bc, type: 2}
+      offset: {x: 0.075, y: 2.27, z: -0.4}
+    final:
+    - mesh: {fileID: 2532197596911439093, guid: cc78567c45b1f344599f6d15d535c28f,
+        type: 3}
+      material: {fileID: 2100000, guid: 9b41a33cbd0abd74181c74e1b2f18da9, type: 2}
+      offset: {x: 0.05, y: 2.575, z: -0.4}
+    - mesh: {fileID: -889180119648741084, guid: 04ecf08e3daf2aa4db3fd87bf65d24af,
+        type: 3}
+      material: {fileID: 2100000, guid: df79332be204ab54d95638d067a85329, type: 2}
+      offset: {x: -0.04, y: 3.05, z: 0.56}
