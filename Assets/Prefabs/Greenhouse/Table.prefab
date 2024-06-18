@@ -320,6 +320,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Seeds
       objectReference: {fileID: 0}
+    - target: {fileID: 2844254772673232893, guid: cf9386dba22b6be4b8a0fb869b31919d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3437543050160275761, guid: cf9386dba22b6be4b8a0fb869b31919d,
         type: 3}
       propertyPath: m_LocalScale.x

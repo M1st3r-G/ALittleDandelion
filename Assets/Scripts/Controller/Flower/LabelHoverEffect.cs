@@ -23,7 +23,6 @@ namespace Controller
         {
             string tmp = flag ? labelText.text : contentToShow;
             _outputField.text = tmp;
-            Debug.Log($"{_outputField.text} is displayed, {tmp} should be displayed");
         }
 
         public void OnPointerExit(PointerEventData eventData)
