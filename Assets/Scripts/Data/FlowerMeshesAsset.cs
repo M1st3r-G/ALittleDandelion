@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 namespace Data
@@ -6,23 +7,37 @@ namespace Data
     [CreateAssetMenu(menuName = "Data/FlowerMeshesAsset")]
     public class FlowerMeshesAsset : ScriptableObject
     {
-        [SerializeField] private FlowerTypedList[] lists;
+        [SerializeField] private TypedFlowerInformation[] lists;
         
-        public Mesh GetMesh(FlowerData.FlowerType type, FlowerInstance.GrowthState state)
+        public MeshWithMaterial GetMesh(FlowerData.FlowerType type, FlowerInstance.GrowthState state)
         {
-            foreach (FlowerTypedList ftl in lists)
+            Debug.Assert(state != FlowerInstance.GrowthState.Dead && state != FlowerInstance.GrowthState.Flower,
+                "Illegaler Mesh abgefragt");
+            
+            foreach (TypedFlowerInformation flowerInformation in lists)
             {
-                if (ftl.type == type) return ftl.meshes[(int)state];
+                if (flowerInformation.type == type) return flowerInformation.meshes[(int)state];
             }
-
-            return null;
+            
+            return default;
         }
+
+        public MeshWithMaterial[] GetFinalMeshes(FlowerData.FlowerType type)
+            => (from fI in lists where fI.type == type select fI.final).FirstOrDefault();
         
         [Serializable]
-        private struct FlowerTypedList
+        private struct TypedFlowerInformation
         {
             public FlowerData.FlowerType type;
-            public Mesh[] meshes;
+            public MeshWithMaterial[] meshes;
+            public MeshWithMaterial[] final;
+        }
+
+        [Serializable]
+        public struct MeshWithMaterial
+        {
+            public Mesh mesh;
+            public Material material;
         }
     }
 }

@@ -25,9 +25,12 @@ namespace Managers
             if (Instance == this) Instance = null;
         }
 
-        public Mesh GetMesh(FlowerData.FlowerType type, FlowerInstance.GrowthState state)
+        public FlowerMeshesAsset.MeshWithMaterial GetMesh(FlowerData.FlowerType type, FlowerInstance.GrowthState state)
             => allMeshes.GetMesh(type, state);
 
+        public FlowerMeshesAsset.MeshWithMaterial[] GetFinalMesh(FlowerData.FlowerType type)
+            => allMeshes.GetFinalMeshes(type);
+        
         public Material GetDirtMaterial(Environment.SoilType type)
             => allDirts.FirstOrDefault(mWt => mWt.type == type).mat;
 

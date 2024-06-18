@@ -5,7 +5,10 @@ A Cozy Gardening Game with calming colors
 ---
 Bugs:
   - Check Load for Save of Book (Seems To reset)
-
+  - Dirt Tint, nach gießen
+  - Fix SeedBox Position
+  - Start with Empty table
+  - Buttons for Book
 
 ToDo:
   - Tutorial
