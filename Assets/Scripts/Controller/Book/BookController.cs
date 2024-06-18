@@ -154,8 +154,12 @@ namespace Controller.Book
 
         public void FlipPage(int direction)
         {
-            _currentPage = Mathf.Clamp(_currentPage + direction, 0, pages.Length - 1);
             Debug.Assert(IsShown, "Fehler, Seite im Ausgeblendeten zustand geblättert");
+            int prev = _currentPage;
+            _currentPage = Mathf.Clamp(_currentPage + direction, 0, pages.Length - 1);
+
+            if (prev == _currentPage) return;
+            
             PageWithUnlockData current = pages[_currentPage];
             AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.BookPageFlip);
             pageController.ShowPage(current.page, current.unlockValue);

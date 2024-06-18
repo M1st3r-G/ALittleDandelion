@@ -59,11 +59,6 @@ namespace Controller
             foreach (SeedBoxController box in _allBoxes) box.SetHover(false);
         }
 
-        private void OnDisable()
-        {
-            Debug.LogError("Wait Who did that? The Seedbox shouldn't get Disabled");
-        }
-
         private void Awake()
         {
             _allBoxes = GetComponentsInChildren<SeedBoxController>();

@@ -8,8 +8,6 @@ Bugs:
 - Dirt Tint, nach gießen
 - BookRework
   - Buttons for Book
-  - Page Sound only when good
-
 
 ToDo:
   - Tutorial
@@ -17,8 +15,9 @@ ToDo:
   - Aufbewahrung:
     - Aufbewahren von Fertigen Pflanzen
       - Fix Removal Display
-  - Gartenbauen
 
+
+- Gartenbauen
 Blumenbuch Content
 - Text
 - Images
