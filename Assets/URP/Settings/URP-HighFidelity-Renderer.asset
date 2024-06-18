@@ -111,10 +111,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    intensity: 0.3
+    intensity: 0.2
     kuwahara: 2
     passes: 3
-    radius: 8
+    radius: 7
     blur: 2
     sharpness: 8
     hardness: 8
