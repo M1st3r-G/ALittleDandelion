@@ -28,6 +28,7 @@ namespace Data
         [Serializable]
         private struct TypedFlowerInformation
         {
+            public string name;
             public FlowerData.FlowerType type;
             public MeshWithMaterial[] meshes;
             public MeshWithMaterial[] final;
@@ -38,6 +39,7 @@ namespace Data
         {
             public Mesh mesh;
             public Material material;
+            public Vector3 offset;
         }
     }
 }

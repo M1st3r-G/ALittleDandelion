@@ -22,11 +22,11 @@ namespace Controller
 
                     stalkMesh.mesh = finalMeshes[0].mesh;
                     stalkRenderer.material = finalMeshes[0].material;
+                    stalkMesh.gameObject.transform.localPosition = finalMeshes[0].offset;
 
                     blossomMesh.mesh = finalMeshes[1].mesh;
                     blossomRenderer.material = finalMeshes[1].material;
-                    //Fix Stalk Position
-                    //Fix Blossom Position
+                    blossomMesh.gameObject.transform.localPosition = finalMeshes[1].offset;
                     return;
                 }
                 case FlowerInstance.GrowthState.Dead:
@@ -39,6 +39,7 @@ namespace Controller
                     FlowerMeshesAsset.MeshWithMaterial mwM = FlowerLookUpLibrary.Instance.GetMesh(flower.Type, flower.State);
                     stalkMesh.mesh = mwM.mesh;
                     stalkRenderer.material = mwM.material;
+                    stalkMesh.gameObject.transform.localPosition = mwM.offset;
                     blossomMesh.mesh = null;
                     return;
             }
