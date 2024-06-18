@@ -52,29 +52,7 @@ namespace Controller.Book
         {
             if (Instance == this) Instance = null;
         }
-        
-        private static void TestCases()
-        {
-            Debug.Log("Testing Begins");
-            List<int> tmp = GetSetOfNeededOptions(0b000_11010);
 
-            Debug.Assert(tmp.Aggregate("", (s, i) => s+i) == "02", "Der erste Teil ist falsch");
-
-            List<int> tmp2 = GetSetOfNeededOptions(0b000_11011);
-            string val2 = tmp2.Aggregate("", (s, i) => s + i);
-            Debug.Assert(val2 == "2", $"Wrong set {val2}");
-            
-            Debug.Assert(ModifyUnlockedHintsFlag(1, 0b000_11011) == 0b000_11111, "Die Flag wurde falsch Manipuliert");
-
-            int tmp3 = ModifyUnlockedHintsFlag(1, 0b000_01110);
-            Debug.Assert(tmp3 is 0b000_01111 or 0b000_11110, "Fehler bei der Zeiten FlagManipulierung");
-
-            int tmp4 = ModifyUnlockedHintsFlag(3, 0b000_10000);
-            Debug.Assert(tmp4 is 0b000_10111 or 0b000_11011 or 0b000_11110, "Fehler bei der Dritten FlagManipulierung");
-            
-            Debug.Log("Testing Ends");
-        }
-        
         #endregion
 
         #region UnlockFlagManagement
