@@ -3,16 +3,27 @@ Prototyping Project
 A Cozy Gardening Game with calming colors
 
 ---
-ToDo:
-- Arrow in ui button to overworld
-- Remover Add KeepSpace
-
 Bugs:
   - Check Load for Save of Book (Seems To reset)
+
+
+ToDo:
   - Tutorial
     - Dialog und Charactere
+  - Gartenbauen
+  - Aufbewahrung:
+    - Aufbewahren von Fertigen Pflanzen
+    - Fix Removeal Display
+  - Add PlantMaterials (Test)
+    - Löwenzahn
+    - Rose
+    - Tulpe
 
-- Audio
+Blumenbuch Content
+- Text
+- Images
+
+- More Audio Import
   - Add Topf Benutzen
   - Import Sounds
     - Soil Placement
@@ -21,22 +32,13 @@ Bugs:
     - Remove Plant
     - Plant Seedling
 
-- Add PlantMaterials (Test)
-  - Löwenzahn
+More Plant Import
   - Löwenzahn (Weiß)
-  - Rose
-  - Tulpe
   - Santini
     - Bei der Santini Saat vom Löwenzahn
 
-- Gartenbauen
-
-Aufbewahrung:
-- Aufbewahren von Fertigen Pflanzen
-- Fix Removeal Display
-
-
 Enhancements:
+- Arrow in ui button to overworld
 - Schere und Unkraut
 - Fix Highlight on hover
   - Add hover Multiplier
