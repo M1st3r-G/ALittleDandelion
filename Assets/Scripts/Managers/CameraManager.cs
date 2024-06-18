@@ -19,6 +19,10 @@ namespace Managers
         private void Awake()
         {
             Instance = this;
+        }
+
+        private void Start()
+        {
             ToHub();
         }
 
