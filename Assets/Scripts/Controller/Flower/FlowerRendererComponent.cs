@@ -30,7 +30,11 @@ namespace Controller
                     return;
                 }
                 case FlowerInstance.GrowthState.Dead:
-                    Debug.LogError("The Dead Mesh ist missing");
+                    FlowerMeshesAsset.MeshWithMaterial deadMesh = FlowerLookUpLibrary.Instance.GetDeadMesh();
+                    stalkMesh.mesh = deadMesh.mesh;
+                    stalkRenderer.material = deadMesh.material;
+                    stalkMesh.gameObject.transform.localPosition = deadMesh.offset;
+                    blossomMesh.mesh = null;
                     return;
                 case FlowerInstance.GrowthState.Seed:
                 case FlowerInstance.GrowthState.Sprout:

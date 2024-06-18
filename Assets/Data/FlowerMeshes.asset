@@ -95,3 +95,7 @@ MonoBehaviour:
         type: 3}
       material: {fileID: 2100000, guid: df79332be204ab54d95638d067a85329, type: 2}
       offset: {x: -0.04, y: 3.05, z: 0.56}
+  deadMesh:
+    mesh: {fileID: 3861478300804232965, guid: 4effe39a6a32caf4cb849b5720d42b67, type: 3}
+    material: {fileID: 2100000, guid: 63bf61cb23388ba41969b9b5cba96e30, type: 2}
+    offset: {x: 0.7, y: 0.415, z: 0.115}

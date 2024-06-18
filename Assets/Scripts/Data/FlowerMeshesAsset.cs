@@ -8,6 +8,8 @@ namespace Data
     public class FlowerMeshesAsset : ScriptableObject
     {
         [SerializeField] private TypedFlowerInformation[] lists;
+        [SerializeField] private MeshWithMaterial deadMesh;
+        public MeshWithMaterial GetDeadMesh() => deadMesh;
         
         public MeshWithMaterial GetMesh(FlowerData.FlowerType type, FlowerInstance.GrowthState state)
         {

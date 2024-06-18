@@ -30,6 +30,9 @@ namespace Managers
 
         public FlowerMeshesAsset.MeshWithMaterial[] GetFinalMesh(FlowerData.FlowerType type)
             => allMeshes.GetFinalMeshes(type);
+
+        public FlowerMeshesAsset.MeshWithMaterial GetDeadMesh()
+            => allMeshes.GetDeadMesh();
         
         public Material GetDirtMaterial(Environment.SoilType type)
             => allDirts.FirstOrDefault(mWt => mWt.type == type).mat;
