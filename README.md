@@ -3,26 +3,29 @@ Prototyping Project
 A Cozy Gardening Game with calming colors
 
 ---
-Bugs:
-- Feels Laggy
-- Dirt Tint, nach gießen
-
 ToDo:
   - Tutorial
-    - Dialog und Charactere
+    - Display Lines
+    - Add Triggers
   - Aufbewahrung:
     - Aufbewahren von Fertigen Pflanzen
       - Fix Removal Display
-  - Button need to Render plants
+  - Render Plants to the Buttons in the UI
+  - Dirt Tint, nach gießen
+    - Dirt Controller += TimeManager.OnIncrease
+    - Tint -> 0;
 
+- SeedPot Clickable to Focus
+- Rework Flowers
 
+Art and Scene
+- Rework Regal Layout
+- Pot Smaller, Flower Bigger
 - Gartenbauen
-Blumenbuch Content
-- Text
-- Images
 
 
 Enhancements:
+- Animation fürs Buch
 - More Audio Import
     - Add Topf Benutzen
     - Import Sounds
@@ -31,18 +34,16 @@ Enhancements:
         - Use Shovel
         - Remove Plant
         - Plant Seedling
-- Arrow in ui button to overworld
+- Arrow in ui button to over world
 - Schere und Unkraut
 - Fix Highlight on hover
   - Add hover Multiplier
 - Let the SaveFile Controller Adjust the Data
-- Remove Pots from SeedController, (RectDirt)
-- Pause Change Debug Sound
+- Remove Pots from SeedController so they're not seen
+- Change Debug Sound in Pause Menu
 - More Plant Import
-    - Löwenzahn (Weiß)
-        - Santini
-            - Bei der Santini Saat vom Löwenzahn
-- Auswahl und Kreuzung
-- Samenernte (Nach einigen Tagen)
-- ShopSystem
-  - Samen Kaufen und verkaufen
+- Features
+  - Auswahl und Kreuzung
+  - Samenernte (Nach einigen Tagen)
+  - ShopSystem
+    - Samen Kaufen und verkaufen
