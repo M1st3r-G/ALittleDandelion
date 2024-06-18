@@ -6,8 +6,6 @@ A Cozy Gardening Game with calming colors
 Bugs:
 - Feels Laggy
 - Dirt Tint, nach gießen
-- BookRework
-  - Buttons for Book
 
 ToDo:
   - Tutorial
@@ -15,6 +13,7 @@ ToDo:
   - Aufbewahrung:
     - Aufbewahren von Fertigen Pflanzen
       - Fix Removal Display
+  - Button need to Render plants
 
 
 - Gartenbauen

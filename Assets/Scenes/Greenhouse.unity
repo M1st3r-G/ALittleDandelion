@@ -206,6 +206,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1358940210 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9151335010643182147, guid: 68c6920b2f9e894489a362efd7944e4b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5999383546375344079}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c69ba4f798418490500ca01f58e767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1719867928 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8436125076901253141, guid: 68c6920b2f9e894489a362efd7944e4b,
@@ -544,6 +556,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4396903931046205424, guid: 40a99c2c5361bb843a6e1f5499c558ef,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1358940210}
+    - target: {fileID: 4981045363040533843, guid: 40a99c2c5361bb843a6e1f5499c558ef,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1358940210}
+    - target: {fileID: 5318421252720943832, guid: 40a99c2c5361bb843a6e1f5499c558ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1358940210}
+    - target: {fileID: 7232893330218752946, guid: 40a99c2c5361bb843a6e1f5499c558ef,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 3634346487666334504}
     - target: {fileID: 8823533485802793066, guid: 40a99c2c5361bb843a6e1f5499c558ef,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -634,6 +666,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9071444464671343157, guid: 40a99c2c5361bb843a6e1f5499c558ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1358940210}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

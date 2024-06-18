@@ -18,7 +18,7 @@ namespace Controller.Book
         [SerializeField] private PageWithUnlockData[] pages;
         
         // Params
-        private const float DefaultZ = 8;
+        private Vector3 _defaultPos;
         
         //Temps
         private int _currentPage;
@@ -29,7 +29,7 @@ namespace Controller.Book
         
 
         #endregion
-        
+
         #region SetUp
 
         private void Awake()
@@ -43,9 +43,9 @@ namespace Controller.Book
                 pages[i].unlockValue = tmp[i];
             }
 
+            _defaultPos = transform.localPosition;
+            
             DisplayBook(false);
-
-            //TestCases();
         }
 
         private void OnDestroy()
@@ -145,7 +145,9 @@ namespace Controller.Book
         
         private void DisplayBook(bool show)
         {
-            transform.localPosition = new Vector3(show ? inAndOutOfFrame.x : inAndOutOfFrame.y, 0, DefaultZ);
+            Vector3 tmp = _defaultPos;
+            tmp.x = show ? inAndOutOfFrame.x : inAndOutOfFrame.y;
+            transform.localPosition = tmp;
             
             if (!show) return;
             PageWithUnlockData current = pages[_currentPage];

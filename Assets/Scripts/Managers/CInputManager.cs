@@ -3,7 +3,6 @@ using Controller.Book;
 using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Managers
@@ -153,7 +152,7 @@ namespace Managers
 
         
         private void FlipPageWrapper(InputAction.CallbackContext ctx) => FlipPage((int)ctx.ReadValue<float>());
-        private  void FlipPage(int direction)
+        public  void FlipPage(int direction)
         {
             if (!_navigationActive) return;
             if (BookController.Instance is null) return; //Faul, vielleicht vorher Initialisieren.
