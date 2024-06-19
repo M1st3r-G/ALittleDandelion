@@ -7,16 +7,11 @@ ToDo:
   - Aufbewahrung:
     - Aufbewahren von Fertigen Pflanzen
       - Fix Removal Display
-  - Render Plants to the Buttons in the UI
   - Dirt Tint, nach gießen
     - Dirt Controller += TimeManager.OnIncrease
     - Tint -> 0;
 
-Pot Loading not immedeatly rendering
-
 - SeedPot Clickable to Focus
-- Rework Flowers
-  - Pot Smaller, Flower Bigger
 
 Art and Scene
 - Rework Regal Layout
