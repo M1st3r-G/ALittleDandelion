@@ -4,20 +4,10 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-- FullBook End Display
-- Add Schere To Scene (Removes Dead Plants)
 - RichPresence
-- Arrow in ui button to over world
-- More Sounds
-  - Add Topf Benutzen
-  - Import Sounds
-    - Soil Placement
-    - Water Plant
-    - Use Shovel
-    - Remove Plant
-    - Plant Seedling
 - Save TutorialProgress
 - EasterEggs
+- Add Schere To Scene (Removes Dead Plants)
 - Fix Highlight on hover (Add Multiplier)
 - Dirt Tint, nach gießen
   - Dirt Controller += TimeManager.OnIncrease

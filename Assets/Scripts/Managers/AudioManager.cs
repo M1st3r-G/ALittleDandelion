@@ -16,10 +16,23 @@ namespace Managers
         public const string EffectVolumeKey = "EffectVolume";
         
         public static AudioManager Instance { get; private set; }
-        
+
         public enum AudioEffect // MoneyChange | Ignored PotClicked due to Inheritance
         {
-            Click, HoverUI, HoverGame, Dirt, Fertilizer, Water,  Shovel, SeedPlant, StarRating,  RemovePlant, Replant, BookPageFlip, NextDay
+            Click,
+            HoverUI,
+            HoverGame,
+            Dirt,
+            Fertilizer,
+            Water,
+            Shovel,
+            SeedPlant,
+            StarRating,
+            RemovePlant,
+            Replant,
+            BookPageFlip,
+            NextDay,
+            PlacePot
         }
 
         #region SetUp

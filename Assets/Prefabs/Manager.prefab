@@ -251,17 +251,20 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 03979b3b5026c274ca58871fd56663da, type: 3}
   - name: Soil Placement
     type: 3
-    clips: []
+    clips:
+    - {fileID: 8300000, guid: 78f0b9cb660b7a646b8e85f21a597464, type: 3}
   - name: Add Fertilizer
     type: 4
     clips:
     - {fileID: 8300000, guid: 2b8670b132d29984c93743808adbfcb3, type: 3}
   - name: Water Plant
     type: 5
-    clips: []
+    clips:
+    - {fileID: 8300000, guid: dbbf553762f459541bc4f103e33a3024, type: 3}
   - name: Use Shovel
     type: 6
-    clips: []
+    clips:
+    - {fileID: 8300000, guid: fea01853c596eb440851e7402e237082, type: 3}
   - name: Plant Seed
     type: 7
     clips:
@@ -272,10 +275,12 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
   - name: Remove Plant
     type: 9
-    clips: []
+    clips:
+    - {fileID: 8300000, guid: fea01853c596eb440851e7402e237082, type: 3}
   - name: Replant Seedling
     type: 10
-    clips: []
+    clips:
+    - {fileID: 8300000, guid: 95798c5af3f22a54f825fb50722465bb, type: 3}
   - name: Flip Book Page
     type: 11
     clips:
@@ -284,6 +289,10 @@ MonoBehaviour:
     type: 12
     clips:
     - {fileID: 8300000, guid: c5e2a73ad4706440f93bf05df0b465fe, type: 3}
+  - name: Place Pot
+    type: 13
+    clips:
+    - {fileID: 8300000, guid: c230389cdba1a4d47bda71c4d0e2b6f9, type: 3}
   effectSrc: {fileID: 620530939505051547}
 --- !u!82 &620530939505051547
 AudioSource:

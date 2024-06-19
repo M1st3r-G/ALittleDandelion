@@ -2,6 +2,7 @@
 using Data;
 using Managers;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace Controller
 {
@@ -33,6 +34,9 @@ namespace Controller
             _current = FlowerInstanceLibrary.Instance.BorrowPot(index);
             AdjustCurrentTransform();
             _current.SetDisplayed(true);
+
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.PlacePot);
+            
             CheckForRemoval();
         }
 
