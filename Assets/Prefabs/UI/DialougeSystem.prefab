@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 673921066395780354}
   - component: {fileID: 8148954088962702051}
   - component: {fileID: 4402507501806920435}
+  - component: {fileID: 2577066884910232867}
   m_Layer: 5
   m_Name: CharacterImage
   m_TagString: Untagged
@@ -200,7 +201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e80735592ab00764b950f9e42b15b8b0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -210,6 +211,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &2577066884910232867
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509080293532529411}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0814f2c3a0b907a409df2c24726febdf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1598773737875504779
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,3 +698,4 @@ MonoBehaviour:
   - name: Tochter
     actor: 1
     sprite: {fileID: 21300000, guid: e80735592ab00764b950f9e42b15b8b0, type: 3}
+  anim: {fileID: 2577066884910232867}

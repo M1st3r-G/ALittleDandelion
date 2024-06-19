@@ -20,6 +20,8 @@ namespace Controller
         [SerializeField] private DialogueSequence[] sequences;
         [SerializeField] private ActorImages[] images;
 
+        [SerializeField] private Animator anim;
+        
         private int _currentSequence = -1;
         private int _currentLine;
 
@@ -44,6 +46,8 @@ namespace Controller
         private void DisplayLine(DialogueLine line)
         {
             characterImage.sprite = GetActorSprite(line.actor);
+            anim.Play(line.actor == Actor.Mutter ? "Mutter" : "Tochter" );
+            
             characterName.text = line.ActorName;
             lineText.text = line.line;
         }
@@ -54,6 +58,7 @@ namespace Controller
             if (_currentLine >= sequences[_currentSequence].lines.Length)
             {
                 print("Finished Lines");
+                anim.Play("Idle");
                 gameObject.SetActive(false);
                 TutorialManager.Instance.SetFlag(TutorialManager.TutorialFlag.DialogueFinished);
                 return;
