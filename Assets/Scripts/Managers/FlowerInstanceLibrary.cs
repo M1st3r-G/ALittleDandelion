@@ -20,6 +20,8 @@ namespace Managers
         [SerializeField] private Transform row1;
         [SerializeField] private Transform row2;
         [SerializeField] private GameObject potPrefab;
+
+        [SerializeField] private RenderTexture[] allOutputTextures;
         
         private List<PotController> _allPots;
 
@@ -43,7 +45,10 @@ namespace Managers
             {
                 GameObject tmpObj = Instantiate(potPrefab);
                 PotController tmpPot = tmpObj.GetComponent<PotController>();
+                Camera tmpCam = tmpObj.GetComponentInChildren<Camera>();
                 tmpObj.SetActive(false);
+
+                tmpCam.targetTexture = allOutputTextures[i];
                 
                 _allPots.Add(tmpPot);
                 ReturnPot(tmpPot);

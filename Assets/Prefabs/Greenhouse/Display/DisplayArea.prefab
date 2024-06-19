@@ -52,6 +52,19 @@ MonoBehaviour:
   row2: {fileID: 1609087112859399241}
   potPrefab: {fileID: 8864590871730076074, guid: eac7270006df2934083d5ad90fa4f9ad,
     type: 3}
+  allOutputTextures:
+  - {fileID: 8400000, guid: 5a8ca1ff217b4b04f994d82810237fb0, type: 2}
+  - {fileID: 8400000, guid: c0650e26928b73945bf1c32eb7a5e866, type: 2}
+  - {fileID: 8400000, guid: 47b4dfeda1525b240a9079b48f7a64f0, type: 2}
+  - {fileID: 8400000, guid: b8f674e294a324944ac23329d63eae3b, type: 2}
+  - {fileID: 8400000, guid: f2da0172c8fd0534d8c210c46acd8929, type: 2}
+  - {fileID: 8400000, guid: 3e93f0dfc53948c4e85b15312873e1ee, type: 2}
+  - {fileID: 8400000, guid: 2fd0c3e615695c24982b71c70419a712, type: 2}
+  - {fileID: 8400000, guid: 00cee55f29139074a9f020f7f4e80958, type: 2}
+  - {fileID: 8400000, guid: 888ccbf3e650227439b86deefa1ec617, type: 2}
+  - {fileID: 8400000, guid: 3f720438144aeb54098a341f77185ffd, type: 2}
+  - {fileID: 8400000, guid: a6d3173fd5169f5468cfc7d10d285b9a, type: 2}
+  - {fileID: 8400000, guid: eba0fec631c7cdb45990a2a6dcf2de3d, type: 2}
 --- !u!1001 &933800003877714588
 PrefabInstance:
   m_ObjectHideFlags: 0
