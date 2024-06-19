@@ -11,11 +11,11 @@ ToDo:
     - Dirt Controller += TimeManager.OnIncrease
     - Tint -> 0;
 
-- SeedPot Clickable to Focus
 
+    
 Art and Scene
 - Rework Regal Layout
-- Gartenbauen
+
 
 
 Enhancements:

@@ -15,6 +15,8 @@ namespace Controller
         private SeedBoxController _currentSelection;
         private SeedBoxController[] _allBoxes;
 
+        [SerializeField] private SeedBoxMainHover hoverEffect;
+        
         private readonly Vector3 _hidePosition = new(-4.65f, -5.5f, -1f);
         private readonly Vector3 _defaultPosition = new(0,0,0.56f);
         
@@ -25,11 +27,13 @@ namespace Controller
             {
                 transform.localPosition = _defaultPosition;
                 CustomOnEnable();
+                hoverEffect.SetActive(false);
             }
             else
             {
                 transform.localPosition = _hidePosition;
                 CustomOnDisable();
+                hoverEffect.SetActive(true);
             }
         }
         
