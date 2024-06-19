@@ -16,7 +16,7 @@ MonoBehaviour:
   sketch: {fileID: 1800729216, guid: 0a164d924933368498c885fa4db6bf9b, type: 3}
   image: {fileID: 957620242, guid: 54fe8db680d475c4085a07e00d0d6da8, type: 3}
   hints:
-  - 'Name: Hyazinthen'
+  - 'Name: Hyazinthe'
   - 'Keimer: Lichtkeimer'
   - 'Erde: Sanderde'
   - "D\xFCnger: Knochend\xFCnger"

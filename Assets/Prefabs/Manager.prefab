@@ -218,6 +218,10 @@ MonoBehaviour:
   seeds:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   soils:
   - {fileID: 0}
   - {fileID: 0}

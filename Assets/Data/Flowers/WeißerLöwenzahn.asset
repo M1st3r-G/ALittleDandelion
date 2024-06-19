@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowerTypes: 6
   preferredEnv:
-    soil: 1
+    soil: 3
     lichtkeimer: 1
-  fertilizer: 0
+  fertilizer: 1
   hSoil: 0
   timeToSprout: 2
   timeToBloom: 8
