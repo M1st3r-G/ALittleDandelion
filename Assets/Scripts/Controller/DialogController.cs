@@ -51,6 +51,8 @@ namespace Controller
         public void NextLine()
         {
             _currentLine++;
+            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Click);
+            
             if (_currentLine >= sequences[_currentSequence].lines.Length)
             {
                 print("Finished Lines");

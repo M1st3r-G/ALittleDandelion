@@ -4,7 +4,6 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-- Hover and Click for Dialogue
 - FullBook End Display
 - Add Schere To Scene (Removes Dead Plants)
 - Hide Button of Books when at the End
