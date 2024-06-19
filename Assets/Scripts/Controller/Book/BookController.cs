@@ -4,6 +4,7 @@ using System.Linq;
 using Data;
 using Managers;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -20,6 +21,8 @@ namespace Controller.Book
 
         [SerializeField] private Button leftButton;
         [SerializeField] private Button rightButton;
+
+        [SerializeField] private WinController winDisplayController;
         
         // Params
         private Vector3 _defaultPos;
@@ -75,8 +78,18 @@ namespace Controller.Book
             Debug.Log($"New UValue: {newUnlockValue}");
 
             pages[index].unlockValue = newUnlockValue;
+
+            if (newUnlockValue == 0b00_111111) CheckForWin();
         }
 
+        private void CheckForWin()
+        {
+            if (pages.All(p => p.unlockValue == 0b00_111111))
+            {
+                winDisplayController.Show();
+            }
+        }
+        
         private static int ModifyUnlockedHintsFlag(int stars, int unlockedHintsFlag)
         {
             if (unlockedHintsFlag != 31)
