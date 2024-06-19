@@ -9,8 +9,6 @@ namespace Managers
     {
         [SerializeField] private AudioClipsContainer[] clips;
         [SerializeField] private AudioSource effectSrc;
-        [SerializeField] private AudioSource musicSrc;
-        [SerializeField] private AudioSource ambienceSrc;
 
         public const string MasterVolumeKey = "MasterVolume";
         public const string MusicVolumeKey = "MusicVolume";

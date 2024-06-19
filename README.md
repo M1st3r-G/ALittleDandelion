@@ -6,7 +6,9 @@ A Cozy Gardening Game with calming colors
 ToDo:
 - Audio (Settings in Main Menu)
 - AddFlowers
+- MoreSounds
 - Add Schere To Scene
+- EasterEggs
 - Dirt Tint, nach gießen
   - Dirt Controller += TimeManager.OnIncrease
   - Tint -> 0;
