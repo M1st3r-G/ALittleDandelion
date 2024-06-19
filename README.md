@@ -4,8 +4,9 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-- Fix Removal Display (Tutorial)
+- Fix Removal (Tutorial)
 - FixBook
+- Audio (Settings in Main Menu)
 - AddFlowers
 - Add Schere To Scene
 - Dirt Tint, nach gießen

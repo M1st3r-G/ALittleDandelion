@@ -2,22 +2,26 @@
 using Managers;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Controller
 {
     [RequireComponent(typeof(CanvasGroup))]
     public class PlantRemoval : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI button1Text;
-        [SerializeField] private TextMeshProUGUI button2Text;
+        [Header("Component References")]
         [SerializeField] private TextMeshProUGUI mainText;
+        [Header("Stars")] 
+        [SerializeField] private Image[] images;
+        [SerializeField] private Sprite activeStar;
+        [SerializeField] private Sprite emptyStar;
+        
         
         private CanvasGroup _canvasGroup;
+        private bool _isDead;
         
         public delegate void CallbackType();
-
         private CallbackType _callBackMethod;
-        private bool _isDead;
         
         public static PlantRemoval Instance { get; private set; }
         
@@ -26,7 +30,6 @@ namespace Controller
             Instance = this;
             _canvasGroup = GetComponent<CanvasGroup>();
             SetVisibility(false);
-            button2Text.transform.parent.gameObject.SetActive(false);
         }
 
         private void OnDestroy()
@@ -44,34 +47,19 @@ namespace Controller
             
             if (!isDead)
             {
-                mainText.text = $"Sehr gut, du hast eine {stars}-Sterne Blume gezüchtet. Was möchtst du mit ihr tun?";
+                mainText.text = $"Sehr gut, du hast eine {stars}-Sterne Blume gezüchtet. Dein Fortschritt wurde im Blumenbuch vermerkt. Weiter so!";
                 StartCoroutine(ConsecutiveStarSounds(stars));
-                
-                button1Text.text = "Wegschmeißen";
-                button2Text.transform.parent.gameObject.SetActive(true);
-                int freeSpace = -1; //TODO
-                button2Text.text = $"Beahlten ({freeSpace} freie Plätze)";
             }
-            else button1Text.text = "Wegschmeißen";
+            else
+            {
+                mainText.text = "Leider ist die Pflanze gestorben. Versuch es doch nochmal und probiere anders aus.";
+            }
         }
 
-        public void OnButton1Pressed()
+        public void OnButtonPressed()
         {
             AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Click);
-            End();
-        }
-        
-        public void OnButton2Pressed()
-        {
-            AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Click);
-            //Add FlowerInstance, Env to Save TODO
-            End();
-        }
-
-        private void End()
-        {
             TutorialManager.Instance.SetFlag(TutorialManager.TutorialFlag.DecidedForPlant);
-            button2Text.transform.parent.gameObject.SetActive(false);
             SetVisibility(false);
             CInputManager.Instance.SetNavigation(true);
             _callBackMethod?.Invoke();
@@ -79,14 +67,17 @@ namespace Controller
 
         private void SetVisibility(bool state)
         {
+            if (state) foreach (Image star in images) star.sprite = emptyStar;
+            
             _canvasGroup.alpha = state ? 1 : 0;
             _canvasGroup.interactable = _canvasGroup.blocksRaycasts = state;
         }
 
-        private static IEnumerator ConsecutiveStarSounds(int stars)
+        private IEnumerator ConsecutiveStarSounds(int stars)
         {
             for (int i = 0; i < stars; i++)
             {
+                images[i].sprite = activeStar;
                 yield return new WaitForSeconds(AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.StarRating));
                 yield return new WaitForSeconds(0.25f);
             }
