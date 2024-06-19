@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Managers;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -24,9 +23,8 @@ namespace UI
 
         private float _cooldown;
         
-        private const float DefaultZeroDecibel = 0.675f;
+        public const float DefaultZeroDecibel = 0.675f;
         private const float Default15Decibel = 0.475f;
-        
         
         public static PauseMenuController Instance { get; private set; }
 
@@ -107,7 +105,7 @@ namespace UI
             }
         }
         
-        private static float SliderValueToDecibel(float sliderValue) => 163.769f * Mathf.Log10(sliderValue + 0.324718f);
+        public static float SliderValueToDecibel(float sliderValue) => 163.769f * Mathf.Log10(sliderValue + 0.324718f);
         
         #region ButtonFunctions
 

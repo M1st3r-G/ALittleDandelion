@@ -4,9 +4,8 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-- Audio (Settings in Main Menu)
 - AddFlowers
-- MoreSounds
+- More Sounds
 - Add Schere To Scene
 - EasterEggs
 - Dirt Tint, nach gießen
