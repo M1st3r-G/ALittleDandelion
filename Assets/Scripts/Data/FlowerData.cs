@@ -7,7 +7,7 @@ namespace Data
     {
         public enum FlowerType
         {
-            Löwenzahn, Tulpe, Rose
+            Löwenzahn, Tulpe, Rose, Lilie, Hyazinthe, Santini, WLöwenzahn
         }
         
         public FlowerType FlowerName => flowerTypes; 

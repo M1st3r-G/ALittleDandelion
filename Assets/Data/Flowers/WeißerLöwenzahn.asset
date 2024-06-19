@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f538442731605ac43b3cac24cc4290fd, type: 3}
+  m_Name: "Wei\xDFerL\xF6wenzahn"
+  m_EditorClassIdentifier: 
+  flowerTypes: 6
+  preferredEnv:
+    soil: 1
+    lichtkeimer: 1
+  fertilizer: 0
+  hSoil: 0
+  timeToSprout: 2
+  timeToBloom: 8
+  waterFrequency: 2
