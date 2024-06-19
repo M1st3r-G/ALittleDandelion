@@ -4,7 +4,6 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-- RichPresence
 - Save TutorialProgress
 - EasterEggs
 - Add Schere To Scene (Removes Dead Plants)
@@ -15,6 +14,7 @@ ToDo:
 
 
 Enhancements (WotFix for Now):
+- RichPresence
 - Change Debug Sound in Pause Menu
 - Let the SaveFile Controller Adjust the Data
 - Animation fürs Buch
