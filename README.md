@@ -5,6 +5,7 @@ A Cozy Gardening Game with calming colors
 ---
 ToDo:
 - AddFlowers
+    - Page Text
   - Lilien
     - Page
     - Mesh
@@ -26,6 +27,7 @@ ToDo:
   - Tint -> 0;
 - Arrow in ui button to over world
 - Save TutorialProgress
+- RichPresence
 
 Enhancements:
 - Animation fürs Buch
