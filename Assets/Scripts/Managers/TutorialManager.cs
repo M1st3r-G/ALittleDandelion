@@ -45,14 +45,11 @@ namespace Managers
             if (_isInTutorial) return;
             
             _isInTutorial = true;
-            
-            //Limit Seeds, Soil and Fertilizer
-            LimitContent(true);
-            
+            UnlockContent(false);
             StartCoroutine(TutorialRoutine());
         }
 
-        private void LimitContent(bool state)
+        private void UnlockContent(bool state)
         {
             foreach (ShelfSeedsItem seed in seeds)
                 seed.gameObject.SetActive(state);
@@ -66,9 +63,7 @@ namespace Managers
         
         public void SetFlag(TutorialFlag type)
         {
-            if (!_isInTutorial) return;
-
-            _lastFlag = type;
+            if (_isInTutorial) _lastFlag = type;
         }
 
         private IEnumerator TutorialRoutine()
@@ -85,6 +80,8 @@ namespace Managers
             dialogueSystem.StartNextSequence();
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.DialogueFinished);
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.NextDay); 
+            CameraManager.Instance.ToHub();
+            
             dialogueSystem.StartNextSequence();
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.DialogueFinished);
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.EnterGreenhouse); 
@@ -94,6 +91,8 @@ namespace Managers
             dialogueSystem.StartNextSequence();
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.DialogueFinished);
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.NextDay);
+            CameraManager.Instance.ToHub();
+            
             dialogueSystem.StartNextSequence();
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.DialogueFinished);
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.EnterGreenhouse);
@@ -106,6 +105,8 @@ namespace Managers
             dialogueSystem.StartNextSequence();
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.DialogueFinished);
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.FlowerBlooms);
+            CameraManager.Instance.ToHub();
+            
             dialogueSystem.StartNextSequence();
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.DialogueFinished);
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.EnterGreenhouse);
@@ -113,7 +114,7 @@ namespace Managers
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.DialogueFinished);
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.DecidedForPlant);
             dialogueSystem.StartNextSequence();
-            LimitContent(true);
+            UnlockContent(true);
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.DialogueFinished);
             _isInTutorial = false;
         }

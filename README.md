@@ -4,17 +4,10 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-  - Aufbewahrung, Either:
-    - Aufbewahren von Fertigen Pflanzen
-    - Fix Removal Display
-
-  - Dirt Tint, nach gießen
-    - Dirt Controller += TimeManager.OnIncrease
-    - Tint -> 0;
-
-
-Tutorial Remove item not working
-Go back to Hub after Day
+- Fix Removal Display (Tutorial)
+- Dirt Tint, nach gießen
+  - Dirt Controller += TimeManager.OnIncrease
+  - Tint -> 0;
 
 
 Enhancements:
