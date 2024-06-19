@@ -12,9 +12,7 @@ ToDo:
     - Dirt Controller += TimeManager.OnIncrease
     - Tint -> 0;
 
-Invetigate
-Reder Overlapping
-Pot Loading
+Pot Loading not immedeatly rendering
 
 - SeedPot Clickable to Focus
 - Rework Flowers

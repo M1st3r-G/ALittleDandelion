@@ -53,7 +53,9 @@ namespace Managers
                 _allPots.Add(tmpPot);
                 ReturnPot(tmpPot);
 
+                
                 tmpPot.SetUpContent(flowers[i], envs[i]);
+                potsUIDisplay.SetIndexToState(i, flowers[i] is not null);
             }
         }
         
