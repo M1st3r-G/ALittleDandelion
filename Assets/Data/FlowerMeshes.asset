@@ -95,6 +95,116 @@ MonoBehaviour:
         type: 3}
       material: {fileID: 2100000, guid: df79332be204ab54d95638d067a85329, type: 2}
       offset: {x: -0.04, y: 3.05, z: 0.56}
+  - name: Lilie
+    type: 3
+    meshes:
+    - mesh: {fileID: -3758573805739257388, guid: 5be8e61739a865f49aa599a1269f29c3,
+        type: 3}
+      material: {fileID: 2100000, guid: a75d5154eae7ce5468fc18b4848b9c5e, type: 2}
+      offset: {x: 0, y: 0.1, z: 0}
+    - mesh: {fileID: 8271874427896421271, guid: bbaa8dc0d8f401749ad83d37f57ca476,
+        type: 3}
+      material: {fileID: 2100000, guid: 5262ef032a9378946b09024fb6ecbb43, type: 2}
+      offset: {x: 0, y: 0.235, z: -0.07}
+    - mesh: {fileID: -7476697841690118149, guid: 881e6e91a614b5143a707671d5b78aa0,
+        type: 3}
+      material: {fileID: 2100000, guid: 284c34e82f49944409cebcba519f42f1, type: 2}
+      offset: {x: 0, y: 1.365, z: 0.15}
+    - mesh: {fileID: 4452795150876059728, guid: ab411e216756eef47a5718c088dac2b2,
+        type: 3}
+      material: {fileID: 2100000, guid: b4034c25b9851c44d810e305be90dedb, type: 2}
+      offset: {x: 0.26, y: 2.05, z: -0.15}
+    final:
+    - mesh: {fileID: -8998534309025572196, guid: 9aa21f38d7cf0504c8fc78ea56b78d92,
+        type: 3}
+      material: {fileID: 2100000, guid: 9839185297bcce14e9ce263c79da0175, type: 2}
+      offset: {x: 0, y: 2.1, z: -0.15}
+    - mesh: {fileID: -4365226347262381360, guid: ca73eacd4ffce614aba63ca18619bc52,
+        type: 3}
+      material: {fileID: 2100000, guid: 956495e964d1c9345b60c811e2f98273, type: 2}
+      offset: {x: 0.2, y: 2.65, z: 0.15}
+  - name: Hyazinthe
+    type: 4
+    meshes:
+    - mesh: {fileID: -3172421823607553832, guid: 91ec975b49551274584c21cabe27e859,
+        type: 3}
+      material: {fileID: 2100000, guid: 2a370e6a32d4e6445a5201847dddfbe9, type: 2}
+      offset: {x: 0, y: 0.42, z: 0}
+    - mesh: {fileID: 2717864537982314454, guid: 36ff369782bdadc4691b7eda9ad62760,
+        type: 3}
+      material: {fileID: 2100000, guid: f5c886758938ecb40b4834c1493b0b7b, type: 2}
+      offset: {x: 0, y: 0.7, z: 0}
+    - mesh: {fileID: -2512095965473164668, guid: 7c04de7326b73ed47a7a36ba87bffbc2,
+        type: 3}
+      material: {fileID: 2100000, guid: d1464705576a3164eac5b75f5357aa7b, type: 2}
+      offset: {x: 0, y: 1.06, z: 0}
+    - mesh: {fileID: -8548258979736466071, guid: e514056033c109e4f9baad00ceb09049,
+        type: 3}
+      material: {fileID: 2100000, guid: 8d060ccd2ac02864a9d8b33a6ee9213e, type: 2}
+      offset: {x: 0, y: 1, z: -0.1}
+    final:
+    - mesh: {fileID: 2197620061819681479, guid: d81a91f73963793449b1348d42113f43,
+        type: 3}
+      material: {fileID: 2100000, guid: dc480ec87f4dc124e9f0c96e27149370, type: 2}
+      offset: {x: 0.2, y: 2.8, z: 0.67}
+    - mesh: {fileID: 2090687728633907481, guid: 2245168251d09cc40b034c43e375207c,
+        type: 3}
+      material: {fileID: 2100000, guid: 334fab4df323b9a49adcbab1362172f1, type: 2}
+      offset: {x: -0.08, y: 1.759, z: 0.08}
+  - name: Santini
+    type: 5
+    meshes:
+    - mesh: {fileID: 189162934501049559, guid: 76d35f7b6c2afeb4ebfe224997d77578, type: 3}
+      material: {fileID: 2100000, guid: 4b51b1a43c2ac164c9300b0058b0cc80, type: 2}
+      offset: {x: 0, y: 0.172, z: 0}
+    - mesh: {fileID: 6224576839946213590, guid: be0ccaf343a5f924586032def1f450ba,
+        type: 3}
+      material: {fileID: 2100000, guid: f1df1f64a69d22544afa8f2328c79e6d, type: 2}
+      offset: {x: 0, y: 0.885, z: 0}
+    - mesh: {fileID: 5302568919011541938, guid: efb62c8a6dbf1284e918b55550ffd51a,
+        type: 3}
+      material: {fileID: 2100000, guid: bf52d8e3a1a7cf74287cc6cc4db66486, type: 2}
+      offset: {x: 0, y: 0, z: 0}
+    - mesh: {fileID: 3369316746193770658, guid: 8c3baace5c126ea489c8c492e5bebd61,
+        type: 3}
+      material: {fileID: 2100000, guid: 553268e9d24667b439675798f3c28f29, type: 2}
+      offset: {x: 0.05, y: 2.25, z: -0.3}
+    final:
+    - mesh: {fileID: 5823646049202150835, guid: 1acb5e6dd5e481d43a92f80b28bec09e,
+        type: 3}
+      material: {fileID: 2100000, guid: 6a1da2e09707651409b1fe5eabc66ac2, type: 2}
+      offset: {x: 0, y: 2, z: 0}
+    - mesh: {fileID: 1629971573039554117, guid: d6a5654f23910f443aa37691a2d106cf,
+        type: 3}
+      material: {fileID: 2100000, guid: 4f22af60d9dff744aaf086efe2f00b2b, type: 2}
+      offset: {x: -0.39, y: 2.185, z: 0.139}
+  - name: "WL\xF6wenzahn"
+    type: 6
+    meshes:
+    - mesh: {fileID: 189162934501049559, guid: 76d35f7b6c2afeb4ebfe224997d77578, type: 3}
+      material: {fileID: 2100000, guid: 4b51b1a43c2ac164c9300b0058b0cc80, type: 2}
+      offset: {x: 0, y: 0.172, z: 0}
+    - mesh: {fileID: 4068373912626513877, guid: 2288b6bceab5df3478eb612bd953aefd,
+        type: 3}
+      material: {fileID: 2100000, guid: 174c20ae114f44c4cb05a087756a6493, type: 2}
+      offset: {x: -0.7, y: 0.75, z: 0}
+    - mesh: {fileID: 4732937762076777578, guid: d0c1b69dc87df9f4891e4f96ec0df9ac,
+        type: 3}
+      material: {fileID: 2100000, guid: 5256059ba4400c3408fe7456569d7eaa, type: 2}
+      offset: {x: -0.1, y: 0, z: -0.215}
+    - mesh: {fileID: -2776328985985073188, guid: aafffdb64abf60b4aa87ba90ad5c800b,
+        type: 3}
+      material: {fileID: 2100000, guid: dea5db011e9a6d34cbbae8ca3dc0d804, type: 2}
+      offset: {x: -0.2, y: 5.1, z: 0.38}
+    final:
+    - mesh: {fileID: -8012436844635426135, guid: aedb9db6524097344bd97eba50310832,
+        type: 3}
+      material: {fileID: 2100000, guid: ca2f05271ee4d664693ee9bc103f0943, type: 2}
+      offset: {x: 0, y: 1.2, z: 0.15}
+    - mesh: {fileID: 3937115314576174600, guid: 4aca8d16fe2020946ac1dd1d2e451b70,
+        type: 3}
+      material: {fileID: 2100000, guid: 8d2532b810feba04aadaea282ecb8913, type: 2}
+      offset: {x: 0, y: 1.13, z: -0.03}
   deadMesh:
     mesh: {fileID: 3861478300804232965, guid: 4effe39a6a32caf4cb849b5720d42b67, type: 3}
     material: {fileID: 2100000, guid: 63bf61cb23388ba41969b9b5cba96e30, type: 2}
