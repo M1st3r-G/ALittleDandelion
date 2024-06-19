@@ -4,7 +4,6 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-- Fix Removal (Tutorial)
 - FixBook
 - Audio (Settings in Main Menu)
 - AddFlowers
