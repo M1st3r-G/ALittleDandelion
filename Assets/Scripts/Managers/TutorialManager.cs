@@ -117,14 +117,10 @@ namespace Managers
             dialogueSystem.StartNextSequence();
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.DialogueFinished);
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.BookOpened);
+            UnlockContent(true);
             dialogueSystem.StartNextSequence();            
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.DialogueFinished);
             
-            UnlockContent(true);
-            dialogueSystem.StartNextSequence();
-            _lastFlag = TutorialFlag.None;
-            
-            yield return new WaitUntil(() => _lastFlag == TutorialFlag.DialogueFinished);
             _isInTutorial = false;
         }
     }

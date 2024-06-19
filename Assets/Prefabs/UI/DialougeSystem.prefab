@@ -714,14 +714,14 @@ MonoBehaviour:
     - actor: 0
       line: "Mit jeder Ausgewachsenen Blume lernst du neue Informationen \xFCber
         deine Pflanzen. "
-    - actor: 0
-      line: Notiere sie dir doch in deinem Blumenbuch.
   - name: "B\xFCcherwurm"
     lines:
+    - actor: 0
+      line: Schreib dir doch ein Paar informationen in dein Blumenbuch.
     - actor: 1
       line: "Das ist ja hilfreich. Ich werder versuchen es zu f\xFCllen."
     - actor: 0
-      line: "Tu das meine Liebste. Aber vorher m\xF6chte ich dir etwas geben. "
+      line: "Tu das meine Liebste. Aber danach m\xF6chte ich dir etwas geben. "
   - name: Abschied
     lines:
     - actor: 1
