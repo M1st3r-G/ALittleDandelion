@@ -4,8 +4,6 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-- Import Flowers (Seeds)
-- Import Flowers (Pages)
 - More Sounds
 - FullBook End Display
 - Add Schere To Scene
