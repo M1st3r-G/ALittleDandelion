@@ -72,7 +72,8 @@ namespace Controller
             else
             {
                 labelObject.SetActive(true);
-                textRender.text = $"Empty pot: Environment: {pEnv.soil}, {pEnv.lichtkeimer}";
+                textRender.text = $"Ein Topf voll {pEnv.soil}. Es ist " + (pEnv.lichtkeimer ? "ein" : "kein") +
+                                  " Lichtkeimer";
             }
         }
     }
