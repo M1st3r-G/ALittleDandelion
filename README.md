@@ -14,6 +14,8 @@ ToDo:
 - Arrow in ui button to over world
 - Save TutorialProgress
 - RichPresence
+- Hide Button of Books when at the End
+- Hover and Click for Dialogue
 
 Enhancements:
 - Animation fürs Buch
