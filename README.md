@@ -4,7 +4,6 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-- FixBook
 - Audio (Settings in Main Menu)
 - AddFlowers
 - Add Schere To Scene
