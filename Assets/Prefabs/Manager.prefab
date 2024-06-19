@@ -564,3 +564,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueSystem: {fileID: 0}
+  seeds:
+  - {fileID: 0}
+  - {fileID: 0}
+  soils:
+  - {fileID: 0}
+  - {fileID: 0}
+  fertilizers:
+  - {fileID: 0}
+  - {fileID: 0}

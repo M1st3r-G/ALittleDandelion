@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18283203, g: 0.22599553, b: 0.2922312, a: 1}
+  m_IndirectSpecularColor: {r: 0.18283232, g: 0.22599594, b: 0.29223254, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,66 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &13795815 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1365956737171271037, guid: 40a99c2c5361bb843a6e1f5499c558ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 3634346487666334501}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ae4d80eefa40f09b96c60faaaf0371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &109392363 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3538788412490228531, guid: 40a99c2c5361bb843a6e1f5499c558ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 3634346487666334501}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ac92262a444b9aa45c80c060a8733b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1016160485 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7499550767003421482, guid: 40a99c2c5361bb843a6e1f5499c558ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 3634346487666334501}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ac92262a444b9aa45c80c060a8733b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1025185145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 780695078293471714, guid: 40a99c2c5361bb843a6e1f5499c558ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 3634346487666334501}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ae4d80eefa40f09b96c60faaaf0371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1150343896 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 546152687796523467, guid: 40a99c2c5361bb843a6e1f5499c558ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 3634346487666334501}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6b8c42a3164dd080dcb1ca720baa70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1280969290
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,6 +300,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bf608d7900c4606aacf1faff3946057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1949366465 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5576950368417814563, guid: 40a99c2c5361bb843a6e1f5499c558ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 3634346487666334501}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6b8c42a3164dd080dcb1ca720baa70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!20 &181150656375535941
@@ -847,6 +919,36 @@ PrefabInstance:
       propertyPath: dialogueSystem
       value: 
       objectReference: {fileID: 5999383546375344080}
+    - target: {fileID: 6864413784202447587, guid: ae77225a1eb62ae4b8353d411fb058c9,
+        type: 3}
+      propertyPath: seeds.Array.data[0]
+      value: 
+      objectReference: {fileID: 1025185145}
+    - target: {fileID: 6864413784202447587, guid: ae77225a1eb62ae4b8353d411fb058c9,
+        type: 3}
+      propertyPath: seeds.Array.data[1]
+      value: 
+      objectReference: {fileID: 13795815}
+    - target: {fileID: 6864413784202447587, guid: ae77225a1eb62ae4b8353d411fb058c9,
+        type: 3}
+      propertyPath: soils.Array.data[0]
+      value: 
+      objectReference: {fileID: 1150343896}
+    - target: {fileID: 6864413784202447587, guid: ae77225a1eb62ae4b8353d411fb058c9,
+        type: 3}
+      propertyPath: soils.Array.data[1]
+      value: 
+      objectReference: {fileID: 1949366465}
+    - target: {fileID: 6864413784202447587, guid: ae77225a1eb62ae4b8353d411fb058c9,
+        type: 3}
+      propertyPath: fertilizers.Array.data[0]
+      value: 
+      objectReference: {fileID: 109392363}
+    - target: {fileID: 6864413784202447587, guid: ae77225a1eb62ae4b8353d411fb058c9,
+        type: 3}
+      propertyPath: fertilizers.Array.data[1]
+      value: 
+      objectReference: {fileID: 1016160485}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

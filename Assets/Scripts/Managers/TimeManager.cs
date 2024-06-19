@@ -24,6 +24,7 @@ namespace Managers
         {
             Debug.Log("Next Day");
             AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.NextDay);
+            TutorialManager.Instance.SetFlag(TutorialManager.TutorialFlag.NextDay);
             Days++;
             OnTimeIncrease?.Invoke();
         }

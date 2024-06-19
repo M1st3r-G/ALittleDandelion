@@ -4,9 +4,6 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-  - Tutorial
-    - Add Triggers
-    - Remove when Sequence over
   - Aufbewahrung:
     - Aufbewahren von Fertigen Pflanzen
       - Fix Removal Display
@@ -47,3 +44,5 @@ Enhancements:
   - Samenernte (Nach einigen Tagen)
   - ShopSystem
     - Samen Kaufen und verkaufen
+- Tutorial IdiotenSicher
+  - Save Progress

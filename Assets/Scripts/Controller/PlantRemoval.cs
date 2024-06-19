@@ -70,6 +70,7 @@ namespace Controller
 
         private void End()
         {
+            TutorialManager.Instance.SetFlag(TutorialManager.TutorialFlag.DecidedForPlant);
             button2Text.transform.parent.gameObject.SetActive(false);
             SetVisibility(false);
             CInputManager.Instance.SetNavigation(true);

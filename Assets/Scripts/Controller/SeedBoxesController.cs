@@ -118,6 +118,7 @@ namespace Controller
             if (_currentSelection.IsEditable) return;
 
             AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Water);
+            TutorialManager.Instance.SetFlag(TutorialManager.TutorialFlag.Watered);
             _currentSelection.WaterPlant();
         }
 
@@ -129,6 +130,7 @@ namespace Controller
             if (!FlowerInstanceLibrary.Instance.HasSpace) return;
 
             AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Replant);
+            TutorialManager.Instance.SetFlag(TutorialManager.TutorialFlag.Replant);
             _currentSelection.Replant(); 
         }
         

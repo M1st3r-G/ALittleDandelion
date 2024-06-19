@@ -84,6 +84,8 @@ namespace Controller
             WateringCan.OnWatering += WaterPlant;
 
             AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.Fertilizer);
+            TutorialManager.Instance.SetFlag(TutorialManager.TutorialFlag.AddedFertilizer);
+            
             _currentFlower.Replant(type);
         }
 

@@ -103,6 +103,7 @@ namespace Data
                     break;
                 case GrowthState.Flower:
                     TimeManager.OnTimeIncrease -= Grow;
+                    TutorialManager.Instance.SetFlag(TutorialManager.TutorialFlag.FlowerBlooms);
                     break;
                 case GrowthState.Dead:
                 default:
