@@ -1890,3 +1890,5 @@ MonoBehaviour:
     unlockValue: 0
   - page: {fileID: 11400000, guid: 06c35346f1e185647b2e26b33a803a50, type: 2}
     unlockValue: 0
+  leftButton: {fileID: 7506148228307228952}
+  rightButton: {fileID: 6629825685610609141}

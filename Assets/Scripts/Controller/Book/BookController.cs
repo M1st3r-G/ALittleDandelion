@@ -4,6 +4,7 @@ using System.Linq;
 using Data;
 using Managers;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 namespace Controller.Book
@@ -16,6 +17,9 @@ namespace Controller.Book
         [SerializeField] private Vector2 inAndOutOfFrame = new(4.25f, 12f);
         [SerializeField] private PageController pageController;
         [SerializeField] private PageWithUnlockData[] pages;
+
+        [SerializeField] private Button leftButton;
+        [SerializeField] private Button rightButton;
         
         // Params
         private Vector3 _defaultPos;
@@ -26,7 +30,6 @@ namespace Controller.Book
         public static BookController Instance { get; private set; }
 
         public bool IsShown => transform.localPosition.x < 8f;
-        
 
         #endregion
 
@@ -45,6 +48,7 @@ namespace Controller.Book
 
             _defaultPos = transform.localPosition;
             
+            leftButton.gameObject.SetActive(false);
             DisplayBook(false);
         }
 
@@ -141,6 +145,18 @@ namespace Controller.Book
             PageWithUnlockData current = pages[_currentPage];
             AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.BookPageFlip);
             pageController.ShowPage(current.page, current.unlockValue);
+
+            //ButtonManagement
+            if (_currentPage == 0 || _currentPage == pages.Length)
+            {
+                if (_currentPage == 0) leftButton.gameObject.SetActive(false);
+                else rightButton.gameObject.SetActive(false);
+            }
+            else
+            {
+                leftButton.gameObject.SetActive(true);
+                rightButton.gameObject.SetActive(true);
+            }
         }
         
         private void DisplayBook(bool show)

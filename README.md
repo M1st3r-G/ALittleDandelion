@@ -6,7 +6,6 @@ A Cozy Gardening Game with calming colors
 ToDo:
 - FullBook End Display
 - Add Schere To Scene (Removes Dead Plants)
-- Hide Button of Books when at the End
 - RichPresence
 - Arrow in ui button to over world
 - More Sounds
