@@ -4,18 +4,18 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-- More Sounds
+- Hover and Click for Dialogue
 - FullBook End Display
-- Add Schere To Scene
+- Add Schere To Scene (Removes Dead Plants)
+- Hide Button of Books when at the End
+- RichPresence
+- Arrow in ui button to over world
+- More Sounds
+- Save TutorialProgress
 - EasterEggs
 - Dirt Tint, nach gießen
   - Dirt Controller += TimeManager.OnIncrease
   - Tint -> 0;
-- Arrow in ui button to over world
-- Save TutorialProgress
-- RichPresence
-- Hide Button of Books when at the End
-- Hover and Click for Dialogue
 
 Enhancements:
 - Animation fürs Buch
