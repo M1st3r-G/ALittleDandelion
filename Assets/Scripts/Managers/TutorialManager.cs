@@ -53,6 +53,7 @@ namespace Managers
 
         private IEnumerator TutorialRoutine()
         {
+            dialogueSystem.StartNextSequence();
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.DialogueFinished);
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.EnterGreenhouse);
             dialogueSystem.StartNextSequence();
@@ -62,6 +63,8 @@ namespace Managers
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.DialogueFinished);
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.PlantedSeed);
             dialogueSystem.StartNextSequence();
+            //break
+            
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.DialogueFinished);
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.NextDay); 
             dialogueSystem.StartNextSequence();

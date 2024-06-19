@@ -12,6 +12,7 @@ namespace Clickable
         public override void OnClick()
         {
             CameraManager.Instance.ToGreenhouse();
+            TutorialManager.Instance.SetFlag(TutorialManager.TutorialFlag.EnterGreenhouse);
         }
 
         public void Enable() => EnableHoverAndClick(true);

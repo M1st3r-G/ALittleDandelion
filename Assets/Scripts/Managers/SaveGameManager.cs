@@ -33,6 +33,11 @@ namespace Managers
             Debug.LogWarning(tmp);
         }
 
+        private void Start()
+        {
+            if (_loadedState is null) TutorialManager.Instance.StartTutorial();
+        }
+
         #region RetrieveSavedData
 
         public void GetSeedBoxData(out FlowerInstance[] flowers, out Environment[] envs)

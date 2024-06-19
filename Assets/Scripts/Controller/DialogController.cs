@@ -19,16 +19,22 @@ namespace Controller
         [Header("Content")]
         [SerializeField] private DialogueSequence[] sequences;
         [SerializeField] private ActorImages[] images;
-        
-        private int _currentSequence;
+
+        private int _currentSequence = -1;
         private int _currentLine;
 
         #endregion
         
         #region LineManagement
 
+        private void Awake()
+        {
+            gameObject.SetActive(false);
+        }
+
         public void StartNextSequence()
         {
+            gameObject.SetActive(true);
             _currentSequence++;
             _currentLine = -1;
 
@@ -48,6 +54,7 @@ namespace Controller
             if (_currentLine >= sequences[_currentSequence].lines.Length)
             {
                 print("Finished Lines");
+                gameObject.SetActive(true);
                 TutorialManager.Instance.SetFlag(TutorialManager.TutorialFlag.DialogueFinished);
                 return;
             }

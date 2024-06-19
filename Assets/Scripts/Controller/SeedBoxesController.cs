@@ -5,7 +5,6 @@ using Clickable;
 using Clickable.Shelf;
 using Data;
 using Managers;
-using Unity.VisualScripting;
 using UnityEngine;
 using Environment = Data.Environment;
 
@@ -41,6 +40,8 @@ namespace Controller
             WateringCan.OnWatering += OnWatering;
             Shovel.OnLightTypeChange += OnShovelClicked;
             ReplantPot.OnReplant += OnReplant;
+            
+            TutorialManager.Instance.SetFlag(TutorialManager.TutorialFlag.FocusedSeed);
             
             foreach (SeedBoxController box in _allBoxes) box.SetHover(true);
         }
@@ -85,6 +86,8 @@ namespace Controller
             if (!_currentSelection.IsEditable) return;
 
             AudioManager.Instance.PlayEffect(AudioManager.AudioEffect.SeedPlant);
+            TutorialManager.Instance.SetFlag(TutorialManager.TutorialFlag.PlantedSeed);
+            
             _currentSelection.AddFlower(type);
         }
 
