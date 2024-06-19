@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84d447d2b0464673a0538004b9ce29f1, type: 3}
+  m_Name: Santini
+  m_EditorClassIdentifier: 
+  type: 5
+  sketch: {fileID: -1359485623, guid: fd470590f175b144486d7723cb6f939e, type: 3}
+  image: {fileID: 880810558, guid: a3f83dd75bb3d564a9cbdd21d46dc94a, type: 3}
+  hints:
+  - 'Name: Santini'
+  - 'Keimer: Lichtkeimer'
+  - 'Erde: Lehmerde'
+  - "D\xFCnger: Knochend\xFCger"
+  - "Alle 4 Tage w\xE4ssern"

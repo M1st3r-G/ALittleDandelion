@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84d447d2b0464673a0538004b9ce29f1, type: 3}
+  m_Name: "WL\xF6wenzahn"
+  m_EditorClassIdentifier: 
+  type: 6
+  sketch: {fileID: -1702546023, guid: 4c6f47d01b4e81a409b2521fc3c4e4f4, type: 3}
+  image: {fileID: 1210792745, guid: 047610d0a69e7a84f86c73b0ca4f30f1, type: 3}
+  hints:
+  - Diese Pflanze
+  - 'War Omas '
+  - Lieblingspflanze
+  - "Sie w\xE4re "
+  - Stolz
