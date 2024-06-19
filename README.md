@@ -4,19 +4,8 @@ A Cozy Gardening Game with calming colors
 
 ---
 ToDo:
-- AddFlowers
-    - Page Text
-  - Lilien
-    - Mesh
-  - Hyazinthen
-    - Mesh
-  - Santini
-    - Mesh
-  - Weißer Löwenzahn
-    - Mesh
 - Import Flowers (Seeds)
 - Import Flowers (Pages)
-- Import Flowers (MeshAssets)
 - More Sounds
 - FullBook End Display
 - Add Schere To Scene
