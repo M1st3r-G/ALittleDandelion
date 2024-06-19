@@ -5,10 +5,14 @@ A Cozy Gardening Game with calming colors
 ---
 ToDo:
 - Fix Removal Display (Tutorial)
+- FixBook
+- AddFlowers
+- Add Schere To Scene
 - Dirt Tint, nach gießen
   - Dirt Controller += TimeManager.OnIncrease
   - Tint -> 0;
-
+- Arrow in ui button to over world
+- Save TutorialProgress
 
 Enhancements:
 - Animation fürs Buch
@@ -20,18 +24,14 @@ Enhancements:
         - Use Shovel
         - Remove Plant
         - Plant Seedling
-- Arrow in ui button to over world
-- Schere und Unkraut
-- Fix Highlight on hover
-  - Add hover Multiplier
+- Unkraut (Use Schere)
+- Fix Highlight on hover (Add Multiplier)
 - Let the SaveFile Controller Adjust the Data
 - Remove Pots from SeedController so they're not seen
 - Change Debug Sound in Pause Menu
-- More Plant Import
 - Features
   - Auswahl und Kreuzung
   - Samenernte (Nach einigen Tagen)
   - ShopSystem
     - Samen Kaufen und verkaufen
 - Tutorial IdiotenSicher
-  - Save Progress
