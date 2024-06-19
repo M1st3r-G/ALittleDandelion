@@ -32,7 +32,8 @@ namespace Managers
             Replant,
             AddedFertilizer,
             FlowerBlooms,
-            DecidedForPlant
+            DecidedForPlant,
+            BookOpened
         }
 
         private void Awake()
@@ -114,7 +115,15 @@ namespace Managers
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.DialogueFinished);
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.DecidedForPlant);
             dialogueSystem.StartNextSequence();
+            yield return new WaitUntil(() => _lastFlag == TutorialFlag.DialogueFinished);
+            yield return new WaitUntil(() => _lastFlag == TutorialFlag.BookOpened);
+            dialogueSystem.StartNextSequence();            
+            yield return new WaitUntil(() => _lastFlag == TutorialFlag.DialogueFinished);
+            
             UnlockContent(true);
+            dialogueSystem.StartNextSequence();
+            _lastFlag = TutorialFlag.None;
+            
             yield return new WaitUntil(() => _lastFlag == TutorialFlag.DialogueFinished);
             _isInTutorial = false;
         }

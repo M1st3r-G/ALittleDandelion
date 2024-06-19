@@ -590,6 +590,7 @@ MonoBehaviour:
   characterImage: {fileID: 4402507501806920435}
   characterName: {fileID: 1556490097469318697}
   lineText: {fileID: 172050499327497046}
+  anim: {fileID: 2577066884910232867}
   sequences:
   - name: "Begr\xFC\xDFung"
     lines:
@@ -679,11 +680,20 @@ MonoBehaviour:
   - name: Ausgewachsen
     lines:
     - actor: 0
-      line: 'Wie toll, er ist ja ausgewachsen. Was willst du jetzt mit ihm machen? '
+      line: 'Wie toll, er ist ja ausgewachsen. '
+    - actor: 0
+      line: "Mit jeder Ausgewachsenen Blume lernst du neue Informationen \xFCber
+        deine Pflanzen. "
+    - actor: 0
+      line: Notiere sie dir doch in deinem Blumenbuch.
+  - name: "B\xFCcherwurm"
+    lines:
+    - actor: 1
+      line: "Das ist ja hilfreich. Ich werder versuchen es zu f\xFCllen."
+    - actor: 0
+      line: "Tu das meine Liebste. Aber vorher m\xF6chte ich dir etwas geben. "
   - name: Abschied
     lines:
-    - actor: 0
-      line: Zur Feier des Tages habe ich dir was vorbereitet. Hier bitte sehr?
     - actor: 1
       line: "Das alles ist f\xFCr mich? So viele verschiedene Pflanzen! "
     - actor: 0
@@ -691,11 +701,3 @@ MonoBehaviour:
         Erfolg bei deinen weiteren Z\xFCchtungen. "
     - actor: 1
       line: "Vielen Lieben Dank, die werden w\xFCndersch\xF6n! "
-  images:
-  - name: Mutter
-    actor: 0
-    sprite: {fileID: 21300000, guid: f303001bbf5f1514e9146df36e6ecce3, type: 3}
-  - name: Tochter
-    actor: 1
-    sprite: {fileID: 21300000, guid: e80735592ab00764b950f9e42b15b8b0, type: 3}
-  anim: {fileID: 2577066884910232867}

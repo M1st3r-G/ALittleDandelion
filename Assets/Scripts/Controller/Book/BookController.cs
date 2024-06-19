@@ -150,6 +150,7 @@ namespace Controller.Book
             transform.localPosition = tmp;
             
             if (!show) return;
+            TutorialManager.Instance.SetFlag(TutorialManager.TutorialFlag.BookOpened);
             PageWithUnlockData current = pages[_currentPage];
             pageController.ShowPage(current.page, current.unlockValue);
         }

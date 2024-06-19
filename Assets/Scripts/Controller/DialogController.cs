@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using Managers;
 using TMPro;
 using UnityEngine;
@@ -15,12 +14,10 @@ namespace Controller
         [SerializeField] private Image characterImage;
         [SerializeField] private TextMeshProUGUI characterName;
         [SerializeField] private TextMeshProUGUI lineText;
+        [SerializeField] private Animator anim;
         
         [Header("Content")]
         [SerializeField] private DialogueSequence[] sequences;
-        [SerializeField] private ActorImages[] images;
-
-        [SerializeField] private Animator anim;
         
         private int _currentSequence = -1;
         private int _currentLine;
@@ -45,7 +42,6 @@ namespace Controller
 
         private void DisplayLine(DialogueLine line)
         {
-            characterImage.sprite = GetActorSprite(line.actor);
             anim.Play(line.actor == Actor.Mutter ? "Mutter" : "Tochter" );
             
             characterName.text = line.ActorName;
@@ -72,9 +68,6 @@ namespace Controller
 
         #region Utils
 
-        private Sprite GetActorSprite(Actor actor)
-            => (from aI in images where aI.actor == actor select aI.sprite).FirstOrDefault();
-        
         private enum Actor
         {
             Mutter, Tochter
@@ -102,14 +95,6 @@ namespace Controller
             public DialogueLine[] lines;
         }
         
-        [Serializable]
-        private struct ActorImages
-        {
-            public string name;
-            public Actor actor;
-            public Sprite sprite;
-        }
-
         #endregion
     }
 }
