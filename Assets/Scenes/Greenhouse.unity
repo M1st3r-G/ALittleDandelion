@@ -1579,6 +1579,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -28.199999
       objectReference: {fileID: 0}
+    - target: {fileID: 2686490190712637084, guid: 40a99c2c5361bb843a6e1f5499c558ef,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 407
+      objectReference: {fileID: 0}
     - target: {fileID: 2878056286051665788, guid: 40a99c2c5361bb843a6e1f5499c558ef,
         type: 3}
       propertyPath: m_AllowDynamicResolution

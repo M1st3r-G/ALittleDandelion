@@ -12,10 +12,9 @@ ToDo:
     - Tint -> 0;
 
 
-    
-Art and Scene
-- Rework Regal Layout
-
+Tutorial Remove item not working
+Go back to Hub after Day
+Add Animation
 
 
 Enhancements:
