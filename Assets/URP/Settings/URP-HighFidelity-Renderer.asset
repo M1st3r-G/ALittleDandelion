@@ -168,7 +168,7 @@ MonoBehaviour:
     gamma: 1
     hue: 0
     saturation: 1
-    affectSceneView: 0
+    affectSceneView: 1
     filterMode: 1
     whenToInsert: 550
     ignoreDeltaTimeScale: 0
