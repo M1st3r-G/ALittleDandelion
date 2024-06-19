@@ -54,7 +54,7 @@ namespace Controller
             if (_currentLine >= sequences[_currentSequence].lines.Length)
             {
                 print("Finished Lines");
-                gameObject.SetActive(true);
+                gameObject.SetActive(false);
                 TutorialManager.Instance.SetFlag(TutorialManager.TutorialFlag.DialogueFinished);
                 return;
             }
