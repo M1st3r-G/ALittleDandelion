@@ -1,3 +1,4 @@
+OUTDATED there is the real project (PRIVATE) is now [somewhere else](https://github.com/M1st3r-G/ALittleDandelion-Rework): 
 # A Little Dandelion
 Prototyping Project
 A Cozy Gardening Game with calming colors
